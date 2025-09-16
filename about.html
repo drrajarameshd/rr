@@ -1,61 +1,81 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>About — Dr. Raja Ramesh</title>
-<link rel="stylesheet" href="assets/style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — Dr. Raja Ramesh</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="icon" href="assets/logo-placeholder.svg" />
 </head>
 <body>
-<header class="site-header small">
-<div class="container header-inner">
-<a class="brand" href="index.html">
-<img src="assets/logo-placeholder.svg" alt="Logo" class="logo" />
-<div class="brand-text">
-<h1>Dr. Raja Ramesh</h1>
-</div>
-</a>
+  <!-- SITE HEADER -->
+  <header class="site-header small">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/logo-placeholder.svg" alt="Logo" class="logo" />
+        <div class="brand-text">
+          <h1>Dr. Raja Ramesh</h1>
+          <p class="tag">General Physician</p>
+        </div>
+      </a>
 
+      <nav class="nav" id="main-nav">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
+        <ul class="nav-list" id="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" aria-current="page">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-<nav class="nav">
-<ul class="nav-list">
-<li><a href="index.html">Home</a></li>
-<li><a href="about.html" aria-current="page">About</a></li>
-<li><a href="services.html">Services</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</nav>
-</div>
-</header>
+  <!-- MAIN -->
+  <main class="container main-content">
+    <article class="profile">
+      <h2>About Dr. Raja Ramesh</h2>
+      <p><strong>Qualification:</strong> MD (Medicine)</p>
+      <p><strong>Experience:</strong> 8+ years of clinical practice in outpatient care, acute illness management and chronic disease follow-up.</p>
 
+      <p>Dr. Ramesh focuses on evidence-based medicine, patient education, and shared decision-making. He emphasizes preventive care and long-term relationships with patients to manage health holistically.</p>
 
-<main class="container main-content">
-<article class="profile">
-<h2>About Dr. Raja Ramesh</h2>
-<p><strong>Qualification:</strong> MD (Medicine) — General Physician</p>
-<p><strong>Experience:</strong> 8+ years of clinical practice in outpatient care, acute illness management and chronic disease follow-up.</p>
-<p>Dr. Ramesh focuses on evidence-based medicine, patient education and shared decision-making. He believes in preventive care and building long-term relationships with patients.</p>
+      <h3>Clinic Hours</h3>
+      <ul>
+        <li>Mon – Fri: 9:00 AM – 2:00 PM, 4:00 PM – 7:00 PM</li>
+        <li>Sat: 9:00 AM – 1:00 PM</li>
+        <li>Sun: Closed</li>
+      </ul>
 
+      <h3>Professional Interests</h3>
+      <p>Preventive medicine, metabolic health (diabetes/hypertension), respiratory care, minor procedures, and occupational health screening.</p>
+    </article>
+  </main>
 
-<h3>Clinic Hours</h3>
-<ul>
-<li>Mon – Fri: 9:00 AM – 2:00 PM, 4:00 PM – 7:00 PM</li>
-<li>Sat: 9:00 AM – 1:00 PM</li>
-<li>Sun: Closed</li>
-</ul>
-</article>
-</main>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>Dr. Raja Ramesh</strong>
+        <p>General Physician — Outpatient Clinic</p>
+      </div>
+      <div>
+        <p>Phone: <a href="tel:+918062182411">+91 8062182411</a></p>
+        <p>Email: <a href="mailto:asksurgeons@gmail.com">asksurgeons@gmail.com</a></p>
+      </div>
+    </div>
+    <p class="copyright">© <span id="year"></span> Dr. Raja Ramesh. All rights reserved.</p>
+  </footer>
 
+  <!-- WHATSAPP -->
+  <a class="whatsapp-float" href="https://wa.me/918062182411" target="_blank" aria-label="Chat on WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M21.7 4.3a11 11 0 10-15.6 15.6L3 21l1.1-3.2A11 11 0 0021.7 4.3z" fill="#25D366"/>
+      <path d="M17.6 15.1c-.4-.2-2.2-1.1-2.5-1.2-.3-.1-.5-.2-.7.2-.2.4-.8 1.2-1 1.5-.2.3-.4.4-.8.2-1.1-.5-3.1-1.9-4.1-3.3-.3-.4.3-.3.7-.9.8-1.2.6-1.9.3-2.1-.3-.2-.7-.5-1-.7-.3-.2-.4-.4 0-.6.4-.2 1.2-.4 1.8-.6.6-.2 1.1-.3 1.6-.3.5 0 1 .1 1.4.4.4.3 1.1.9 1.2 1.2.2.3.1.6-.1.8-.2.3-.4.6-.6.9-.2.3-.3.5 0 .7.3.2 1 .8 1.3 1.1.3.4.5.8.1 1z" fill="#fff"/>
+    </svg>
+  </a>
 
-<footer class="site-footer">
-<div class="container footer-inner">
-<div>
-<strong>Dr. Raja Ramesh</strong>
-</div>
-<div>
-<p>Phone: <a href="tel:+918062182411">+91 8062182411</a></p>
-</div>
-</div>
-</footer>
+  <!-- SCRIPTS -->
+  <script src="assets/script.js"></script>
 </body>
 </html>
