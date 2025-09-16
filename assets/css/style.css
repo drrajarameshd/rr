@@ -1,0 +1,92 @@
+```css
+:root{
+  --primary: #007BBF;
+  --muted:#6b7280;
+  --bg:#ffffff;
+  --card:#f9fbfd;
+  --radius:12px;
+  --container:1100px;
+  --gap:1.25rem;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:#111;line-height:1.5}
+.container{max-width:var(--container);margin:0 auto;padding:0 1rem}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
+.brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:inherit}
+.logo{width:56px;height:56px;border-radius:10px;background:#fff;border:1px solid rgba(0,0,0,.06);padding:8px}
+.brand-text h1{font-size:1.1rem;margin:0}
+.brand-text .tag{margin:0;font-size:.85rem;color:var(--muted)}
+
+/* Navigation */
+.nav-list{list-style:none;margin:0;padding:0;display:flex;gap:1rem}
+.nav-list a{text-decoration:none;color:inherit;padding:.4rem .6rem;border-radius:8px}
+.nav-list a:hover{background:rgba(0,0,0,.03)}
+.nav-toggle{display:none;padding:.5rem;border-radius:8px;background:transparent;border:1px solid rgba(0,0,0,.06)}
+
+/* Banner */
+.banner{background:linear-gradient(90deg, rgba(0,123,191,0.08), rgba(0,123,191,0.02));padding:2.4rem 0;border-bottom:1px solid rgba(0,0,0,.03)}
+.banner-inner{display:flex;align-items:center;gap:1.5rem}
+.hero-text h2{margin:0 0 .5rem;font-size:1.6rem}
+.hero-text p{margin:0 0 1rem;color:var(--muted)}
+.btn{display:inline-block;background:var(--primary);color:#fff;padding:.6rem 1rem;border-radius:10px;text-decoration:none}
+
+.illustration{display:flex;align-items:center;justify-content:center}
+
+/* Main */
+.main-content{padding:2rem 0}
+.intro p{color:var(--muted);max-width:60ch}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1rem}
+.card{background:var(--card);padding:1rem;border-radius:10px;border:1px solid rgba(0,0,0,.03)}
+.more{margin-top:.75rem}
+
+.contact-cta{background:#fff;padding:1.25rem;border-radius:10px;border:1px solid rgba(0,0,0,.03);margin-top:1.25rem}
+
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.service{background:var(--card);padding:1rem;border-radius:10px;border:1px solid rgba(0,0,0,.03)}
+
+/* Contact Form */
+.contact-form form{
+  margin-top:1rem;
+  display:grid;
+  gap:1rem;
+  max-width:500px;
+}
+.form-group{display:flex;flex-direction:column;gap:.4rem}
+input,textarea{
+  padding:.6rem .8rem;
+  border:1px solid rgba(0,0,0,.12);
+  border-radius:8px;
+  font-size:1rem;
+  font-family:inherit;
+}
+input:focus,textarea:focus{outline:2px solid var(--primary);border-color:var(--primary)}
+.map-embed{margin-top:1rem;border-radius:10px;overflow:hidden;border:1px solid rgba(0,0,0,.08)}
+
+/* Footer */
+.site-footer{margin-top:2rem;padding:1rem 0;background:#f8fbff;border-top:1px solid rgba(0,0,0,.03)}
+.footer-inner{display:flex;justify-content:space-between;align-items:center}
+.site-footer p{margin:.25rem 0;color:var(--muted)}
+
+/* WhatsApp Float */
+.whatsapp-float{position:fixed;right:18px;bottom:18px;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.12);text-decoration:none}
+
+/* Responsive */
+@media (max-width:900px){
+  .banner-inner{flex-direction:column;align-items:flex-start}
+  .hero-image{align-self:stretch}
+}
+
+@media (max-width:700px){
+  .nav-list{display:none;flex-direction:column;gap:0}
+  .nav-list.open{display:flex}
+  .nav-toggle{display:inline-block}
+  .brand-text h1{font-size:1rem}
+  .logo{width:48px;height:48px}
+}
+
+/* Utility */
+.small .banner{display:none}
+.profile ul{padding-left:1.1rem}
+```
