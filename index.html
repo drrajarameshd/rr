@@ -1,0 +1,72 @@
+<!doctype html>
+<p>Dr. Raja Ramesh is a board-certified general physician providing outpatient and preventive care with a focus on patient education and tailored treatment plans. We handle acute illnesses, routine health checks, immunizations, and long-term care for chronic conditions.</p>
+</section>
+
+
+<section class="services-preview">
+<h3>Our Services</h3>
+<div class="cards">
+<article class="card">
+<h4>General Consultation</h4>
+<p>Diagnosis and treatment of common illnesses and minor injuries.</p>
+</article>
+<article class="card">
+<h4>Chronic Disease Management</h4>
+<p>Follow-up and medication management for diabetes, hypertension, asthma, etc.</p>
+</article>
+<article class="card">
+<h4>Preventive Care</h4>
+<p>Health screenings, vaccinations, lifestyle counseling.</p>
+</article>
+</div>
+<p class="more"><a href="services.html">View all services →</a></p>
+</section>
+
+
+<section class="contact-cta">
+<div>
+<h3>Need medical advice?</h3>
+<p>Call us at <a href="tel:+918062182411">+91 8062182411</a> or message on WhatsApp.</p>
+<a class="btn" href="contact.html">Contact</a>
+</div>
+</section>
+</main>
+
+
+<footer class="site-footer">
+<div class="container footer-inner">
+<div>
+<strong>Dr. Raja Ramesh</strong>
+<p>General Physician — Outpatient Clinic</p>
+</div>
+<div>
+<p>Phone: <a href="tel:+918062182411">+91 8062182411</a></p>
+<p>Email: <a href="mailto:asksurgeons@gmail.com">asksurgeons@gmail.com</a></p>
+</div>
+</div>
+<p class="copyright">© <span id="year"></span> Dr. Raja Ramesh. All rights reserved.</p>
+</footer>
+
+
+<!-- Floating WhatsApp button -->
+<a class="whatsapp-float" href="https://wa.me/918062182411" target="_blank" aria-label="Chat on WhatsApp">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden>
+<path d="M21.7 4.3a11 11 0 10-15.6 15.6L3 21l1.1-3.2A11 11 0 0021.7 4.3z" fill="#25D366"/>
+<path d="M17.6 15.1c-.4-.2-2.2-1.1-2.5-1.2-.3-.1-.5-.2-.7.2-.2.4-.8 1.2-1 1.5-.2.3-.4.4-.8.2-1.1-.5-3.1-1.9-4.1-3.3-.3-.4.3-.3.7-.9.8-1.2.6-1.9.3-2.1-.3-.2-.7-.5-1-.7-.3-.2-.4-.4 0-.6.4-.2 1.2-.4 1.8-.6.6-.2 1.1-.3 1.6-.3.5 0 1 .1 1.4.4.4.3 1.1.9 1.2 1.2.2.3.1.6-.1.8-.2.3-.4.6-.6.9-.2.3-.3.5 0 .7.3.2 1 .8 1.3 1.1.3.4.5.8.1 1z" fill="#fff"/>
+</svg>
+</a>
+
+
+<script>
+// small script for year and mobile nav
+document.getElementById('year').textContent = new Date().getFullYear();
+const navToggle = document.querySelector('.nav-toggle');
+const navList = document.getElementById('nav-list');
+navToggle.addEventListener('click', () => {
+const expanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
+navToggle.setAttribute('aria-expanded', !expanded);
+navList.classList.toggle('open');
+});
+</script>
+</body>
+</html>
