@@ -9,47 +9,53 @@
 </head>
 <body>
   <!-- ✅ SITE HEADER -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <img src="assets/logo.png" alt="Logo" class="logo" />
-        <div class="brand-text">
-          <h1>Dr. D. Raja Ramesh</h1>
-          <p class="tag">MBBS(Gandhi) MD(osmania) </p>
-        </div>
-      </a>
+ <!-- SITE HEADER (replace existing header) -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" style="color:var(--primary-dark);">
+      <!-- logo is an inline <img> referencing the SVG file -->
+      <img src="assets/logo-placeholder.svg" alt="Care Clinic logo" class="logo" />
+      <div class="brand-text">
+        <h1 style="color:var(--primary-dark);">Care Clinic</h1>
+        <p class="tag">Internal Medicine • Outpatient Care</p>
+      </div>
+    </a>
 
-      <nav class="nav" id="main-nav">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
-        <ul class="nav-list" id="nav-list">
-          <li><a href="index.html" aria-current="page">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+    <nav class="nav" id="main-nav" aria-label="Main navigation">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
 
-    <!-- Banner -->
-    <div class="banner">
-      <div class="container banner-inner">
-        <div class="hero-text">
-          <h2>Compassionate & Evidence-based Primary Care</h2>
-          <p>Comprehensive medical care for adults — consultation, preventive health, chronic disease management and more.</p>
-          <a href="contact.html" class="btn">Book an Appointment</a>
-        </div>
-        <div class="hero-image">
-          <!-- illustration placeholder -->
-          <div class="illustration">
-            <svg width="220" height="220" viewBox="0 0 100 100" aria-hidden="true">
-              <circle cx="50" cy="40" r="28" stroke="#007BBF" stroke-width="2" fill="none" />
-              <rect x="20" y="62" width="60" height="18" rx="3" fill="#f3f7fb" stroke="#dfecff" />
-            </svg>
-          </div>
-        </div>
+  <!-- BANNER / HERO (themed) -->
+  <div class="banner" role="banner" aria-hidden="false">
+    <div class="container banner-inner">
+      <div class="hero-text" style="color:var(--primary-dark)">
+        <h2>Compassionate, Evidence-based Internal Medicine</h2>
+        <p>Comprehensive adult medical care — routine health checks, chronic disease management, preventive medicine and urgent appointments.</p>
+        <a href="contact.html" class="btn" title="Book an appointment">Book an Appointment</a>
+      </div>
+
+      <div class="hero-image" aria-hidden="true">
+        <!-- The SVG illustration uses currentColor / CSS variables for tinting -->
+        <svg class="hero-svg" width="220" height="220" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="medical illustration">
+          <!-- Outer circle tint uses primary-100 (subtle) -->
+          <circle cx="50" cy="40" r="28" stroke="var(--primary-600)" stroke-width="2" fill="none" opacity="0.95"/>
+          <!-- Stethoscope-like simplified icon -->
+          <path d="M36 64c0-8.8 7.2-16 16-16s16 7.2 16 16v8" fill="none" stroke="var(--primary-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="50" cy="72" r="6" fill="var(--primary)" opacity="0.95"/>
+          <rect x="20" y="62" width="60" height="18" rx="3" fill="#f3f7fb" stroke="#dfecff"/>
+        </svg>
       </div>
     </div>
-  </header>
+  </div>
+</header>
+
 
   <!-- ✅ MAIN CONTENT -->
   <main class="container main-content">
