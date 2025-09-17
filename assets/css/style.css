@@ -74,27 +74,6 @@ body{
 }
 .btn:hover{ transform: translateY(-2px); }
 
-/* Hero profile photo (replaces SVG) */
-.hero-image {
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-/* The actual image */
-/* Hero profile circular photo */
-.hero-photo-circle {
-  display: block;
-  width: 100%;
-  max-width: 320px;         /* adjust size in hero banner */
-  height: auto;
-  border-radius: 50%;       /* ensures circle crop */
-  object-fit: cover;
-  border: 4px solid var(--primary); /* blue ring (matches your theme) */
-  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-  background: #fff;
-}
-
 /* On smaller screens */
 @media (max-width:600px) {
   .hero-photo-circle {
@@ -102,6 +81,112 @@ body{
     border-width: 3px;
   }
 }
+
+/* ---------- hero photo (existing) ---------- */
+.hero-image { /* keep the original centering behavior on desktop */
+  display: block;
+  align-items:center;
+  justify-content:center;
+  position: relative;
+}
+
+/* circular photo (already in your stylesheet) */
+.hero-photo-circle {
+  display:block;
+  width:100%;
+  max-width:320px;
+  height:auto;
+  border-radius:50%;
+  object-fit:cover;
+  border:4px solid var(--primary);
+  box-shadow:0 8px 28px rgba(15,23,36,0.12);
+  background:#fff;
+}
+
+/* ---------- mobile visiting card (hidden by default) ---------- */
+.hero-mobile-card {
+  display: none;               /* hidden on larger screens */
+  box-sizing: border-box;
+}
+
+/* small decorative styles used by the card */
+.hero-mobile-card .card-name {
+  margin: 0 0 4px;
+  font-size: 1rem;
+  color: var(--primary-dark);
+  font-weight: 700;
+}
+.hero-mobile-card .card-title {
+  margin: 0 0 6px;
+  font-size: .85rem;
+  color: var(--muted);
+}
+.hero-mobile-card .card-role {
+  margin: 0 0 .6rem;
+  font-size: .88rem;
+  color: var(--text);
+}
+
+/* contact line */
+.hero-mobile-card .card-line {
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+  margin:.45rem 0;
+}
+.hero-mobile-card .card-icon {
+  width:18px;height:18px;flex:0 0 18px;color:var(--primary-dark);
+}
+.hero-mobile-card .card-link{
+  color:var(--primary-dark);
+  text-decoration:none;
+  font-weight:600;
+  font-size:.92rem;
+}
+.hero-mobile-card .card-link:hover { text-decoration:underline; }
+
+/* ---------- SHOW card and arrange horizontally on small screens (<900px) ---------- */
+@media (max-width:900px) {
+  /* display photo + card in a row */
+  .hero-image {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .9rem;
+  }
+
+  /* card becomes visible and styled like a small visiting card */
+  .hero-mobile-card {
+    display: block;
+    background: linear-gradient(180deg, rgba(51,104,198,0.03), rgba(51,104,198,0.01));
+    border-radius: 12px;
+    padding: .72rem;
+    min-width: 56%;
+    box-shadow: 0 6px 18px rgba(15,23,36,0.06);
+    border: 1px solid rgba(51,104,198,0.06);
+  }
+
+  /* make sure photo is modestly sized on small screens */
+  .hero-photo-circle {
+    max-width: 120px;
+    min-width: 96px;
+    height: auto;
+    border-width:3px;
+  }
+
+  /* keep text compact */
+  .hero-mobile-card .card-name { font-size: .98rem; }
+  .hero-mobile-card .card-title { font-size: .78rem; }
+  .hero-mobile-card .card-role  { font-size: .84rem; }
+}
+
+/* On very small phones, allow the card to wrap under if needed */
+@media (max-width:420px) {
+  .hero-image { gap:.6rem; align-items:flex-start; }
+  .hero-mobile-card { min-width: 52%; padding:.6rem; }
+  .hero-photo-circle { max-width:100px; }
+}
+
 
 /* illustration placeholder */
 .illustration{display:flex;align-items:center;justify-content:center}
