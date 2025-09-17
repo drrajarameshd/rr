@@ -219,8 +219,9 @@ input:focus,textarea:focus{outline:2px solid var(--primary-600);border-color:var
   color: var(--muted, #555);
   text-decoration: none;
   font-size: .78rem;
-  padding: 8px 4px;               /* even padding all around */
-  -webkit-tap-highlight-color: transparent;
+  padding: 8px 4px;
+  padding-top:12px;
+  -webkit-tap-highlight-color: blue;
 }
 
 /* If you use <i> (font icons) */
