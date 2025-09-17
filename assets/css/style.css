@@ -194,7 +194,7 @@ input:focus,textarea:focus{outline:2px solid var(--primary-600);border-color:var
   transform: translateX(-50%);
   width: 90%;
   max-width: 760px;
-  height: 72px;                    /* slightly larger for comfortable touch area */
+  height: 60px;                    /* slightly larger for comfortable touch area */
   background: #fff;
   display: flex;
   justify-content: space-around;
