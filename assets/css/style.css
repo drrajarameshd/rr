@@ -166,7 +166,7 @@ input:focus,textarea:focus{outline:2px solid var(--primary-600);border-color:var
 .professional-footer{
   background: linear-gradient(180deg, var(--footer-bg-start), var(--footer-bg-end));
   color: #153145;
-  padding: 2rem 0 1rem;
+  padding: 2rem 0 4rem;
   border-top: 1px solid rgba(0,0,0,0.06);
   font-size:.95rem;
 }
