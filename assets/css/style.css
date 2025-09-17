@@ -186,28 +186,26 @@ input:focus,textarea:focus{outline:2px solid var(--primary-600);border-color:var
 .small .banner{display:none}
 .profile ul{padding-left:1.1rem}
 
-/* -------------------- Full-width bottom navigation (flush to screen bottom) -------------------- */
+/* -------------------- Full-width bottom navigation (theme colored) -------------------- */
 .bottom-nav {
   position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
   height: 64px;                         /* touch-friendly height */
-  background: #fff;
+  background: #3368c6;                  /* theme color */
   display: flex;
   justify-content: space-around;
   align-items: center;
   z-index: 9999;
-  box-shadow: 0 -6px 20px rgba(0,0,0,0.08); /* subtle top shadow */
-  border-top: 1px solid rgba(0,0,0,0.04);
-  padding-top: 6px;                     /* small top padding inside bar */
-  /* bottom safe area applied only at bottom */
+  box-shadow: 0 -6px 20px rgba(0,0,0,0.08);
+  border-top: 1px solid rgba(0,0,0,0.08);
+  padding-top: 6px;
   padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 6px);
-  /* remove rounded corners so it is flush edge-to-edge */
   border-radius: 0;
 }
 
-/* Individual items are vertical stacks (icon above text) */
+/* Nav items */
 .bottom-nav a {
   flex: 1 1 0;
   display: inline-flex;
@@ -215,14 +213,15 @@ input:focus,textarea:focus{outline:2px solid var(--primary-600);border-color:var
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: var(--muted, #555);
+  color: #ffffff;              /* white text */
   text-decoration: none;
   font-size: .78rem;
-  padding-top: 5px;     /* you requested 5px top padding */
+  padding-top: 5px;            /* small top padding as you wanted */
   padding-bottom: 0;
   padding-left: 6px;
   padding-right: 6px;
   -webkit-tap-highlight-color: transparent;
+  transition: background .2s ease;
 }
 
 /* uniform SVG icon sizing */
@@ -231,28 +230,30 @@ input:focus,textarea:focus{outline:2px solid var(--primary-600);border-color:var
   height: 22px;
   display: block;
   margin-bottom: 4px;
+  fill: #ffffff;               /* force icons white */
 }
 
-/* special larger WhatsApp icon (if you added class="whatsapp-big") */
+/* WhatsApp special (bigger icon if needed) */
 .bottom-nav a.whatsapp-big svg {
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   margin-bottom: 2px;
+  fill: #25D366;              /* keep WhatsApp official green for recognizability */
 }
 
-/* active state */
+/* Active state highlight */
 .bottom-nav a.active {
-  color: var(--primary);
   font-weight: 600;
+  background: rgba(255,255,255,0.15);  /* subtle highlight */
+  border-radius: 6px;
 }
 
-/* on-press feedback */
+/* Touch feedback */
 .bottom-nav a:active {
   transform: translateY(1px);
 }
 
-/* show only on small screens (optional). Remove @media to always show */
+/* Show only on mobile (optional) */
 @media (min-width: 900px) {
   .bottom-nav { display: none; }
 }
-
