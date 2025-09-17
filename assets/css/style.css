@@ -82,27 +82,26 @@ body{
 }
 
 /* The actual image */
-.hero-photo {
-  display:block;
-  width:100%;
-  max-width:420px;               /* maximum visual size on wide screens */
-  height:auto;
-  aspect-ratio: 1 / 1;           /* keep square crop if possible */
-  object-fit: cover;             /* fills the box and crops overflow */
-  border-radius: 18px;           /* rounded corner - tweak to taste */
-  border: 6px solid rgba(51,104,198,0.06); /* soft framed border matching theme */
-  box-shadow: 0 10px 30px rgba(15,23,36,0.12);
-  background: linear-gradient(180deg, rgba(51,104,198,0.02), rgba(51,104,198,0.01));
+/* Hero profile circular photo */
+.hero-photo-circle {
+  display: block;
+  width: 100%;
+  max-width: 320px;         /* adjust size in hero banner */
+  height: auto;
+  border-radius: 50%;       /* ensures circle crop */
+  object-fit: cover;
+  border: 4px solid var(--primary); /* blue ring (matches your theme) */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  background: #fff;
 }
 
-/* On smaller screens keep it modest */
-@media (max-width:900px) {
-  .hero-photo { max-width:320px; border-radius:14px; }
+/* On smaller screens */
+@media (max-width:600px) {
+  .hero-photo-circle {
+    max-width: 220px;
+    border-width: 3px;
+  }
 }
-@media (max-width:420px) {
-  .hero-photo { max-width:240px; border-radius:12px; }
-}
-
 
 /* illustration placeholder */
 .illustration{display:flex;align-items:center;justify-content:center}
