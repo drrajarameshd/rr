@@ -74,6 +74,36 @@ body{
 }
 .btn:hover{ transform: translateY(-2px); }
 
+/* Hero profile photo (replaces SVG) */
+.hero-image {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* The actual image */
+.hero-photo {
+  display:block;
+  width:100%;
+  max-width:420px;               /* maximum visual size on wide screens */
+  height:auto;
+  aspect-ratio: 1 / 1;           /* keep square crop if possible */
+  object-fit: cover;             /* fills the box and crops overflow */
+  border-radius: 18px;           /* rounded corner - tweak to taste */
+  border: 6px solid rgba(51,104,198,0.06); /* soft framed border matching theme */
+  box-shadow: 0 10px 30px rgba(15,23,36,0.12);
+  background: linear-gradient(180deg, rgba(51,104,198,0.02), rgba(51,104,198,0.01));
+}
+
+/* On smaller screens keep it modest */
+@media (max-width:900px) {
+  .hero-photo { max-width:320px; border-radius:14px; }
+}
+@media (max-width:420px) {
+  .hero-photo { max-width:240px; border-radius:12px; }
+}
+
+
 /* illustration placeholder */
 .illustration{display:flex;align-items:center;justify-content:center}
 
@@ -219,7 +249,6 @@ input:focus,textarea:focus{outline:2px solid var(--primary-600);border-color:var
 /* ========= RESPONSIVE ========= */
 @media (max-width:900px){
   .banner-inner{flex-direction:column;align-items:flex-start}
-  .hero-image{align-self:stretch}
   .contact-cta{flex-direction:column;align-items:flex-start}
 }
 @media (max-width:780px){
