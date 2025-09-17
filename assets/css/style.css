@@ -64,15 +64,14 @@ input,textarea{
 input:focus,textarea:focus{outline:2px solid var(--primary);border-color:var(--primary)}
 .map-embed{margin-top:1rem;border-radius:10px;overflow:hidden;border:1px solid rgba(0,0,0,.08)}
 
-/* Professional footer for Internal Medicine */
-
+/* Professional footer with #3368c6 theme */
 .professional-footer {
-  --footer-bg: linear-gradient(180deg, #f5f9fc 0%, #eaf3fb 100%);
-  --footer-accent: #005f8a;
+  --footer-bg: linear-gradient(180deg, #f6f9fe 0%, #eaf0fc 100%);
+  --footer-accent: #3368c6;
   background: var(--footer-bg);
-  color: #07323a;
+  color: #1c2f4c;
   padding: 2rem 0 1rem;
-  border-top: 1px solid rgba(7,50,58,0.06);
+  border-top: 1px solid rgba(0,0,0,0.06);
   font-size: .95rem;
 }
 
@@ -94,7 +93,7 @@ input:focus,textarea:focus{outline:2px solid var(--primary);border-color:var(--p
 
 .footer-contact address {
   font-style: normal;
-  color: #174a57;
+  color: #1c2f4c;
   line-height: 1.5;
   margin-bottom: .6rem;
 }
@@ -104,10 +103,10 @@ input:focus,textarea:focus{outline:2px solid var(--primary);border-color:var(--p
   align-items: center;
   gap: .5rem;
   margin: .35rem 0;
-  color: #174a57;
+  color: #1c2f4c;
 }
 
-.contact-line a { color: #0b4f68; text-decoration:none; }
+.contact-line a { color: #264a94; text-decoration:none; }
 .contact-line a:hover { text-decoration: underline; }
 
 /* Quick links */
@@ -118,31 +117,41 @@ input:focus,textarea:focus{outline:2px solid var(--primary);border-color:var(--p
 }
 .footer-links li { margin: .45rem 0; }
 .footer-links a {
-  color: #0b4f68;
+  color: #264a94;
   text-decoration: none;
 }
 .footer-links a:hover { text-decoration: underline; }
 
 /* Social icons */
 .social-row { display:flex; gap:.6rem; margin-top:.5rem; align-items:center; }
-.social { display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:8px; text-decoration:none; background: rgba(7,50,58,0.04); color: #07323a; }
-.social:hover { background: rgba(7,50,58,0.09); transform: translateY(-2px); transition: .18s ease; }
+.social { display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:8px; text-decoration:none; background: rgba(51,104,198,0.08); color: #3368c6; }
+.social:hover { background: rgba(51,104,198,0.15); transform: translateY(-2px); transition: .18s ease; }
 
 /* SVG sizing */
 .icon, .icon-social { width:20px; height:20px; display:inline-block; vertical-align:middle; }
-.icon { color: #0b4f68; }
-.icon-social { color: #07323a; }
+.icon { color: #264a94; }
+.icon-social { color: #3368c6; }
 
 /* Footer bottom */
-.footer-bottom { border-top: 1px solid rgba(7,50,58,0.03); padding-top:.75rem; display:flex; justify-content:space-between; align-items:center; gap:1rem; padding: .75rem 1rem 0; color: #174a57; font-size:.9rem; }
+.footer-bottom {
+  border-top: 1px solid rgba(0,0,0,0.05);
+  padding-top:.75rem;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:1rem;
+  padding: .75rem 1rem 0;
+  color: #1c2f4c;
+  font-size:.9rem;
+}
 .footer-bottom .small{ opacity:.85; margin:0; }
 
-/* Responsive: stack columns on small screens */
+/* Responsive */
 @media (max-width:780px) {
   .footer-grid { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; align-items: flex-start; gap:.5rem; }
 }
-
+/* Foooter END */
 
 /* WhatsApp Float */
 .whatsapp-float{position:fixed;right:18px;bottom:18px;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.12);text-decoration:none}
