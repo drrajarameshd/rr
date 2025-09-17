@@ -182,7 +182,7 @@ body{
 
 /* On very small phones, allow the card to wrap under if needed */
 @media (max-width:420px) {
-  .hero-image { gap:.6rem; align-items:flex-start; }
+  .hero-image { gap:.6rem; align-items:anchor-center; }
   .hero-mobile-card { min-width: 52%; padding:.6rem; }
   .hero-photo-circle { max-width:100px; }
 }
