@@ -8,10 +8,11 @@
   <link rel="icon" href="assets/logo-placeholder.svg" />
 </head>
 <body>
-  <!-- SITE HEADER -->
+ <!-- ✅ SITE HEADER -->
   <header class="site-header">
-    <div class="container header-inner">
+<div class="container header-inner">
       <a class="brand" href="index.html" style="color:var(--primary-dark);">
+        <!-- logo -->
         <img src="assets/logo.png" alt="RR logo" class="logo" />
         <div class="brand-text">
           <h1 style="color:var(--primary-dark);">Dr. D. Raja Ramesh MD (Osmania)</h1>
@@ -22,33 +23,58 @@
       <nav class="nav" id="main-nav" aria-label="Main navigation">
         <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
         <ul class="nav-list" id="nav-list">
-          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html" aria-current="page">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="services.html" aria-current="page">Services</a></li>
+          <li><a href="services.html">Services</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </div>
 
-    <div class="banner" role="banner">
+    <!-- BANNER / HERO (themed) -->
+<div class="banner" role="banner" aria-hidden="false">
       <div class="container banner-inner">
         <div class="hero-text" style="color:var(--primary-dark)">
-          <h2>Services</h2>
-          <p>Comprehensive outpatient services — acute care, chronic disease management and preventive medicine.</p>
+          <h2>Compassionate, Evidence-based Internal Medicine</h2>
+         <p>Comprehensive outpatient services — acute care, chronic disease management and preventive medicine.</p>
           <a href="contact.html" class="btn" title="Book an appointment">Book an Appointment</a>
+          <a href="tel: +91 7989676770" class="btn" title="Call Clinic">Call : 7986676770 </a>
         </div>
 
-        <div class="hero-image" aria-hidden="true">
-          <!-- hero svg -->
-          <svg class="hero-svg" width="220" height="220" viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Internal medicine illustration">
-            <circle cx="320" cy="320" r="300" stroke="var(--primary-600)" stroke-width="2" fill="none" opacity="0.14"/>
-            <path d="M320 171.9L305 151.1C280 116.5 239.9 96 197.1 96C123.6 96 64 155.6 64 229.1L64 231.7C64 255.3 70.2 279.7 80.6 304L186.6 304C189.8 304 192.7 302.1 194 299.1L225.8 222.8C229.5 214 238.1 208.2 247.6 208C257.1 207.8 265.9 213.4 269.8 222.1L321.1 336L362.5 253.2C366.6 245.1 374.9 239.9 384 239.9C393.1 239.9 401.4 245 405.5 253.2L428.7 299.5C430.1 302.2 432.8 303.9 435.9 303.9L559.5 303.9C570 279.6 576.1 255.2 576.1 231.6L576.1 229C576 155.6 516.4 96 442.9 96C400.2 96 360 116.5 335 151.1L320 171.8zM533.6 352L435.8 352C414.6 352 395.2 340 385.7 321L384 317.6L341.5 402.7C337.4 411 328.8 416.2 319.5 416C310.2 415.8 301.9 410.3 298.1 401.9L248.8 292.4L238.3 317.6C229.6 338.5 209.2 352.1 186.6 352.1L106.4 352.1C153.6 425.9 229.4 493.8 276.8 530C289.2 539.4 304.4 544.1 319.9 544.1C335.4 544.1 350.7 539.5 363 530C410.6 493.7 486.4 425.8 533.6 352z"
-                  fill="var(--primary)" opacity="0.95"/>
-          </svg>
-        </div>
-      </div>
+<!-- hero image + mobile visiting card wrapper -->
+<div class="hero-image">
+  <img src="assets/dr-raja-ramesh.webp"
+       alt="Dr. Raja Ramesh — Consultant Physician"
+       class="hero-photo-circle" />
+
+  <!-- visiting card (hidden on >=900px, shown on small screens) -->
+  <aside class="hero-mobile-card" aria-label="Contact card for Dr. Raja Ramesh">
+    <h3 class="card-name">Dr. D. Raja Ramesh</h3>
+    <p class="card-title">MBBS (Gandhi) • MD (Osmania)</p>
+    <p class="card-role">Consultant Physician &amp; Diabetologist</p>
+
+    <div class="card-line">
+      <!-- phone icon -->
+      <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path fill="currentColor" d="M21 16.5l-5.2-.7a1 1 0 0 0-1 .3l-2.3 2.3a16 16 0 0 1-7.3-7.3l2.3-2.3a1 1 0 0 0 .3-1L7.5 3A1 1 0 0 0 6.5 2H3a1 1 0 0 0-1 1 19 19 0 0 0 19 19 1 1 0 0 0 1-1v-3.5a1 1 0 0 0-1-1z"/>
+      </svg>
+      <a class="card-link" href="tel:+917989676770">+91 79896 76770</a>
     </div>
-  </header>
+
+    <div class="card-line">
+      <!-- mail icon -->
+      <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" d="M3 6.5A2.5 2.5 0 0 1 5.5 4h13A2.5 2.5 0 0 1 21 6.5V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6.5z"/>
+        <path fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" d="M5.5 6L12 10.5 18.5 6"/>
+      </svg>
+      <a class="card-link" href="mailto:careclinic177@gmail.com">careclinic177@gmail.com</a>
+    </div>
+  </aside>
+</div>
+<!-- END hero image + mobile visiting card wrapper -->
+</div>
+</div>
+</header>
 
   <!-- MAIN -->
   <main class="container main-content">
