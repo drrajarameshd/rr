@@ -202,7 +202,6 @@ input:focus,textarea:focus{outline:2px solid var(--primary-600);border-color:var
   border-radius: 16px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.12);
   z-index: 1000;
-  padding: env(safe-area-inset-bottom) 8px 8px;
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
   gap: 4px;
