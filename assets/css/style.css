@@ -186,4 +186,28 @@ input:focus,textarea:focus{outline:2px solid var(--primary-600);border-color:var
 .small .banner{display:none}
 .profile ul{padding-left:1.1rem}
 
-/* End of stylesheet */
+/* -------------------- Bottom navigation (non-chat pages) -------------------- */
+.bottom-nav{
+  position:fixed;
+  bottom:12px;
+  left:50%;
+  transform:translateX(-50%);
+  width:90%;
+  max-width:760px;
+  height:60px;
+  background:#fff;
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+  border-radius:16px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.12);
+  z-index:1000;
+  padding-bottom:env(safe-area-inset-bottom);
+  -webkit-backdrop-filter:blur(6px);
+  backdrop-filter:blur(6px);
+}
+.bottom-nav a{flex:1;text-align:center;color:#555;text-decoration:none;font-size:.8rem;padding-top:6px;-webkit-tap-highlight-color:transparent}
+.bottom-nav a i{font-size:1.2rem;display:block;margin-bottom:4px}
+.bottom-nav a.active{color:var(--primary);font-weight:600}
+.bottom-nav a:active{transform:translateY(1px)}
+
