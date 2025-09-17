@@ -421,3 +421,145 @@ input:focus,textarea:focus{outline:2px solid var(--primary-600);border-color:var
 @media (min-width: 900px) {
   .bottom-nav { display: none; }
 }
+
+/* ---------- TIMELINE (desktop -> mobile responsive) ---------- */
+.education-profile {
+  max-width: 900px;
+  margin: 40px auto;
+  font-family: Arial, sans-serif;
+}
+
+.education-profile .section-title {
+  text-align: center;
+  color: #3368c6;
+  margin-bottom: 28px;
+}
+
+/* timeline layout */
+.timeline {
+  position: relative;
+  padding-left: 36px;    /* space for markers (desktop default) */
+}
+
+/* connecting vertical line */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 18px;            /* center of markers */
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #3368c6;
+  opacity: 0.12;
+  border-radius: 2px;
+}
+
+/* timeline item */
+.timeline-item {
+  position: relative;
+  margin: 14px 0 32px 0;
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+/* marker (dot with icon) */
+.timeline-marker {
+  position: absolute;
+  left: -18px;           /* sits centered on the connecting line */
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #3368c6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 8px rgba(51,104,198,0.18);
+  flex-shrink: 0;
+  transition: transform .16s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* hover / active affordance for pointer devices */
+.timeline-marker:hover { transform: translateY(-2px) scale(1.03); }
+
+/* svg inside marker */
+.marker-icon {
+  width: 18px;
+  height: 18px;
+  fill: #fff;
+  display: block;
+}
+
+/* ensure the card doesn't overlap the marker */
+.timeline-item .edu-card {
+  margin-left: 10px;
+  width: calc(100% - 10px);
+  /* keep your existing .edu-card visuals (background, padding, shadow) */
+}
+
+/* edu-info text */
+.edu-info h3 { margin: 0 0 4px 0; color: #3368c6; font-size: 16px; line-height:1.2; }
+.edu-info p  { margin: 0; color: #555; font-size: 14px; }
+
+/* ------------------ Responsive tweaks ------------------ */
+/* Tablet / small laptop */
+@media (max-width: 920px) {
+  .education-profile { padding: 0 16px; }
+  .timeline { padding-left: 44px; }
+  .timeline::before { left: 22px; }
+  .timeline-marker { left: -22px; width: 38px; height: 38px; }
+  .marker-icon { width: 20px; height: 20px; }
+}
+
+/* Mobile (phones) — stacked, touch-friendly */
+@media (max-width: 720px) {
+  .timeline {
+    padding-left: 56px;   /* more left padding so cards start visually after marker */
+  }
+  .timeline::before { left: 28px; width: 4px; }
+  .timeline-item {
+    display: block;       /* stack marker + card vertically flow better */
+    margin: 18px 0;
+    padding-left: 0;
+  }
+  .timeline-marker {
+    position: absolute;
+    left: 12px;           /* keep the marker near the left edge */
+    top: 6px;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;   /* slightly rounded square gives more tap area */
+  }
+  .marker-icon { width: 20px; height: 20px; }
+
+  /* make card full width and spaced properly */
+  .timeline-item .edu-card {
+    margin-left: 0;
+    padding-left: 64px;   /* ensure content does not overlap marker on small screens */
+    padding-right: 12px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .edu-info h3 { font-size: 15px; }
+  .edu-info p  { font-size: 13px; }
+}
+
+/* Very small phones */
+@media (max-width: 420px) {
+  .education-profile { margin: 20px auto; }
+  .timeline { padding-left: 48px; }
+  .timeline::before { left: 24px; }
+  .timeline-marker { left: 8px; width: 36px; height: 36px; }
+  .timeline-item .edu-card { padding-left: 56px; }
+
+  .edu-info h3 { font-size: 14px; }
+  .edu-info p  { font-size: 13px; color: #666; }
+}
+
+/* Accessibility / print tweaks */
+@media (prefers-reduced-motion: reduce) {
+  .timeline-marker, .timeline-marker:hover { transition: none; transform: none; }
+}
+
