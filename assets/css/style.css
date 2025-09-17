@@ -187,27 +187,79 @@ input:focus,textarea:focus{outline:2px solid var(--primary-600);border-color:var
 .profile ul{padding-left:1.1rem}
 
 /* -------------------- Bottom navigation (non-chat pages) -------------------- */
-.bottom-nav{
-  position:fixed;
-  bottom:12px;
-  left:50%;
-  transform:translateX(-50%);
-  width:90%;
-  max-width:760px;
-  height:60px;
-  background:#fff;
-  display:flex;
-  justify-content:space-around;
-  align-items:center;
-  border-radius:16px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.12);
-  z-index:1000;
-  padding-bottom:env(safe-area-inset-bottom);
-  -webkit-backdrop-filter:blur(6px);
-  backdrop-filter:blur(6px);
+.bottom-nav {
+  position: fixed;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 760px;
+  height: 64px;                    /* slightly larger for comfortable touch area */
+  background: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  z-index: 1000;
+  padding: env(safe-area-inset-bottom) 8px 8px;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  gap: 4px;
 }
-.bottom-nav a{flex:1;text-align:center;color:#555;text-decoration:none;font-size:.8rem;padding-top:6px;-webkit-tap-highlight-color:transparent}
-.bottom-nav a i{font-size:1.2rem;display:block;margin-bottom:4px}
-.bottom-nav a.active{color:var(--primary);font-weight:600}
-.bottom-nav a:active{transform:translateY(1px)}
 
+/* Each link is a vertical flex column so icon sits above the label */
+.bottom-nav a {
+  flex: 1 1 auto;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--muted, #555);
+  text-decoration: none;
+  font-size: .78rem;
+  padding: 6px 4px;               /* even padding all around */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* If you use <i> (font icons) */
+.bottom-nav a i {
+  font-size: 20px;
+  display: block;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+/* SVG icons inside bottom-nav */
+.bottom-nav a svg {
+  width: 22px;                    /* uniform icon size */
+  height: 22px;
+  display: block;
+  margin-bottom: 4px;
+  vertical-align: middle;
+}
+
+/* Active / highlighted link */
+.bottom-nav a.active {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Touch feedback */
+.bottom-nav a:active {
+  transform: translateY(1px);
+}
+
+/* Hide on large screens if desired (optional) */
+@media (min-width: 900px) {
+  .bottom-nav { display: none; }
+}
+
+/* Make sure big embedded SVG (like the large green WA icon) doesn't overflow */
+.bottom-nav a svg[width][height] {
+  width: 28px !important;
+  height: 28px !important;
+}
+
+.bottom-nav a.whatsapp-big svg { width: 36px; height: 36px; }
