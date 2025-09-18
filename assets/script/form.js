@@ -3,7 +3,7 @@
   const form = document.getElementById('appointmentForm');
   const submitBtn = document.getElementById('formSubmit');
 
-  // <-- your deployed Web App URL (exec) -->
+  // <-- use your deployed Web App (exec) URL -->
   const endpoint = 'https://script.google.com/macros/s/AKfycbyYnYR3kGeEhyzbUHwy57amAFMNhGuWDFE46zhBgTjk9gFxMGVadiyHE8Fj5sPCsYPe/exec';
 
   function showError(id, message) {
@@ -50,9 +50,6 @@
     if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError('err-email', 'Enter a valid email address.'); ok = false; }
     if (!msg) { showError('err-msg', 'Please enter a brief message.'); ok = false; }
 
-    const honeypot = form.querySelector('input[name="website"]');
-    if (honeypot && honeypot.value.trim()) ok = false; // probable bot
-
     return ok;
   }
 
@@ -82,12 +79,9 @@
       mode: 'cors'
     })
     .then(async res => {
-      // treat any 2xx as success
-      if (!res.ok) {
-        const text = await res.text().catch(() => '');
-        throw new Error(text || 'Server returned ' + res.status);
-      }
-      return res.text().catch(() => '');
+      const txt = await res.text().catch(() => '');
+      if (!res.ok) throw new Error(txt || `Server returned ${res.status}`);
+      return txt;
     })
     .then(() => {
       showToast('✅ Request sent — we will contact you shortly');
@@ -103,6 +97,3 @@
     });
   });
 })();
-
-
-
