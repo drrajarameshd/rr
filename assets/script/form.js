@@ -4,7 +4,7 @@
   const submitBtn = document.getElementById('formSubmit');
 
   // your deployed Web App (exec) URL
-  const endpoint = 'https://script.google.com/macros/s/AKfycbyIkZStYHLw4rWx19TlV1nqq9TjeFXEx8DXVKZhP2jIl5amRGkq6RwWm28q6AyXWbFz/exec';
+  const endpoint = 'https://script.google.com/macros/s/AKfycbxTfTr5aJcp6OFO4gjWvw74qMETwAnQ4uYobbDwQYwiwjJ_yZzIZx637wjh-s-IA8PV/exec';
 
   function showError(id, message) {
     const el = document.getElementById(id);
