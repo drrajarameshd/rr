@@ -105,7 +105,7 @@
         </div>
 
         <aside>
-          <!-- FORM: will POST to your Google Apps Script -->
+   <!-- FORM: will POST to your Google Apps Script (fields unchanged) -->
 <form id="appointmentForm" class="form-card" novalidate>
   <h4 class="form-title">Request an appointment</h4>
 
@@ -120,7 +120,7 @@
   <input class="form-input" id="p_phone" name="phone" type="tel" pattern="[6-9]\d{9}" required />
   <div class="form-error" id="err-phone" aria-hidden="true"></div>
 
-  <label class="form-label" for="p_email">Email (optional)</label>
+  <label class="form-label" for="p_email">Email</label>
   <input class="form-input" id="p_email" name="email" type="email" />
   <div class="form-error" id="err-email" aria-hidden="true"></div>
 
@@ -132,6 +132,7 @@
 
   <div class="form-note muted">We will contact you during clinic hours. Your details stay private.</div>
 </form>
+
 
 <!-- Map: embed using q=place_id so API key isn't required -->
 <div class="map-wrap" aria-hidden="false">
