@@ -8,9 +8,16 @@
 
   function showError(id, message) {
     const el = document.getElementById(id);
-    if (el) {
-      el.textContent = message || '';
-      el.setAttribute('aria-hidden', message ? 'false' : 'true');
+    if (!el) return;
+    el.textContent = message || '';
+    if (message) {
+      el.classList.add('active');
+      el.style.display = 'block';
+      el.setAttribute('aria-hidden', 'false');
+    } else {
+      el.classList.remove('active');
+      el.style.display = 'none';
+      el.setAttribute('aria-hidden', 'true');
     }
   }
 
@@ -29,26 +36,43 @@
     t.style.background = isError ? '#dc2626' : 'var(--primary-dark, #16a34a)';
     t.textContent = message;
     document.body.appendChild(t);
+    // fade after 3s
     setTimeout(() => { t.style.transition = 'opacity .35s'; t.style.opacity = '0'; }, 3000);
     setTimeout(() => t.remove(), 3600);
   }
 
-  function validate() {
-    let ok = true;
+  function clearAllErrors() {
     showError('err-name', '');
     showError('err-phone', '');
     showError('err-email', '');
     showError('err-msg', '');
+  }
+
+  function validate() {
+    let ok = true;
+    clearAllErrors();
 
     const name = document.getElementById('p_name').value.trim();
     const phone = document.getElementById('p_phone').value.trim();
     const email = document.getElementById('p_email').value.trim();
     const msg = document.getElementById('p_msg').value.trim();
 
-    if (!name) { showError('err-name', 'Please enter your name.'); ok = false; }
-    if (!/^[6-9]\d{9}$/.test(phone)) { showError('err-phone', 'Enter a valid 10-digit Indian phone number.'); ok = false; }
-    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError('err-email', 'Enter a valid email address.'); ok = false; }
-    if (!msg) { showError('err-msg', 'Please enter a brief message.'); ok = false; }
+    if (!name) {
+      showError('err-name', 'Please enter your name.');
+      ok = false;
+    }
+    if (!/^[6-9]\d{9}$/.test(phone)) {
+      showError('err-phone', 'Enter a valid 10-digit Indian phone number.');
+      ok = false;
+    }
+    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      showError('err-email', 'Enter a valid email address.');
+      ok = false;
+    }
+    if (!msg) {
+      showError('err-msg', 'Please enter a brief message.');
+      ok = false;
+    }
 
     return ok;
   }
@@ -58,12 +82,25 @@
     return;
   }
 
+  // clear individual errors while user types
+  ['p_name', 'p_phone', 'p_email', 'p_msg'].forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.addEventListener('input', () => {
+      const map = { 'p_name': 'err-name', 'p_phone': 'err-phone', 'p_email': 'err-email', 'p_msg': 'err-msg' };
+      showError(map[id], '');
+    });
+  });
+
   form.addEventListener('submit', async function (ev) {
     ev.preventDefault();
+
     if (!validate()) return;
 
-    submitBtn.disabled = true;
-    submitBtn.textContent = '⏳ Sending...';
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = '⏳ Sending...';
+    }
 
     // URL-encoded payload avoids CORS preflight
     const params = new URLSearchParams();
@@ -82,16 +119,14 @@
       const txt = await res.text().catch(() => '');
       console.debug('Server response (text):', txt);
 
-      // attempt JSON parse, otherwise fallback to text
       let parsed = null;
       try {
         parsed = txt ? JSON.parse(txt) : null;
         console.debug('Server response parsed as JSON:', parsed);
       } catch (parseErr) {
-        // not JSON — that's fine, we'll handle as text
+        // not JSON — fine
       }
 
-      // Treat non-2xx as error. If parsed JSON contains status:error, treat as error.
       if (!res.ok) {
         const errMsg = (parsed && parsed.message) ? parsed.message : (txt || `Server returned ${res.status}`);
         throw new Error(errMsg);
@@ -100,16 +135,18 @@
         throw new Error(parsed.message || 'Server returned an error');
       }
 
-      // if we get here, accept success. Some servers return plain "Success" or raw content.
       showToast('✅ Request sent — we will contact you shortly');
       form.reset();
+      clearAllErrors();
 
     } catch (err) {
       console.error('Form submit error:', err);
       showToast('❌ Submission failed. Please try again later.', true);
     } finally {
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Send Request';
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Request';
+      }
     }
   });
 })();
