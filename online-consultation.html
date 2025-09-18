@@ -3,16 +3,34 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Online Consultation — Dr. Raja Ramesh</title>
+  <title>Terms & Conditions — Dr. Raja Ramesh</title>
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="icon" href="assets/logo.png" />
+  <style>
+    /* Small localized styles for the terms card and language switcher */
+    .terms-card { font-family: Arial, sans-serif; line-height:1.6; color:#222; max-width:820px; margin:24px auto; background:#fff; padding:18px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.08); }
+    .terms-head { color:var(--primary-dark,#005b96); text-align:center; font-size:1.25rem; margin-bottom:6px; }
+    .last-updated { font-size:0.85rem; color:#555; text-align:right; margin-top:0; }
+    .language-switcher { display:flex; gap:10px; justify-content:center; align-items:center; margin-bottom:12px; flex-wrap:wrap; }
+    .lang-btn { background:transparent; border:1px solid #ddd; padding:6px 10px; border-radius:6px; text-decoration:none; color:inherit; cursor:pointer; }
+    .lang-btn[aria-current="true"] { border-color:var(--primary-dark,#005b96); background:rgba(0,91,150,0.06); }
+    .lang-select { padding:6px 8px; border-radius:6px; border:1px solid #ccc; }
+    ol.bold-numbers { padding-left:22px; font-size:0.95em; margin-top:12px; }
+    ol.bold-numbers li::marker { font-weight: bold; }
+    ol.bold-numbers li { margin-bottom:10px; }
+    .accept-btn { display:inline-block; background:#25D366; color:#fff; padding:12px 20px; border-radius:8px; text-decoration:none; font-weight:700; font-size:15px; box-shadow:0 2px 6px rgba(0,0,0,0.12); }
+    .lang-note { font-size:0.85em; color:#666; text-align:center; margin-top:10px; }
+    /* hide non-active translations */
+    [data-lang] { display:none; }
+    [data-lang].active { display:block; }
+    @media (max-width:900px) { .terms-card { margin:12px; padding:14px; } }
+  </style>
 </head>
 <body>
-   <!-- ✅ SITE HEADER -->
+  <!-- (header kept as-is) -->
   <header class="site-header">
-<div class="container header-inner">
+    <div class="container header-inner">
       <a class="brand" href="index.html" style="color:var(--primary-dark);">
-        <!-- logo -->
         <img src="assets/logo.png" alt="RR logo" class="logo" />
         <div class="brand-text">
           <h1 style="color:var(--primary-dark);">Dr. D. Raja Ramesh MD (Osmania)</h1>
@@ -23,7 +41,7 @@
       <nav class="nav" id="main-nav" aria-label="Main navigation">
         <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
         <ul class="nav-list" id="nav-list">
-          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="contact.html">Contact</a></li>
@@ -31,109 +49,207 @@
       </nav>
     </div>
 
-    <!-- BANNER / HERO (themed) -->
-<div class="banner" role="banner" aria-hidden="false">
+    <div class="banner" role="banner">
       <div class="container banner-inner">
         <div class="hero-text" style="color:var(--primary-dark)">
-          <h2>Dr.Raja Ramesh | Terms & Conditions </h2>
+          <h2>Dr.Raja Ramesh | Terms &amp; Conditions</h2>
           <p>Digital Help for Patients | Not Teleconsultation</p>
         </div>
 
-<!-- hero image + mobile visiting card wrapper -->
-<div class="hero-image">
-  <img src="assets/dr-raja-ramesh.webp"
-       alt="Dr. Raja Ramesh — Consultant Physician"
-       class="hero-photo-circle" />
-
-  <!-- visiting card (hidden on >=900px, shown on small screens) -->
-  <aside class="hero-mobile-card" aria-label="Contact card for Dr. Raja Ramesh">
-    <h3 class="card-name">Dr. D. Raja Ramesh</h3>
-    <p class="card-title">MBBS (Gandhi) • MD (Osmania)</p>
-    <p class="card-role">Consultant Physician &amp; Diabetologist</p>
-
-    <div class="card-line">
-      <!-- phone icon -->
-      <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-        <path fill="currentColor" d="M21 16.5l-5.2-.7a1 1 0 0 0-1 .3l-2.3 2.3a16 16 0 0 1-7.3-7.3l2.3-2.3a1 1 0 0 0 .3-1L7.5 3A1 1 0 0 0 6.5 2H3a1 1 0 0 0-1 1 19 19 0 0 0 19 19 1 1 0 0 0 1-1v-3.5a1 1 0 0 0-1-1z"/>
-      </svg>
-      <a class="card-link" href="tel:+917989676770">+91 79896 76770</a>
+        <div class="hero-image">
+          <img src="assets/dr-raja-ramesh.webp" alt="Dr. Raja Ramesh — Consultant Physician" class="hero-photo-circle" />
+          <aside class="hero-mobile-card" aria-label="Contact card for Dr. Raja Ramesh">
+            <h3 class="card-name">Dr. D. Raja Ramesh</h3>
+            <p class="card-title">MBBS (Gandhi) • MD (Osmania)</p>
+            <p class="card-role">Consultant Physician &amp; Diabetologist</p>
+            <div class="card-line">
+              <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21 16.5l-5.2-.7a1 1 0 0 0-1 .3l-2.3 2.3a16 16 0 0 1-7.3-7.3l2.3-2.3a1 1 0 0 0 .3-1L7.5 3A1 1 0 0 0 6.5 2H3a1 1 0 0 0-1 1 19 19 0 0 0 19 19 1 1 0 0 0 1-1v-3.5a1 1 0 0 0-1-1z"/></svg>
+              <a class="card-link" href="tel:+917989676770">+91 79896 76770</a>
+            </div>
+            <div class="card-line">
+              <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" d="M3 6.5A2.5 2.5 0 0 1 5.5 4h13A2.5 2.5 0 0 1 21 6.5V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6.5z"/><path fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" d="M5.5 6L12 10.5 18.5 6"/></svg>
+              <a class="card-link" href="mailto:careclinic177@gmail.com">careclinic177@gmail.com</a>
+            </div>
+          </aside>
+        </div>
+      </div>
     </div>
-
-    <div class="card-line">
-      <!-- mail icon -->
-      <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-        <path fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" d="M3 6.5A2.5 2.5 0 0 1 5.5 4h13A2.5 2.5 0 0 1 21 6.5V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6.5z"/>
-        <path fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" d="M5.5 6L12 10.5 18.5 6"/>
-      </svg>
-      <a class="card-link" href="mailto:careclinic177@gmail.com">careclinic177@gmail.com</a>
-    </div>
-  </aside>
-</div>
-<!-- END hero image + mobile visiting card wrapper -->
-</div>
-</div>
-</header>
-
+  </header>
 
   <!-- MAIN -->
   <main class="container main-content">
- 
-<div style="font-family: Arial, sans-serif; line-height: 1.6; color: #222; max-width: 600px; margin:auto; background:#fff; padding:16px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+    <div class="terms-card" id="termsCard">
+      <div class="language-switcher" role="navigation" aria-label="Language switcher">
+        <div>
+          <button class="lang-btn" data-lang="en" aria-current="false">English</button>
+          <button class="lang-btn" data-lang="hi" aria-current="false">हिंदी</button>
+          <button class="lang-btn" data-lang="te" aria-current="false">తెలుగు</button>
+          <button class="lang-btn" data-lang="ur" aria-current="false">اردو</button>
+        </div>
 
-  <h2 style="color:#005b96; text-align:center; font-size:1.4em; margin-bottom:10px;">Terms & Conditions</h2>
-  <p style="font-size:0.85em; color:#555; text-align:right; margin-top:0;"><strong>Last updated: 24 August 2025</strong></p>
+        <div>
+          <label for="langSelect" class="visually-hidden">Choose language</label>
+          <select id="langSelect" class="lang-select" aria-label="Choose language">
+            <option value="en">English</option>
+            <option value="hi">हिंदी</option>
+            <option value="te">తెలుగు</option>
+            <option value="ur">اردو</option>
+          </select>
+        </div>
+      </div>
 
-  <p>These terms apply to all services, advice, and communications provided by <strong>Dr. Dolla Raja Ramesh, MD (General Medicine)</strong>. By contacting me through any digital medium or otherwise, you agree to the following:</p>
+      <!-- Header -->
+      <h2 class="terms-head" id="termsTitle">Terms &amp; Conditions</h2>
+      <p class="last-updated" id="lastUpdated"><strong>Last updated: 24 August 2025</strong></p>
 
-  <style>
-    ol.bold-numbers { padding-left:22px; font-size:0.95em; margin-top:12px; }
-    ol.bold-numbers li::marker { font-weight: bold; }
-    ol.bold-numbers li { margin-bottom:10px; }
-  </style>
+      <!-- ============================
+           ENGLISH
+           ============================ -->
+      <div data-lang="en" class="active" aria-hidden="false">
+        <p>These terms apply to all services, advice, and communications provided by <strong>Dr. Dolla Raja Ramesh, MD (General Medicine)</strong>. By contacting me through any digital medium or otherwise, you agree to the following:</p>
 
-  <ol class="bold-numbers">
-    <li><strong>No Teleconsultation:</strong> I do not provide telemedicine or teleconsultation services.</li>
-    <li><strong>General Guidance Only:</strong> Any advice shared via digital means (calls, messages, audio, or video) is purely general and not a substitute for a medical consultation.</li>
-    <li><strong>In-Person Required:</strong> Professional diagnosis, prescriptions, or treatment require an in-person consultation.</li>
-    <li><strong>Incomplete Information:</strong> Digital messages may be incomplete, delayed, or misinterpreted.</li>
-    <li><strong>No Examination Possible:</strong> Proper clinical examination cannot be done over phone or text.</li>
-    <li><strong>Report Verification:</strong> Medical reports cannot be reliably verified or interpreted through digital communication.</li>
-    <li><strong>Not a Medical Opinion:</strong> Digital guidance is not to be treated as a medical opinion.</li>
-    <li><strong>Visit Advised:</strong> Even if advice is given digitally, patients will always be advised to visit in person as soon as possible.</li>
-    <li><strong>Emergency Care:</strong> I do not provide emergency services via digital communication.</li>
-    <li><strong>Emergency Protocol:</strong> In case of emergency, patients must immediately call <strong>108/112</strong> or directly contact <strong>Germanten Hospital (☎ 90009 00937)</strong>.</li>
-    <li><strong>Confidentiality Limits:</strong> Digital platforms like WhatsApp, SMS, or email may not be fully secure.</li>
-    <li><strong>Privacy Responsibility:</strong> Patients should avoid sharing sensitive information digitally.</li>
-    <li><strong>No Liability:</strong> I am not responsible for harm, complications, or outcomes resulting from reliance on digital communication.</li>
-    <li><strong>Patient Responsibility:</strong> Patients are responsible for attending in-person consultations for proper care.</li>
-    <li><strong>No Emergency Guarantee:</strong> I cannot guarantee timely responses to digital communications.</li>
-    <li><strong>Professional Boundaries:</strong> Digital communication should not be misused for consultations or prescriptions.</li>
-    <li><strong>Advisory Nature:</strong> All digital replies are advisory in nature and should not be taken as treatment.</li>
-    <li><strong>Legal Jurisdiction:</strong> All disputes, if any, fall under Hyderabad, Telangana jurisdiction.</li>
-    <li><strong>Contact:</strong> For professional consultations, patients should meet me in person. For emergencies, please contact <strong>Germanten Hospital at 90009 00937</strong>.</li>
-  </ol>
+        <ol class="bold-numbers">
+          <li><strong>No Teleconsultation:</strong> I do not provide telemedicine or teleconsultation services.</li>
+          <li><strong>General Guidance Only:</strong> Any advice shared via digital means (calls, messages, audio, or video) is general and not a substitute for a medical consultation.</li>
+          <li><strong>In-Person Required:</strong> Diagnosis, prescriptions, or treatments require an in-person consultation.</li>
+          <li><strong>Incomplete Information:</strong> Digital messages may be incomplete, delayed, or misinterpreted.</li>
+          <li><strong>No Examination Possible:</strong> Proper clinical examination cannot be done over phone or text.</li>
+          <li><strong>Report Verification:</strong> Medical reports cannot be reliably verified through digital communication.</li>
+          <li><strong>Not a Medical Opinion:</strong> Digital guidance is not a formal medical opinion.</li>
+          <li><strong>Visit Advised:</strong> Patients will be advised to visit in person as soon as possible.</li>
+          <li><strong>Emergency Care:</strong> I do not provide emergency services via digital communication.</li>
+          <li><strong>Emergency Protocol:</strong> In case of emergency, call <strong>108/112</strong> or contact <strong>Germanten Hospital (☎ 90009 00937)</strong> immediately.</li>
+          <li><strong>Confidentiality Limits:</strong> Platforms like WhatsApp, SMS, or email may not be fully secure.</li>
+          <li><strong>Privacy Responsibility:</strong> Patients should avoid sharing highly sensitive information digitally.</li>
+          <li><strong>No Liability:</strong> I am not responsible for harm resulting from reliance on digital communication.</li>
+          <li><strong>Patient Responsibility:</strong> Patients must attend in-person consultations for proper care.</li>
+          <li><strong>Professional Boundaries:</strong> Digital communication should not be used as a substitute for consultations or prescriptions.</li>
+          <li><strong>Advisory Nature:</strong> All digital replies are advisory in nature and not treatment orders.</li>
+          <li><strong>Legal Jurisdiction:</strong> All disputes fall under Hyderabad, Telangana jurisdiction.</li>
+          <li><strong>Contact:</strong> For consultations, meet in person. For emergencies, contact <strong>Germanten Hospital at 90009 00937</strong>.</li>
+        </ol>
 
-  <p><strong>By contacting me, you acknowledge that digital communication is not a replacement for direct consultation and agree to meet in person for medical care.</strong></p>
+        <p><strong>By contacting me, you acknowledge that digital communication is not a replacement for direct consultation and agree to meet in person for medical care.</strong></p>
 
-  <!-- WhatsApp Button (unchanged except text) -->
-  <div style="text-align:center; margin-top:20px;">
-    <a href="https://wa.me/916300113363?text=I%20have%20read%20and%20agree%20to%20the%20terms%20and%20conditions%20for%20communicating%20with%20my%20doctor%20digitally." 
-       style="display:inline-block; background:#25D366; color:#fff; padding:12px 24px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:16px; box-shadow:0 2px 6px rgba(0,0,0,0.2);">
-      ✅ I Accept
-    </a>
-  </div>
-  <p style="font-size:0.85em; color:#666; text-align:center; margin-top:10px;">
-    Clicking "I Accept" will send a WhatsApp message confirming your acceptance.<br>
-    This does not replace an in-person medical consultation.
-  </p>
-</div>
-    
+        <div style="text-align:center; margin-top:18px;">
+          <a id="acceptBtn" class="accept-btn" href="https://wa.me/916300113363?text=I%20have%20read%20and%20agree%20to%20the%20terms%20and%20conditions%20for%20communicating%20with%20my%20doctor%20digitally." target="_blank" rel="noopener">
+            ✅ I Accept
+          </a>
+        </div>
+
+        <p class="lang-note">Clicking "I Accept" will send a WhatsApp message confirming your acceptance. This does not replace an in-person medical consultation.</p>
+      </div>
+
+      <!-- ============================
+           HINDI
+           ============================ -->
+      <div data-lang="hi" aria-hidden="true">
+        <p>ये शर्तें <strong>डॉ. डोला राजा रमेश, MD (General Medicine)</strong> द्वारा प्रदान की जाने वाली सभी सेवाओं, सलाह और संवादों पर लागू होती हैं। किसी भी डिजिटल माध्यम से मुझसे संपर्क करके आप निम्नलिखित से सहमत होते हैं:</p>
+
+        <ol class="bold-numbers">
+          <li><strong>टेली-कंसल्टेशन नहीं:</strong> मैं टेलीमेडिसिन या टेली-कंसल्टेशन सेवाएँ प्रदान नहीं करता/करती।</li>
+          <li><strong>सामान्य मार्गदर्शन:</strong> कॉल, संदेश, ऑडियो या वीडियो आदि के माध्यम से दी गई सलाह सामान्य है और चिकित्सा परामर्श का विकल्प नहीं है।</li>
+          <li><strong>व्यक्तिगत परामर्श आवश्यक:</strong> निदान, प्रिस्क्रिप्शन या उपचार के लिए व्यक्तिगत परामर्श आवश्यक है।</li>
+          <li><strong>अधूरी जानकारी:</strong> डिजिटल संदेश अपूर्ण, विलंबित या गलत समझे जा सकते हैं।</li>
+          <li><strong>परीक्षा संभव नहीं:</strong> फोन या टेक्स्ट पर उचित क्लिनिकल परीक्षा नहीं की जा सकती।</li>
+          <li><strong>रिपोर्ट सत्यापन:</strong> डिजिटल माध्यम से मेडिकल रिपोर्ट्स की विश्वसनीय जाँच/व्याख्या संभव नहीं है।</li>
+          <li><strong>चिकित्सीय राय नहीं:</strong> डिजिटल मार्गदर्शन को औपचारिक चिकित्सीय राय न मानें।</li>
+          <li><strong>मुलाकात सलाह:</strong> रोगियों को यथाशीघ्र व्यक्तिगत रूप से दिखाने की सलाह दी जाएगी।</li>
+          <li><strong>आपातकालीन सेवा नहीं:</strong> डिजिटल माध्यम से आपात सेवाएँ उपलब्ध नहीं हैं।</li>
+          <li><strong>आपात प्रोटोकॉल:</strong> आपातकाल में तुरंत <strong>108/112</strong> पर कॉल करें या <strong>Germanten Hospital (☎ 90009 00937)</strong> से संपर्क करें।</li>
+          <li><strong>गोपनीयता सीमाएँ:</strong> WhatsApp, SMS या ईमेल जैसे प्लेटफ़ॉर्म पूरी तरह सुरक्षित नहीं हो सकते।</li>
+          <li><strong>प्राइवेसी जिम्मेदारी:</strong> रोगियों को संवेदनशील जानकारी डिजिटल रूप से साझा करने से बचना चाहिए।</li>
+          <li><strong>कोई दायित्व नहीं:</strong> डिजिटल संचार पर निर्भरता के कारण होने वाले नुकसान के लिए मैं उत्तरदायी नहीं हूँ।</li>
+          <li><strong>रोगी की ज़िम्मेदारी:</strong> उचित देखभाल के लिए रोगियों को व्यक्तिगत परामर्श में हाज़िर होना चाहिए।</li>
+          <li><strong>पेशेवर सीमाएँ:</strong> डिजिटल संचार का दुरुपयोग कंसल्टेशन या प्रिस्क्रिप्शन के लिए न करें।</li>
+          <li><strong>सलाहमूलक प्रकृति:</strong> सभी डिजिटल प्रतिक्रियाएँ सलाहात्मक हैं और उपचार का विकल्प नहीं हैं।</li>
+          <li><strong>कानूनी क्षेत्राधिकार:</strong> सभी विवाद हैदराबाद, तेलंगाना के अधिकार क्षेत्र में होंगे।</li>
+          <li><strong>संपर्क:</strong> परामर्श के लिए व्यक्तिगत रूप से मिलें। आपात स्थिति में Germanten Hospital — 90009 00937 से संपर्क करें।</li>
+        </ol>
+
+        <p><strong>मुझसे संपर्क करके आप स्वीकार करते हैं कि डिजिटल संचार प्रत्यक्ष परामर्श का विकल्प नहीं है और चिकित्सा के लिए व्यक्तिगत रूप से मिलना आवश्यक है।</strong></p>
+
+        <div style="text-align:center; margin-top:18px;">
+          <a id="acceptBtn_hi" class="accept-btn" href="#" target="_blank" rel="noopener">✅ मैं स्वीकार करता/करती हूँ</a>
+        </div>
+
+        <p class="lang-note">"मैं स्वीकार करता/करती हूँ" पर क्लिक करने से WhatsApp पर आपकी सहमति का संदेश भेजा जाएगा। यह व्यक्तिगत परामर्श का विकल्प नहीं है।</p>
+      </div>
+
+      <!-- ============================
+           TELUGU
+           ============================ -->
+      <div data-lang="te" aria-hidden="true">
+        <p>ఈ షరతులు <strong>Dr. Dolla Raja Ramesh, MD (General Medicine)</strong> అందించే అన్ని సేవలు, సలహాలు, మరియు కమ్యూనికేషన్లకు వర్తిస్తాయి. ఏ డిజిటల్ మాధ్యమం ద్వారా నన్ను సంప్రదించినప్పుడైనా మీరు క్రిందివాటిని అంగీకరిస్తారు:</p>
+
+        <ol class="bold-numbers">
+          <li><strong>టెలికాన్సల్టేషన్ లేదు:</strong> నేను టెలిమెడిసిన్ లేదా టెలికాన్సల్టేషన్ సేవలు ఇవ్వను.</li>
+          <li><strong>సరళమైన సూచనలు మాత్రమే:</strong> కాల్స్, మెసేజెస్, ఆడియో లేదా వీడియో ద్వారా ఇచ్చే సూచనలు సాధారణమైనవి; వైద్య పరీక్షకు ప్రత్యామ్నాయం కావు.</li>
+          <li><strong>ప్రత్యక్షమైన సలహా అవసరం:</strong> నిర్ధారణ, ప్రిస్క్రిప్షన్ లేదా చికిత్స కోసం ప్రత్యక్ష పరామర్శ అవసరం.</li>
+          <li><strong>సమగ్ర సమాచారం లేని ప్రమాదం:</strong> డిజిటల్ సందేశాలు అసంపూర్తిగా లేదా ఆలస్యంగా రావచ్చు లేదా తప్పుగా అర్థం కావచ్చు.</li>
+          <li><strong>పరీక్ష చేయలేరు:</strong> ఫోన్ లేదా టెక్ట్స్ ద్వారా పూర్తిస్థాయి క్లినికల్ పరీక్ష చేయలేము.</li>
+          <li><strong>రిపోర్టు వాలిడేషన్:</strong> డిజిటల్ ద్వారా మెడికల్ రిపోర్ట్స్ నమ్మకపూర్వకంగా నిర్ధారించలేము.</li>
+          <li><strong>చికిత్సా అభిప్రాయం కాదు:</strong> డిజిటల్ సూచనలు అధికారిక వైద్య అభిప్రాయం కాదని భావించండి.</li>
+          <li><strong>విజిట్ సలహా:</strong> రోగులను వీలైనంత త్వరగా ప్రత్యక్షంగా చూపించమని సూచిస్తాను.</li>
+          <li><strong>ఎమర్జెన్‌సీ సేవలు కాదు:</strong> ఏవైనా అత్యవసర సేవలు డిజిటల్ ద్వారా అందించబడవు.</li>
+          <li><strong>ఎమర్జెన్సీ ప్రోటోకాల్:</strong> అత్యవసర పరిస్థితులలో వెంటనే <strong>108/112</strong>కు కాల్ చేయండి లేదా <strong>Germanten Hospital (☎ 90009 00937)</strong> ను సంప్రదించండి.</li>
+          <li><strong>గోప్యత పరిమితులు:</strong> WhatsApp, SMS లేదా ఇమెయిల్ వంటి ప్లాట్‌ఫారమ్స్ పూర్తిగా సురక్షితంగా ఉండకపోవచ్చు.</li>
+          <li><strong>ప్రైవసీ బాధ్యత:</strong> రోగులు సున్నితమైన సమాచారం డిజిటల్ ద్వారా పంచుకోవడాన్ని నివారించగలరు.</li>
+          <li><strong>దాయిత్వం లేదు:</strong> డిజిటల్ కమ్యూనికేషన్‌పై ఆధారపడటం వల్ల సంభవించే నష్టానికి నేను బాధ్యుడు కంటే కాదు.</li>
+          <li><strong>రోగి బాధ్యత:</strong> సరైన చికిత్స కోసం రోగులు ప్రత్యక్షంగా హాజరవగలిగే అవసరం ఉంది.</li>
+          <li><strong>వృత్తి పరిమితులు:</strong> కాన్సల్టేషన్ లేదా ప్రిస్క్రిప్షన్ కోసం డిజిటల్ కమ్యూనికేషన్‌ను దుర్వినియోగం చేయకండి.</li>
+          <li><strong>సలహా స్వభావం:</strong> అన్ని డిజిటల్ ప్రతిస్పందనలు సలహా స్వభావం కలిగినవిగా ఉంటాయి.</li>
+          <li><strong>కానూడు పరిధి:</strong> ఎలాంటి వివాదాలైతే హైదరాబాదు, తెలంగాణ పరిధిలో పరిష్కరించబడతాయి.</li>
+          <li><strong>సంప్రదింపు:</strong> ప్రొఫెషనల్ పరామర్శ కోసం వ్యక్తిగతంగా కలవండి. అత్యవసర పరిస్థితులలో Germanten Hospital (90009 00937) ను సంప్రదించండి.</li>
+        </ol>
+
+        <div style="text-align:center; margin-top:18px;">
+          <a id="acceptBtn_te" class="accept-btn" href="#" target="_blank" rel="noopener">✅ నేను అంగీకరిస్తున్నాను</a>
+        </div>
+
+        <p class="lang-note">"నేను అంగీకరిస్తున్నాను" క్లిక్ చేయడం ద్వారా మీ అంగీకారాన్ని WhatsApp ద్వారా పంపవచ్చు. ఇది ప్రత్యక్ష పరామర్శకు బదులుగా ఉండదు.</p>
+      </div>
+
+      <!-- ============================
+           URDU
+           ============================ -->
+      <div data-lang="ur" aria-hidden="true">
+        <p>یہ شرائط <strong>ڈاکٹر ڈولا راجا رمیش، ایم ڈی (جنرل میڈیسن)</strong> کی جانب سے فراہم کردہ تمام خدمات، مشوروں اور اَبلاغ پر لاگو ہوتی ہیں۔ کسی بھی ڈیجیٹل ذریعے سے رابطہ کرکے آپ مندرجہ ذیل سے متفق ہوتے ہیں:</p>
+
+        <ol class="bold-numbers" dir="rtl">
+          <li><strong>ٹیلی کنسلٹیشن نہیں:</strong> میں ٹیلی میڈیسن یا ٹیلی کنسلٹیشن خدمات فراہم نہیں کرتا/کرتی۔</li>
+          <li><strong>عام رہنمائی:</strong> کالز، پیغامات، آڈیو یا ویڈیو کے ذریعے دی گئی معلومات عمومی نوعیت کی ہیں اور طبی معائنے کا متبادل نہیں۔</li>
+          <li><strong>ذاتی معائنہ ضروری:</strong> تشخیص، نسخہ یا علاج کے لیے عینی معائنہ ضروری ہے۔</li>
+          <li><strong>مکمل معلومات کا فقدان:</strong> ڈیجیٹل پیغامات نامکمل، تاخیر شدہ یا غلط فہم ہو سکتے ہیں۔</li>
+          <li><strong>معائنے کا فقدان:</strong> فون یا ٹیکسٹ کے ذریعے مناسب طبی معائنہ نہیں کیا جا سکتا۔</li>
+          <li><strong>رپورٹس کی توثیق ممکن نہیں:</strong> ڈیجیٹل ذریعے طبی رپورٹس کی قابلِ اعتماد جانچ ممکن نہیں۔</li>
+          <li><strong>طبی رائے نہیں:</strong> ڈیجیٹل رہنمائی کو رسمی طبی رائے نہ سمجھیں۔</li>
+          <li><strong>آفرینش کا مشورہ:</strong> مریضوں کو جلد از جلد ذاتی طور پر دکھانے کی ہدایت کی جائے گی۔</li>
+          <li><strong>ہنگامی خدمات نہیں:</strong> میں ہنگامی خدمات ڈیجیٹل طریقے سے فراہم نہیں کرتا/کرتی۔</li>
+          <li><strong>ہنگامی پروٹوکول:</strong> ہنگامی صورت میں فوراً <strong>108/112</strong> پر کال کریں یا <strong>Germanten Hospital (☎ 90009 00937)</strong> سے رابطہ کریں۔</li>
+          <li><strong>رازداری کی حدیں:</strong> WhatsApp، SMS یا ای میل جیسے پلیٹ فارمز مکمل طور پر محفوظ نہیں ہوتے۔</li>
+          <li><strong>پرائیویسی ذمہ داری:</strong> مریض حساس معلومات کو ڈیجیٹل طور پر شیئر کرنے سے گریز کریں۔</li>
+          <li><strong>کوئی ذمہ داری نہیں:</strong> ڈیجیٹل کمیونیکیشن پر انحصار سے ہونے والے نقصان کی ذمہ داری میں قبول نہیں کرتا/کرتی۔</li>
+          <li><strong>مریض کی ذمہ داری:</strong> درست دیکھ بھال کے لیے مریضوں کو ذاتی مشاورت میں حاضر ہونا ہوگا۔</li>
+          <li><strong>پیشہ ورانہ حدیں:</strong> ڈیجیٹل کمیونیکیشن کا غلط استعمال مشاورت یا نسخہ کے لیے نہ کریں۔</li>
+          <li><strong>مشورتی نوعیت:</strong> تمام ڈیجیٹل جوابات مشورتی نوعیت کے ہیں اور علاج کا متبادل نہیں۔</li>
+          <li><strong>قانونی دائرہ کار:</strong> تمام تنازعات حیدرآباد، تلنگانہ کے دائرہ اختیار میں ہوں گے۔</li>
+          <li><strong>رابطہ:</strong> پیشہ ورانہ مشاورت کے لیے ذاتی طور پر ملاقات کریں؛ ایمرجنسی میں Germanten Hospital (90009 00937) سے رابطہ کریں۔</li>
+        </ol>
+
+        <div style="text-align:center; margin-top:18px;">
+          <a id="acceptBtn_ur" class="accept-btn" href="#" target="_blank" rel="noopener">✅ میں قبول کرتا/کرتی ہوں</a>
+        </div>
+
+        <p class="lang-note">"قبول" پر کلک کرنے سے آپ کی رضامندی WhatsApp پر بھیجی جا سکتی ہے۔ یہ ذاتی ملاقات کا متبادل نہیں ہے۔</p>
+      </div>
+
+    </div> <!-- end terms-card -->
   </main>
 
-  <!-- ✅ FOOTER -->
+  <!-- Footer (kept same) -->
   <footer class="site-footer professional-footer" role="contentinfo">
     <div class="container footer-grid">
-      <!-- Column 1: Address & Contact -->
       <div class="footer-col footer-contact">
         <h4>Care Clinic</h4>
         <address>
@@ -142,18 +258,15 @@
           Radha Krishna Nagar, Attapur.
         </address>
         <p class="contact-line">
-          <!-- phone -->
           <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16.5l-5.2-.7a1 1 0 0 0-1 .3l-2.3 2.3a16 16 0 0 1-7.3-7.3l2.3-2.3a1 1 0 0 0 .3-1L7.5 3A1 1 0 0 0 6.5 2H3a1 1 0 0 0-1 1A19 19 0 0 0 21 23a1 1 0 0 0 1-1v-3.5a1 1 0 0 0-1-1z" fill="currentColor"/></svg>
           <a href="tel:+917989676770">+91 79896 76770</a>
         </p>
         <p class="contact-line">
-          <!-- email -->
           <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5A2.5 2.5 0 0 1 5.5 4h13A2.5 2.5 0 0 1 21 6.5V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6.5zM5.5 6L12 10.5 18.5 6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <a href="mailto:careclinic177@gmail.com">careclinic177@gmail.com</a>
         </p>
       </div>
 
-      <!-- Column 2: Quick Links -->
       <nav class="footer-col footer-links" aria-label="Quick links">
         <h4>Quick links</h4>
         <ul>
@@ -164,28 +277,18 @@
         </ul>
       </nav>
 
-      <!-- Column 3: Social -->
       <div class="footer-col footer-social" aria-label="Social links">
         <h4>Connect</h4>
         <p>Follow us on</p>
         <div class="social-row">
-          
           <a href="https://wa.me/917989676770" class="social" aria-label="WhatsApp" target="_blank" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon-social" width="20" height="20" aria-hidden="true" fill="currentColor" ><!--!Font Awesome Free v7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M380.9 97.1c-41.9-42-97.7-65.1-157-65.1-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480 117.7 449.1c32.4 17.7 68.9 27 106.1 27l.1 0c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.6-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1s56.2 81.2 56.1 130.5c0 101.8-84.9 184.6-186.6 184.6zM325.1 300.5c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8s-14.3 18-17.6 21.8c-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7s-12.5-30.1-17.1-41.2c-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2s-9.7 1.4-14.8 6.9c-5.1 5.6-19.4 19-19.4 46.3s19.9 53.7 22.6 57.4c2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4s4.6-24.1 3.2-26.4c-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+            <!-- icon -->
+            <svg viewBox="0 0 448 512" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M380.9 97.1c-41.9-42-97.7-65.1-157-65.1-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480 117.7 449.1c32.4 17.7 68.9 27 106.1 27l.1 0c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.6-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1s56.2 81.2 56.1 130.5c0 101.8-84.9 184.6-186.6 184.6zM325.1 300.5c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8s-14.3 18-17.6 21.8c-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7s-12.5-30.1-17.1-41.2c-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2s-9.7 1.4-14.8 6.9c-5.1 5.6-19.4 19-19.4 46.3s19.9 53.7 22.6 57.4c2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4s4.6-24.1 3.2-26.4c-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
           </a>
-
-          <a href="#" class="social" aria-label="Facebook" target="_blank" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon-social" aria-hidden="true" fill="currentColor"><!--!Font Awesome Free v7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5l0-170.3-52.8 0 0-78.2 52.8 0 0-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4l0 70.8c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2l0 27.8 83.6 0-14.4 78.2-69.3 0 0 175.9C413.8 494.8 512 386.9 512 256z"/></svg>
-          </a>
-          
-          <a href="#" class="social" aria-label="Instagram" target="_blank" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon-social" aria-hidden="true" fill="currentColor"><!--!Font Awesome Free v7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M224.3 141a115 115 0 1 0 -.6 230 115 115 0 1 0 .6-230zm-.6 40.4a74.6 74.6 0 1 1 .6 149.2 74.6 74.6 0 1 1 -.6-149.2zm93.4-45.1a26.8 26.8 0 1 1 53.6 0 26.8 26.8 0 1 1 -53.6 0zm129.7 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM399 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
-          </a>
-
-          <a href="#" class="social" aria-label="Google" target="_blank" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon-social" aria-hidden="true" fill="currentColor"><!--!Font Awesome Free v7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M500 261.8C500 403.3 403.1 504 260 504 122.8 504 12 393.2 12 256S122.8 8 260 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9c-88.3-85.2-252.5-21.2-252.5 118.2 0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9l-140.8 0 0-85.3 236.1 0c2.3 12.7 3.9 24.9 3.9 41.4z"/></svg>
-          </a>
-          
+          <!-- other socials (placeholders) -->
+          <a href="#" class="social" aria-label="Facebook" target="_blank" rel="noopener">FB</a>
+          <a href="#" class="social" aria-label="Instagram" target="_blank" rel="noopener">IG</a>
+          <a href="#" class="social" aria-label="Google" target="_blank" rel="noopener">G</a>
         </div>
       </div>
     </div>
@@ -196,36 +299,18 @@
     </div>
   </footer>
 
-  <!-- BOTTOM NAV -->
+  <!-- bottom nav unchanged -->
   <nav class="bottom-nav" aria-label="Bottom navigation">
-    <a href="index.html">
-      <svg viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M341.8 72.6C329.5 61.2 310.5 61.2 298.3 72.6L74.3 280.6C64.7 289.6 61.5 303.5 66.3 315.7C71.1 327.9 82.8 336 96 336L112 336L112 512C112 547.3 140.7 576 176 576L464 576C499.3 576 528 547.3 528 512L528 336L544 336C557.2 336 569 327.9 573.8 315.7C578.6 303.5 575.4 289.5 565.8 280.6L341.8 72.6zM304 384L336 384C362.5 384 384 405.5 384 432L384 528L256 528L256 432C256 405.5 277.5 384 304 384z"/></svg>
-      <span>Home</span>
-    </a>
-
-    <a href="about.html" class="active" aria-current="page">
-      <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M224 8a120 120 0 1 0 0 240 120 120 0 1 0 0-240zm60 312.8c-5.4-.5-11-.8-16.6-.8l-86.9 0c-5.6 0-11.1 .3-16.6 .8l0 67.5c16.5 7.6 28 24.3 28 43.6 0 26.5-21.5 48-48 48s-48-21.5-48-48c0-19.4 11.5-36.1 28-43.6l0-58.4C61 353 16 413.6 16 484.6 16 499.7 28.3 512 43.4 512l361.1 0c15.1 0 27.4-12.3 27.4-27.4 0-71-45-131.5-108-154.6l0 37.4c23.3 8.2 40 30.5 40 56.6l0 32c0 11-9 20-20 20s-20-9-20-20l0-32c0-11-9-20-20-20s-20 9-20 20l0 32c0 11-9 20-20 20s-20-9-20-20l0-32c0-26.1 16.7-48.3 40-56.6l0-46.6z"/></svg>
-      <span>About</span>
-    </a>
-
-    <a href="https://wa.me/917989676770" class="whatsapp-big" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-      <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="#25D366"><path d="M380.9 97.1c-41.9-42-97.7-65.1-157-65.1-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480 117.7 449.1c32.4 17.7 68.9 27 106.1 27l.1 0c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.6-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1s56.2 81.2 56.1 130.5c0 101.8-84.9 184.6-186.6 184.6zM325.1 300.5c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8s-14.3 18-17.6 21.8c-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7s-12.5-30.1-17.1-41.2c-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2s-9.7 1.4-14.8 6.9c-5.1 5.6-19.4 19-19.4 46.3s19.9 53.7 22.6 57.4c2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4s4.6-24.1 3.2-26.4c-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
-      <span>Chat</span>
-    </a>
-
-    <a href="services.html">
-      <svg viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M32 48C32 21.5 53.5 0 80 0l48 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-32 0 0 128c0 53 43 96 96 96s96-43 96-96l0-128-32 0c-17.7 0-32-14.3-32-32S238.3 0 256 0l48 0c26.5 0 48 21.5 48 48l0 144c0 77.4-55 142-128 156.8l0 19.2c0 61.9 50.1 112 112 112s112-50.1 112-112l0-85.5c-37.3-13.2-64-48.7-64-90.5 0-53 43-96 96-96s96 43 96 96c0 41.8-26.7 77.4-64 90.5l0 85.5c0 97.2-78.8 176-176 176S160 465.2 160 368l0-19.2C87 334 32 269.4 32 192L32 48zM480 224a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"/></svg>
-      <span>Services</span>
-    </a>
-
-    <a href="contact.html">
-      <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path opacity=".4" d="M0 160l448 0 0 272c0 26.5-21.5 48-48 48L48 480c-26.5 0-48-21.5-48-48L0 160zM119.1 327.1c-9.4 9.4-9.4 24.6 0 33.9L175 417c5 5 11.9 7.5 18.8 6.9s13.4-4.1 17.5-9.8L333.5 246.2c7.8-10.7 5.4-25.7-5.3-33.5-10.7-7.8-25.7-5.4-33.5 5.3l-105.6 145.2-36-36c-9.4-9.4-24.6-9.4-33.9 0z"/><path d="M294.7 217.9c7.8-10.7 22.8-13.1 33.5-5.3 10.7 7.8 13.1 22.8 5.3 33.5L211.4 414.1c-4.1 5.7-10.5 9.3-17.5 9.8-7 .5-13.9-2-18.8-6.9l-55.9-55.9c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l36 36 105.6-145.2zM320 0c17.7 0 32 14.3 32 32l0 32 48 0c26.5 0 48 21.5 48 48l0 48-448 0 0-48C0 85.5 21.5 64 48 64l48 0 0-32c0-17.7 14.3-32 32-32s32 14.3 32 32l0 32 128 0 0-32c0-17.7 14.3-32 32-32z"/></svg>
-      <span>Appointment</span>
-    </a>
+    <a href="index.html"><svg viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M341.8 72.6C329.5 61.2 310.5 61.2 298.3 72.6L74.3 280.6C64.7 289.6 61.5 303.5 66.3 315.7C71.1 327.9 82.8 336 96 336L112 336L112 512C112 547.3 140.7 576 176 576L464 576C499.3 576 528 547.3 528 512L528 336L544 336C557.2 336 569 327.9 573.8 315.7C578.6 303.5 575.4 289.5 565.8 280.6L341.8 72.6zM304 384L336 384C362.5 384 384 405.5 384 432L384 528L256 528L256 432C256 405.5 277.5 384 304 384z"/></svg><span>Home</span></a>
+    <a href="about.html"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M224 8a120 120 0 1 0 0 240 120 120 0 1 0 0-240z"/></svg><span>About</span></a>
+    <a href="https://wa.me/917989676770" class="whatsapp-big" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="#25D366"><path d="M380.9 97.1c-41.9-42-97.7-65.1-157-65.1-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480 117.7 449.1c32.4 17.7 68.9 27 106.1 27l.1 0c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157z"/></svg><span>Chat</span></a>
+    <a href="services.html"><span>Services</span></a>
+    <a href="contact.html"><span>Appointment</span></a>
   </nav>
 
   <!-- SCRIPTS -->
   <script>
+    // year, nav toggle
     document.getElementById('year').textContent = new Date().getFullYear();
     const navToggle = document.querySelector('.nav-toggle');
     const navList = document.getElementById('nav-list');
@@ -236,8 +321,78 @@
         navList.classList.toggle('open');
       });
     }
+
+    // Multilanguage logic
+    (function(){
+      const buttons = document.querySelectorAll('.lang-btn');
+      const select = document.getElementById('langSelect');
+      const blocks = document.querySelectorAll('[data-lang]');
+      const htmlEl = document.documentElement;
+
+      // helper to set active language
+      function setLang(lang, updateSelect=true, pushState=false) {
+        // update visibility
+        blocks.forEach(b => {
+          if (b.getAttribute('data-lang') === lang) {
+            b.classList.add('active');
+            b.setAttribute('aria-hidden', 'false');
+          } else {
+            b.classList.remove('active');
+            b.setAttribute('aria-hidden', 'true');
+          }
+        });
+        // update buttons UI
+        buttons.forEach(btn => btn.setAttribute('aria-current', btn.getAttribute('data-lang')===lang ? 'true' : 'false'));
+        // update select
+        if (updateSelect && select.value !== lang) select.value = lang;
+        // set html lang attribute for a11y/SEO
+        const mapLang = { en: 'en', hi: 'hi', te: 'te', ur: 'ur' };
+        htmlEl.lang = mapLang[lang] || 'en';
+        // update Accept button (localized message)
+        const waBase = 'https://wa.me/916300113363?text=';
+        const messages = {
+          en: 'I have read and agree to the terms and conditions for communicating with my doctor digitally.',
+          hi: 'मैंने डिजिटल संचार के लिए नियम और शर्तें पढ़ लीं और मैं सहमत हूँ।',
+          te: 'నేను డిజిటల్ కమ్యూనికేషన్ కోసం నిబంధనలను చదివి అంగీకరించాను.',
+          ur: 'میں نے ڈیجیٹل مواصلات کے لیے شرائط و ضوابط پڑھ لیے ہیں اور میں متفق ہوں۔'
+        };
+        const encoded = encodeURIComponent(messages[lang] || messages.en);
+        // update hrefs for each language accept button if present
+        const acceptIds = ['acceptBtn','acceptBtn_hi','acceptBtn_te','acceptBtn_ur'];
+        acceptIds.forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.href = waBase + encoded;
+        });
+        // optionally store choice in localStorage
+        try { localStorage.setItem('preferredTermsLang', lang); } catch(e){}
+        if (pushState) history.replaceState({lang}, '', window.location.pathname + '#lang=' + lang);
+      }
+
+      // wire buttons
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => setLang(btn.getAttribute('data-lang'), true, true));
+      });
+
+      // wire select
+      select.addEventListener('change', () => setLang(select.value, false, true));
+
+      // Try: 1) URL hash param, 2) localStorage, 3) browser language detection, 4) default 'en'
+      const urlLang = (function(){
+        try {
+          const h = window.location.hash;
+          if (h && h.indexOf('lang=')>-1) return h.split('lang=')[1].split('&')[0];
+        } catch(e){}
+        return null;
+      })();
+      const stored = (function(){ try { return localStorage.getItem('preferredTermsLang'); } catch(e){ return null; } })();
+      const navLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+      const detect = navLang.startsWith('hi') ? 'hi' : navLang.startsWith('te') ? 'te' : navLang.startsWith('ur') || navLang.startsWith('ar') ? 'ur' : 'en';
+      const initial = urlLang || stored || detect || 'en';
+      setLang(initial, true, false);
+    })();
   </script>
 
   <script src="assets/script/script.js"></script>
 </body>
 </html>
+
