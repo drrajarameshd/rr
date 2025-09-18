@@ -1,110 +1,108 @@
-(function(){
-  // Element refs + endpoint
+// assets/script/form.js
+(function () {
   const form = document.getElementById('appointmentForm');
   const submitBtn = document.getElementById('formSubmit');
+
+  // <-- your deployed Web App URL (exec) -->
   const endpoint = 'https://script.google.com/macros/s/AKfycbyYnYR3kGeEhyzbUHwy57amAFMNhGuWDFE46zhBgTjk9gFxMGVadiyHE8Fj5sPCsYPe/exec';
 
-  function showError(id, message){
+  function showError(id, message) {
     const el = document.getElementById(id);
-    if(el){
+    if (el) {
       el.textContent = message || '';
       el.setAttribute('aria-hidden', message ? 'false' : 'true');
     }
   }
 
-  function validate(){
+  function showToast(message, isError) {
+    const t = document.createElement('div');
+    t.className = 'form-toast';
+    t.setAttribute('role', 'status');
+    t.style.position = 'fixed';
+    t.style.left = '50%';
+    t.style.transform = 'translateX(-50%)';
+    t.style.bottom = '24px';
+    t.style.zIndex = 9999;
+    t.style.padding = '10px 14px';
+    t.style.borderRadius = '8px';
+    t.style.color = '#fff';
+    t.style.background = isError ? '#dc2626' : 'var(--primary-dark, #16a34a)';
+    t.textContent = message;
+    document.body.appendChild(t);
+    setTimeout(() => { t.style.transition = 'opacity .35s'; t.style.opacity = '0'; }, 3000);
+    setTimeout(() => t.remove(), 3600);
+  }
+
+  function validate() {
     let ok = true;
-    showError('err-name','');
-    showError('err-phone','');
-    showError('err-email','');
-    showError('err-msg','');
+    showError('err-name', '');
+    showError('err-phone', '');
+    showError('err-email', '');
+    showError('err-msg', '');
 
-    const name = form.name.value.trim();
-    const phone = form.phone.value.trim();
-    const email = form.email.value.trim();
-    const msg = form.message.value.trim();
+    const name = document.getElementById('p_name').value.trim();
+    const phone = document.getElementById('p_phone').value.trim();
+    const email = document.getElementById('p_email').value.trim();
+    const msg = document.getElementById('p_msg').value.trim();
 
-    if(!name){
-      showError('err-name','Please enter your name.');
-      ok = false;
-    }
-    if(!/^[6-9]\d{9}$/.test(phone)){
-      showError('err-phone','Enter a valid 10-digit Indian phone number.');
-      ok = false;
-    }
-    if(email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
-      showError('err-email','Enter a valid email address.');
-      ok = false;
-    }
-    if(!msg){
-      showError('err-msg','Please enter a brief message.');
-      ok = false;
-    }
+    if (!name) { showError('err-name', 'Please enter your name.'); ok = false; }
+    if (!/^[6-9]\d{9}$/.test(phone)) { showError('err-phone', 'Enter a valid 10-digit Indian phone number.'); ok = false; }
+    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError('err-email', 'Enter a valid email address.'); ok = false; }
+    if (!msg) { showError('err-msg', 'Please enter a brief message.'); ok = false; }
 
-    // honeypot should be empty (reject if filled)
-    if(form.website && form.website.value.trim()){
-      ok = false;
-    }
+    const honeypot = form.querySelector('input[name="website"]');
+    if (honeypot && honeypot.value.trim()) ok = false; // probable bot
 
     return ok;
   }
 
-  function showToast(text, isError){
-    const t = document.createElement('div');
-    t.className = 'form-toast';
-    t.setAttribute('role','status');
-    t.style.position = 'fixed';
-    t.style.left = '50%';
-    t.style.transform = 'translateX(-50%)';
-    t.style.bottom = '28px';
-    t.style.background = isError ? '#dc2626' : '#16a34a';
-    t.style.color = '#fff';
-    t.style.padding = '10px 14px';
-    t.style.borderRadius = '8px';
-    t.style.zIndex = 9999;
-    t.textContent = text;
-    document.body.appendChild(t);
-    setTimeout(()=> { t.style.transition = 'opacity 0.4s'; t.style.opacity = '0'; }, 3500);
-    setTimeout(()=> { t.remove(); }, 4200);
-  }
-
-  if(form){
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-      if(!validate()) return;
-
-      submitBtn.disabled = true;
-      submitBtn.textContent = '⏳ Sending...';
-
-      const payload = {
-        name: form.name.value.trim(),
-        phone: form.phone.value.trim(),
-        email: form.email.value.trim(),
-        message: form.message.value.trim()
-      };
-
-      fetch(endpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      })
-      .then(res => res.text())
-      .then(() => {
-        showToast('✅ Request sent — we will contact you shortly');
-        form.reset();
-      })
-      .catch(err => {
-        console.error(err);
-        showToast('❌ Submission failed. Please try again later.', true);
-      })
-      .finally(() => {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Send Request';
-      });
-    });
-  } else {
+  if (!form) {
     console.warn('appointmentForm not found on page.');
+    return;
   }
+
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    if (!validate()) return;
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = '⏳ Sending...';
+
+    const payload = {
+      name: document.getElementById('p_name').value.trim(),
+      phone: document.getElementById('p_phone').value.trim(),
+      email: document.getElementById('p_email').value.trim(),
+      message: document.getElementById('p_msg').value.trim()
+    };
+
+    fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+      mode: 'cors'
+    })
+    .then(async res => {
+      // treat any 2xx as success
+      if (!res.ok) {
+        const text = await res.text().catch(() => '');
+        throw new Error(text || 'Server returned ' + res.status);
+      }
+      return res.text().catch(() => '');
+    })
+    .then(() => {
+      showToast('✅ Request sent — we will contact you shortly');
+      form.reset();
+    })
+    .catch(err => {
+      console.error('Form submit error:', err);
+      showToast('❌ Submission failed. Please try again later.', true);
+    })
+    .finally(() => {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send Request';
+    });
+  });
 })();
+
 
 
