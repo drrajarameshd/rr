@@ -3,7 +3,7 @@
   const form = document.getElementById('appointmentForm');
   const submitBtn = document.getElementById('formSubmit');
 
-  // your deployed Web App (exec) URL — you already provided this
+  // your deployed Web App (exec) URL
   const endpoint = 'https://script.google.com/macros/s/AKfycbyYnYR3kGeEhyzbUHwy57amAFMNhGuWDFE46zhBgTjk9gFxMGVadiyHE8Fj5sPCsYPe/exec';
 
   function showError(id, message) {
@@ -58,7 +58,7 @@
     return;
   }
 
-  form.addEventListener('submit', function (ev) {
+  form.addEventListener('submit', async function (ev) {
     ev.preventDefault();
     if (!validate()) return;
 
@@ -72,38 +72,44 @@
     params.append('email', document.getElementById('p_email').value.trim());
     params.append('message', document.getElementById('p_msg').value.trim());
 
-    fetch(endpoint, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
-      body: params.toString()
-    })
-    .then(async res => {
+    try {
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+        body: params.toString()
+      });
+
       const txt = await res.text().catch(() => '');
-      // Apps Script now returns JSON; attempt parse
+      console.debug('Server response (text):', txt);
+
+      // attempt JSON parse, otherwise fallback to text
+      let parsed = null;
       try {
-        const j = JSON.parse(txt || '{}');
-        if (j && j.status === 'error') throw new Error(j.message || 'Server error');
-      } catch (e) {
-        // if not valid JSON, we still accept plain "Success" text
-        if (txt && txt.toLowerCase().indexOf('error') !== -1) {
-          throw new Error(txt);
-        }
+        parsed = txt ? JSON.parse(txt) : null;
+        console.debug('Server response parsed as JSON:', parsed);
+      } catch (parseErr) {
+        // not JSON — that's fine, we'll handle as text
       }
-      return txt;
-    })
-    .then(() => {
-      console.info('Form submitted OK');
+
+      // Treat non-2xx as error. If parsed JSON contains status:error, treat as error.
+      if (!res.ok) {
+        const errMsg = (parsed && parsed.message) ? parsed.message : (txt || `Server returned ${res.status}`);
+        throw new Error(errMsg);
+      }
+      if (parsed && parsed.status === 'error') {
+        throw new Error(parsed.message || 'Server returned an error');
+      }
+
+      // if we get here, accept success. Some servers return plain "Success" or raw content.
       showToast('✅ Request sent — we will contact you shortly');
       form.reset();
-    })
-    .catch(err => {
+
+    } catch (err) {
       console.error('Form submit error:', err);
       showToast('❌ Submission failed. Please try again later.', true);
-    })
-    .finally(() => {
+    } finally {
       submitBtn.disabled = false;
       submitBtn.textContent = 'Send Request';
-    });
+    }
   });
 })();
-
