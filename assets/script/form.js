@@ -3,7 +3,7 @@
   const form = document.getElementById('appointmentForm');
   const submitBtn = document.getElementById('formSubmit');
 
-  // <-- use your deployed Web App (exec) URL -->
+  // your deployed Web App (exec) URL — you already provided this
   const endpoint = 'https://script.google.com/macros/s/AKfycbyYnYR3kGeEhyzbUHwy57amAFMNhGuWDFE46zhBgTjk9gFxMGVadiyHE8Fj5sPCsYPe/exec';
 
   function showError(id, message) {
@@ -65,25 +65,34 @@
     submitBtn.disabled = true;
     submitBtn.textContent = '⏳ Sending...';
 
-    const payload = {
-      name: document.getElementById('p_name').value.trim(),
-      phone: document.getElementById('p_phone').value.trim(),
-      email: document.getElementById('p_email').value.trim(),
-      message: document.getElementById('p_msg').value.trim()
-    };
+    // URL-encoded payload avoids CORS preflight
+    const params = new URLSearchParams();
+    params.append('name', document.getElementById('p_name').value.trim());
+    params.append('phone', document.getElementById('p_phone').value.trim());
+    params.append('email', document.getElementById('p_email').value.trim());
+    params.append('message', document.getElementById('p_msg').value.trim());
 
     fetch(endpoint, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-      mode: 'cors'
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+      body: params.toString()
     })
     .then(async res => {
       const txt = await res.text().catch(() => '');
-      if (!res.ok) throw new Error(txt || `Server returned ${res.status}`);
+      // Apps Script now returns JSON; attempt parse
+      try {
+        const j = JSON.parse(txt || '{}');
+        if (j && j.status === 'error') throw new Error(j.message || 'Server error');
+      } catch (e) {
+        // if not valid JSON, we still accept plain "Success" text
+        if (txt && txt.toLowerCase().indexOf('error') !== -1) {
+          throw new Error(txt);
+        }
+      }
       return txt;
     })
     .then(() => {
+      console.info('Form submitted OK');
       showToast('✅ Request sent — we will contact you shortly');
       form.reset();
     })
@@ -97,3 +106,4 @@
     });
   });
 })();
+
