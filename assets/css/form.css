@@ -1,17 +1,130 @@
-/* Basic card + layout */
-.form-card { background: var(--card, #ffffff); padding: 1rem; border-radius: 12px; border: 1px solid rgba(0,0,0,0.04); }
-.form-title { margin: 0 0 0.5rem 0; font-size:1.1rem; }
-.form-label { display:block; font-weight:600; margin-top:0.5rem; margin-bottom:0.25rem; }
-.form-input, .form-textarea { width:100%; padding:0.6rem 0.8rem; border-radius:8px; border:1px solid rgba(10,42,74,0.08); font-size:0.95rem; }
-.form-textarea { min-height:90px; resize:vertical; }
-.form-btn { margin-top:0.8rem; width:100%; padding:0.8rem; border-radius:10px; background:var(--primary-dark,#1D75BC); color:#fff; border:none; font-weight:700; cursor:pointer; }
-.form-btn:disabled { opacity:0.6; cursor:not-allowed; }
-.form-error { color:#dc2626; font-size:0.85rem; min-height:1.1rem; margin-top:0.25rem; display:block; }
-.muted { color:var(--muted,#6b7280); font-size:0.9rem; }
-.hidden { position:absolute !important; left:-9999px !important; top:auto; width:1px; height:1px; overflow:hidden; }
-.two-cols { display:flex; gap:0.6rem; }
-.two-cols > div { flex:1; }
-.grid-2-cols { display:grid; grid-template-columns: 1fr 360px; gap:1rem; }
-@media (max-width:900px) { .grid-2-cols { grid-template-columns: 1fr; } .two-cols { flex-direction:column; } }
-.map-wrap iframe { width:100%; height:240px; border:0; display:block; border-radius:10px; }
+/* ==== Form Card & Layout ==== */
+.form-card {
+  background: var(--card, #ffffff);
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+.form-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+/* ==== Labels & Inputs ==== */
+.form-label {
+  display: block;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid rgba(10,42,74,0.08);
+  font-size: 0.95rem;
+}
+
+.form-textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+/* ==== Buttons ==== */
+.form-btn {
+  margin-top: 0.8rem;
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 10px;
+  background: var(--primary-dark, #1D75BC);
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.form-btn:hover:not(:disabled) {
+  background: var(--primary, #007BBF);
+}
+
+.form-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ==== Error Messages ==== */
+.form-error {
+  display: none;           /* hidden by default (no space taken) */
+  color: #dc2626;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+.form-error.active {
+  display: block;          /* visible only when error is present */
+}
+
+/* ==== Notes & Muted Text ==== */
+.muted {
+  color: var(--muted, #6b7280);
+  font-size: 0.9rem;
+  margin-top: 0.6rem;
+}
+
+/* ==== Utility Classes ==== */
+.hidden {
+  position: absolute !important;
+  left: -9999px !important;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Two-column flex */
+.two-cols {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.two-cols > div {
+  flex: 1;
+}
+
+/* Grid layout (form + map) */
+.grid-2-cols {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 1rem;
+}
+
+@media (max-width: 900px) {
+  .grid-2-cols {
+    grid-template-columns: 1fr;
+  }
+  .two-cols {
+    flex-direction: column;
+  }
+}
+
+/* ==== Map Embed ==== */
+.map-wrap iframe {
+  width: 100%;
+  height: 240px;
+  border: 0;
+  display: block;
+  border-radius: 10px;
+}
+
+/* ==== Toast Message ==== */
+.form-toast {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
 
