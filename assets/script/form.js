@@ -4,7 +4,6 @@
   const submitBtn = document.getElementById('formSubmit');
   const endpoint = 'https://script.google.com/macros/s/AKfycbyYnYR3kGeEhyzbUHwy57amAFMNhGuWDFE46zhBgTjk9gFxMGVadiyHE8Fj5sPCsYPe/exec';
 
-  // helper to show inline errors
   function showError(id, message){
     const el = document.getElementById(id);
     if(el){
@@ -13,10 +12,8 @@
     }
   }
 
-  // validation function (fixed: declares `ok` and returns it)
   function validate(){
     let ok = true;
-    // clear previous errors
     showError('err-name','');
     showError('err-phone','');
     showError('err-email','');
@@ -52,7 +49,6 @@
     return ok;
   }
 
-  // small accessible toast using alert role
   function showToast(text, isError){
     const t = document.createElement('div');
     t.className = 'form-toast';
@@ -68,12 +64,10 @@
     t.style.zIndex = 9999;
     t.textContent = text;
     document.body.appendChild(t);
-    // fade + remove
     setTimeout(()=> { t.style.transition = 'opacity 0.4s'; t.style.opacity = '0'; }, 3500);
     setTimeout(()=> { t.remove(); }, 4200);
   }
 
-  // submit handler
   if(form){
     form.addEventListener('submit', function(e){
       e.preventDefault();
@@ -86,8 +80,6 @@
         name: form.name.value.trim(),
         phone: form.phone.value.trim(),
         email: form.email.value.trim(),
-        date: form.date.value || '',
-        time: form.time.value || '',
         message: form.message.value.trim()
       };
 
@@ -114,4 +106,5 @@
     console.warn('appointmentForm not found on page.');
   }
 })();
+
 
