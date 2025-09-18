@@ -106,56 +106,43 @@
 
         <aside>
           <!-- FORM: will POST to your Google Apps Script -->
-          <form id="appointmentForm" class="form-card" novalidate>
-            <h4 class="form-title">Request an appointment</h4>
+<form id="appointmentForm" class="form-card" novalidate>
+  <h4 class="form-title">Request an appointment</h4>
 
-            <!-- Honeypot to deter bots -->
-            <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off" />
+  <!-- Honeypot to deter bots -->
+  <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off" />
 
-            <label class="form-label" for="p_name">Full name</label>
-            <input class="form-input" id="p_name" name="name" type="text" required />
-            <div class="form-error" id="err-name" aria-hidden="true"></div>
+  <label class="form-label" for="p_name">Full name</label>
+  <input class="form-input" id="p_name" name="name" type="text" required />
+  <div class="form-error" id="err-name" aria-hidden="true"></div>
 
-            <label class="form-label" for="p_phone">Phone</label>
-            <input class="form-input" id="p_phone" name="phone" type="tel" pattern="[6-9]\d{9}" required />
-            <div class="form-error" id="err-phone" aria-hidden="true"></div>
+  <label class="form-label" for="p_phone">Phone</label>
+  <input class="form-input" id="p_phone" name="phone" type="tel" pattern="[6-9]\d{9}" required />
+  <div class="form-error" id="err-phone" aria-hidden="true"></div>
 
-            <label class="form-label" for="p_email">Email (optional)</label>
-            <input class="form-input" id="p_email" name="email" type="email" />
-            <div class="form-error" id="err-email" aria-hidden="true"></div>
+  <label class="form-label" for="p_email">Email (optional)</label>
+  <input class="form-input" id="p_email" name="email" type="email" />
+  <div class="form-error" id="err-email" aria-hidden="true"></div>
 
-            <div class="two-cols">
-              <div>
-                <label class="form-label" for="p_date">Preferred date</label>
-                <input class="form-input" id="p_date" name="date" type="date" />
-              </div>
-              <div>
-                <label class="form-label" for="p_time">Preferred time</label>
-                <input class="form-input" id="p_time" name="time" type="time" />
-              </div>
-            </div>
+  <label class="form-label" for="p_msg">Message</label>
+  <textarea class="form-textarea" id="p_msg" name="message" rows="4" required></textarea>
+  <div class="form-error" id="err-msg" aria-hidden="true"></div>
 
-            <label class="form-label" for="p_msg">Message</label>
-            <textarea class="form-textarea" id="p_msg" name="message" rows="4" required></textarea>
-            <div class="form-error" id="err-msg" aria-hidden="true"></div>
+  <button type="submit" class="form-btn" id="formSubmit">Send Request</button>
 
-            <button type="submit" class="form-btn" id="formSubmit">Send Request</button>
+  <div class="form-note muted">We will contact you during clinic hours. Your details stay private.</div>
+</form>
 
-            <div class="form-note muted">We will contact you during clinic hours. Your details stay private.</div>
-          </form>
-
-          <!-- Map: Google Maps Embed using Place ID -->
-          <!-- Replace YOUR_API_KEY with your Google Maps Embed API key -->
-          <div class="map-wrap">
-            <iframe
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&place_id=ChIJg84R-kCXyzsR_6A_e2nIq58"
-              title="Care Clinic location"
-              aria-hidden="false"
-              allowfullscreen
-            ></iframe>
-          </div>
+<!-- Map: embed using q=place_id so API key isn't required -->
+<div class="map-wrap" aria-hidden="false">
+  <iframe
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    src="https://www.google.com/maps?q=place_id:ChIJg84R-kCXyzsR_6A_e2nIq58&output=embed"
+    title="Care Clinic location"
+    allowfullscreen
+  ></iframe>
+</div>
 
         </aside>
       </div>
