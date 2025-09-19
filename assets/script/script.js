@@ -75,4 +75,3 @@ document.addEventListener('DOMContentLoaded', function () {
   if (yearSpan) {
     yearSpan.textContent = new Date().getFullYear();
   }
-});
