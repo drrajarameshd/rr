@@ -2,16 +2,17 @@
 // Shared site scripts: nav toggle, smooth scroll, form handling, accessibility tweaks.
 
 document.addEventListener('DOMContentLoaded', function () {
-  // ===== Mobile nav toggle =====
   const navToggle = document.querySelector('.nav-toggle');
   const navList = document.getElementById('nav-list');
-  if (navToggle && navList) {
-    navToggle.addEventListener('click', function () {
-      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', String(!expanded));
-      navList.classList.toggle('open');
-    });
-  }
+  if (!navToggle || !navList) return;
+
+  navToggle.addEventListener('click', function () {
+    // toggle and use returned boolean to set aria-expanded reliably
+    const isOpen = navList.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', String(!!isOpen));
+  });
+});
+
 
   // ===== Smooth scroll for anchors =====
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
