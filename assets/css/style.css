@@ -134,7 +134,14 @@ input:focus,textarea:focus{outline:2px solid var(--primary-600);border-color:var
 .icon-social{color:var(--primary)}
 .footer-bottom{border-top:1px solid rgba(0,0,0,0.05);padding-top:.75rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.75rem 1rem 0;color:#153145;font-size:.9rem}
 .footer-bottom .small{opacity:.85;margin:0}
-
+/* show by default on small screens (keeps current .social look) */
+.GBP {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .45rem;               /* keeps icon + text spacing if you add text */
+  text-decoration: none;
+}
 /* ========= BOTTOM NAV ========= */
 .bottom-nav{position:fixed;left:0;right:0;bottom:0;height:var(--bottom-nav-height);background:linear-gradient(90deg,#3368c6,#5b9bd5);display:flex;justify-content:space-around;align-items:center;z-index:9999;box-shadow:0 -6px 20px rgba(0,0,0,.12);border-top:1px solid rgba(0,0,0,.08);padding-top:6px;padding-bottom:calc(env(safe-area-inset-bottom,0px)+6px)}
 .bottom-nav a{flex:1 1 0;display:inline-flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff;text-decoration:none;font-size:.78rem;padding-top:5px;padding-left:6px;padding-right:6px;transition:background .2s ease}
@@ -189,6 +196,11 @@ input:focus,textarea:focus{outline:2px solid var(--primary-600);border-color:var
   .timeline::before{left:22px}
   .timeline-marker{left:-22px;width:38px;height:38px}
   .marker-icon{width:20px;height:20px}
+}
+
+/* hide the GBP link on wider screens (>= 900px) */
+@media (min-width: 900px) {
+  .GBP { display: none !important; }
 }
 
 /* <= 768px - tablets and large phones */
