@@ -277,15 +277,6 @@
   <!-- SCRIPTS -->
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-    const navToggle = document.querySelector('.nav-toggle');
-    const navList = document.getElementById('nav-list');
-    if (navToggle && navList) {
-      navToggle.addEventListener('click', () => {
-        const expanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
-        navToggle.setAttribute('aria-expanded', String(!expanded));
-        navList.classList.toggle('open');
-      });
-    }
   </script>
 
   <script src="assets/script/script.js"></script>
