@@ -94,7 +94,7 @@ body{
 .hero-photo-circle {
   display:block;
   width:100%;
-  max-width:320px;
+  max-width:240px;
   height:auto;
   border-radius:50%;
   object-fit:cover;
@@ -466,7 +466,7 @@ input:focus,textarea:focus{outline:2px solid var(--primary-600);border-color:var
 /* marker (dot with icon) */
 .timeline-marker {
   position: absolute;
-  left: -18px;           /* sits centered on the connecting line */
+  left: -35px;           /* sits centered on the connecting line */
   width: 36px;
   height: 36px;
   border-radius: 50%;
