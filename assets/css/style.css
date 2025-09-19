@@ -68,9 +68,35 @@ body{
 .banner-inner{display:flex;align-items:center;gap:1.5rem}
 .hero-text h2{margin:0 0 .5rem;font-size:1.6rem;color:var(--primary-dark)}
 .hero-text p{margin:0 0 1rem;color:var(--muted)}
-.btn{
-  display:inline-block;background:var(--primary);color:#fff;padding:.6rem 1rem;border-radius:10px;text-decoration:none;
-  box-shadow: 0 6px 18px rgba(51,104,198,0.14); transition:transform .14s ease;
+.btn {
+  display: inline-block;
+  background: var(--primary);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(51, 104, 198, 0.14);
+  transition: transform .14s ease;
+  text-align: center; /* keeps text centered */
+  margin: 0.3rem;     /* spacing between buttons */
+}
+
+/* ✅ Responsive fix */
+@media (max-width: 400px) {
+  .btn {
+    display: inline-flex;   /* keeps text centered while flexing */
+    flex: 1 1 auto;         /* allow buttons to shrink/grow equally */
+    min-width: 0;           /* prevents overflow */
+    margin: 0.3rem;         /* keep spacing */
+  }
+
+  /* wrapper for buttons */
+  .btn-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;            /* spacing between buttons */
+    flex-wrap: nowrap;      /* force side-by-side shrink */
+  }
 }
 .btn:hover{ transform: translateY(-2px); }
 
