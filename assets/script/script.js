@@ -70,15 +70,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   window.addEventListener('keydown', handleFirstTab);
 
-  // ===== WhatsApp button visibility on tiny screens =====
-  const wa = document.querySelector('.whatsapp-float');
-  function updateWhatsAppVisibility() {
-    if (!wa) return;
-    wa.style.display = window.innerWidth < 360 ? 'none' : '';
-  }
-  updateWhatsAppVisibility();
-  window.addEventListener('resize', updateWhatsAppVisibility);
-
   // ===== Footer year auto-update =====
   const yearSpan = document.getElementById('year');
   if (yearSpan) {
