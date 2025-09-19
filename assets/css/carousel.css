@@ -1,56 +1,65 @@
-/* assets/css/carousel.css */
-
-.carousel {
-  --w: 1200px;
-  --h: 800px;
-  width: min(var(--w), 100%);
-  max-width: var(--container);
-  border-radius: var(--radius);
-  overflow: hidden;
-  background: linear-gradient(180deg, var(--footer-bg-start), var(--footer-bg-end));
-  box-shadow: 0 8px 30px rgba(15, 23, 36, 0.08);
+/* Carousel Container */
+.carousel-container {
   position: relative;
-  touch-action: pan-y;
-}
-
-/* maintain aspect ratio */
-.carousel .stage {
   width: 100%;
-  aspect-ratio: 3 / 2; /* 1200:800 => 3:2 */
-  position: relative;
+  max-width: 900px;
+  margin: 40px auto;
   overflow: hidden;
-  background: #eee;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
 
-.slides {
+/* Slides Wrapper */
+.carousel-slides {
   display: flex;
-  height: 100%;
-  transition: transform 400ms cubic-bezier(.2,.9,.2,1);
-  will-change: transform;
+  transition: transform 0.6s ease-in-out;
 }
 
-.slide {
+/* Individual Slide */
+.carousel-slide {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
   min-width: 100%;
-  height: 100%;
-  position: relative;
-  display: block;
-  user-select: none;
+  box-sizing: border-box;
+  padding: 6px;
+  background: #fff;
 }
 
-.slide img {
+/* Images */
+.carousel-slide img {
   width: 100%;
-  height: 100%;
+  height: 200px;
   object-fit: cover;
+  border-radius: 8px;
   display: block;
-  vertical-align: middle;
 }
 
-/* Accessibility helper */
-.visually-hidden {
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  clip: rect(1px, 1px, 1px, 1px);
-  white-space: nowrap;
+/* Navigation Buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  color: white;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 22px;
+  z-index: 2;
+  transition: background 0.3s;
 }
+
+.carousel-btn:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+.carousel-btn.prev {
+  left: 12px;
+}
+
+.carousel-btn.next {
+  right: 12px;
+}
+
