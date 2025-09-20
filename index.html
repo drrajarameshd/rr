@@ -5,15 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- ✅ Basic SEO -->
 <title>Dr. Raja Ramesh, MD (Osmania) | Consultant Physician & Diabetologist in Attapur, Hyderabad</title>
-   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WWJ8LHSZSX"></script>
+   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+<link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+<link rel="dns-prefetch" href="//www.googletagmanager.com">
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-WWJ8LHSZSX');
+  // Immediately queue page_view locally so you don't lose it
+  gtag('event', 'page_view', {send_to: 'G-WWJ8LHSZSX'});
+
+  // Lazy-load gtag after small delay
+  setTimeout(function(){
+    var s = document.createElement('script');
+    s.src = "https://www.googletagmanager.com/gtag/js?id=G-WWJ8LHSZSX";
+    s.async = true;
+    document.head.appendChild(s);
+    s.onload = function(){
+      gtag('js', new Date());
+      gtag('config', 'G-WWJ8LHSZSX');
+    };
+  }, 1500);
 </script>
+
 <meta name="description" content="Available at Germanten Hospital (10am–5pm) & Care Clinic Attapur (5pm–8pm). Treating diabetes, thyroid, hypertension & infectious diseases. Call +91 79896 76770 for appointments." />
 <link rel="canonical" href="https://rrdoctor.com/" />
 <meta name="keywords" content="Diabetologist Attapur, General Physician Attapur Hyderabad, Diabetes Doctor Hyderabad, Thyroid Specialist Hyderabad, Hypertension Treatment Hyderabad, Infectious Disease Doctor Hyderabad" />
