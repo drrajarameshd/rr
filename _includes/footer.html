@@ -1,0 +1,51 @@
+<!-- _includes/footer.html (paste once) -->
+<footer class="site-footer professional-footer" role="contentinfo">
+  <div class="container footer-grid">
+    <!-- Column 1: Address & Contact -->
+    <div class="footer-col footer-contact">
+      <h4>Care Clinic</h4>
+      <address>
+        Care Clinic<br/>
+        Next To TBN clinic, Ambience Fort Road,<br/>
+        Radha Krishna Nagar, Attapur.
+      </address>
+      <p class="contact-line">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16.5l-5.2-.7a1 1 0 0 0-1 .3l-2.3 2.3a16 16 0 0 1-7.3-7.3l2.3-2.3a1 1 0 0 0 .3-1L7.5 3A1 1 0 0 0 6.5 2H3a1 1 0 0 0-1 1A19 19 0 0 0 21 23a1 1 0 0 0 1-1v-3.5a1 1 0 0 0-1-1z" fill="currentColor"/></svg>
+        <a href="tel:+917989676770">+91 79896 76770</a>
+      </p>
+      <p class="contact-line">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5A2.5 2.5 0 0 1 5.5 4h13A2.5 2.5 0 0 1 21 6.5V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6.5zM5.5 6L12 10.5 18.5 6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <a href="mailto:careclinic177@gmail.com">careclinic177@gmail.com</a>
+      </p>
+    </div>
+
+    <!-- Column 2: Quick Links -->
+    <nav class="footer-col footer-links" aria-label="Quick links">
+      <h4>Quick links</h4>
+      <ul>
+        <li><a href="{{ '/' | relative_url }}">Home</a></li>
+        <li><a href="{{ '/about.html' | relative_url }}">About</a></li>
+        <li><a href="{{ '/services.html' | relative_url }}">Services</a></li>
+        <li><a href="{{ '/contact.html' | relative_url }}">Contact</a></li>
+        <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
+      </ul>
+    </nav>
+
+    <!-- Column 3: Social -->
+    <div class="footer-col footer-social" aria-label="Social links">
+      <h4>Connect</h4>
+      <p>Follow us on</p>
+      <div class="social-row">
+        <a href="https://wa.me/917989676770" class="social" aria-label="WhatsApp" target="_blank" rel="noopener">
+          <!-- SVG preserved -->
+        </a>
+        <!-- other social links -->
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p class="small">Committed to excellent internal medicine care</p>
+    <p class="small">© {{ site.time | date: "%Y" }} Care Clinic — All rights reserved.</p>
+  </div>
+</footer>
