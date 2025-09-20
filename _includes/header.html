@@ -1,0 +1,76 @@
+<!-- _includes/header.html (paste once) -->
+<!-- ✅ SITE HEADER -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}" style="color:var(--primary-dark);">
+      <!-- logo -->
+      <img src="{{ '/assets/logo.png' | relative_url }}" alt="RR logo" class="logo" />
+      <div class="brand-text">
+        <h1 style="color:var(--primary-dark);">Dr. D. Raja Ramesh MD (Osmania)</h1>
+        <p class="tag">MD (Osmania) • Physician &amp; Diabetologist</p>
+      </div>
+    </a>
+
+    <nav class="nav" id="main-nav" aria-label="Main navigation">
+      <a href="https://maps.app.goo.gl/tnZVczhkgeUxWYJ38"
+         class="Social GBP"
+         aria-label="Google Business Profile (Maps)"
+         title="Open location in Google Maps"
+         target="_blank"
+         rel="noopener noreferrer">
+        <!-- SVG omitted for brevity - keep the same SVG you have -->
+      </a>
+
+      <ul class="nav-list" id="nav-list">
+        <li><a href="{{ '/' | relative_url }}" aria-current="page">Home</a></li>
+        <li><a href="{{ '/about.html' | relative_url }}">About</a></li>
+        <li><a href="{{ '/services.html' | relative_url }}">Services</a></li>
+        <li><a href="{{ '/contact.html' | relative_url }}">Contact</a></li>
+        <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- BANNER / HERO (themed) -->
+  <div class="banner" role="banner" aria-hidden="false">
+    <div class="container banner-inner">
+      <div class="hero-text" style="color:var(--primary-dark)">
+        <h2>Compassionate, Evidence-based Internal Medicine</h2>
+        <p>Comprehensive adult medical care — routine health checks, chronic disease management, preventive medicine and urgent appointments.</p>
+        <div class="btn-container">
+          <a href="{{ '/contact.html' | relative_url }}" class="btn" title="Book an appointment">Book Appointment</a>
+          <a href="tel:+917989676770" class="btn" title="Call Clinic">Call +91 79896 76770</a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img src="{{ '/assets/dr-raja-ramesh.webp' | relative_url }}"
+             alt="Dr. Raja Ramesh — Consultant Physician"
+             class="hero-photo-circle" />
+
+        <aside class="hero-mobile-card" aria-label="Contact card for Dr. Raja Ramesh">
+          <h3 class="card-name">Dr. D. Raja Ramesh</h3>
+          <p class="card-title">MBBS (Gandhi) • MD (Osmania)</p>
+          <p class="card-role">Consultant Physician &amp; Diabetologist</p>
+
+          <div class="card-line">
+            <!-- phone icon -->
+            <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M21 16.5l-5.2-.7a1 1 0 0 0-1 .3l-2.3 2.3a16 16 0 0 1-7.3-7.3l2.3-2.3a1 1 0 0 0 .3-1L7.5 3A1 1 0 0 0 6.5 2H3a1 1 0 0 0-1 1 19 19 0 0 0 19 19 1 1 0 0 0 1-1v-3.5a1 1 0 0 0-1-1z"/>
+            </svg>
+            <a class="card-link" href="tel:+917989676770">+91 79896 76770</a>
+          </div>
+
+          <div class="card-line">
+            <!-- mail icon -->
+            <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" d="M3 6.5A2.5 2.5 0 0 1 5.5 4h13A2.5 2.5 0 0 1 21 6.5V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6.5z"/>
+              <path fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" d="M5.5 6L12 10.5 18.5 6"/>
+            </svg>
+            <a class="card-link" href="mailto:careclinic177@gmail.com">careclinic177@gmail.com</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</header>
