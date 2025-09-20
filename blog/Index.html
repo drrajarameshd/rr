@@ -1,0 +1,52 @@
+---
+layout: default
+title: Blog
+permalink: /blog/
+---
+
+<section class="blog-list">
+  <div class="wrap">
+    <h1>Blog</h1>
+
+    {% if site.posts == empty %}
+      <p>No posts found yet. Check that your posts are in <code>_posts/</code> and not future-dated.</p>
+    {% else %}
+      <ul class="post-list">
+        {% for post in site.posts %}
+          <li class="post-item">
+            {% if post.thumbnail %}
+              <a class="thumb" href="{{ post.url | relative_url }}">
+                <img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }}" loading="lazy" width="200">
+              </a>
+            {% endif %}
+            <div class="post-meta">
+              <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+              <div class="meta">{{ post.date | date: "%B %-d, %Y" }} • {% if post.tags %}{{ post.tags | join: ", " }}{% endif %}</div>
+              <p class="excerpt">{{ post.excerpt | strip_html | truncate: 160 }}</p>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+
+      {% if paginator.total_pages > 1 %}
+        <nav class="pagination">
+          {% if paginator.previous_page %}
+            <a href="{{ paginator.previous_page_path }}">Older</a>
+          {% endif %}
+          {% if paginator.next_page %}
+            <a href="{{ paginator.next_page_path }}">Newer</a>
+          {% endif %}
+        </nav>
+      {% endif %}
+    {% endif %}
+  </div>
+</section>
+
+<style>
+.post-list{list-style:none;padding:0}
+.post-item{display:flex;gap:12px;align-items:flex-start;margin:18px 0;padding-bottom:12px;border-bottom:1px dashed rgba(0,0,0,.06)}
+.post-link{font-weight:600;color:#3368c6;text-decoration:none}
+.post-item img{border-radius:6px;object-fit:cover}
+.meta{font-size:.9rem;color:#666}
+.excerpt{margin-top:6px;color:#333}
+</style>
