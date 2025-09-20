@@ -1,0 +1,45 @@
+title: "RR Doctor — Dr. Raja Ramesh"
+description: "Care Clinic, Attapur — Consultant Physician & Diabetologist"
+url: "https://rrdoctor.com"
+baseurl: ""                 # keep empty for custom domain
+markdown: kramdown
+permalink: /blog/:title/
+paginate: 5
+paginate_path: "/blog/page:num"
+
+# SEO / site metadata (used by jekyll-seo-tag)
+author:
+  name: "Dr. D. Raja Ramesh"
+  email: "careclinic177@gmail.com"
+  twitter: ""               # add if you have one, e.g. "dr_rajaramesh"
+logo: "/assets/logo.png"    # used for social previews & structured data
+default_image: "/assets/dr-raja-ramesh.webp"
+
+# Basic organization (for JSON-LD localBusiness)
+organization:
+  name: "Care Clinic"
+  url: "https://rrdoctor.com"
+  logo: "/assets/logo.png"
+
+# Social links (optional)
+social:
+  - name: "WhatsApp"
+    url: "https://wa.me/917989676770"
+  - name: "Google Maps"
+    url: "https://maps.app.goo.gl/tnZVczhkgeUxWYJ38"
+  - name: "Facebook"
+    url: "https://facebook.com/yourpage"   # replace if available
+
+# Exclude from build
+exclude:
+  - README.md
+  - node_modules
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+
+# Plugins supported by GitHub Pages
+plugins:
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-feed
