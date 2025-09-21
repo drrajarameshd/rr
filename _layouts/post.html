@@ -1,10 +1,10 @@
-<!-- _layouts/post.html — Responsive, accessible, SEO-friendly Jekyll post layout
-     Extracted CSS moved to assets/css/post-layout.css
--->
+<!-- _layouts/post.html — Responsive, accessible, SEO-friendly Jekyll post layout -->
 <!doctype html>
 <html lang="en">
 <head>
-  {% seo %}
+  {% seo %}               {# jekyll-seo-tag plugin: title, meta, og, twitter, json-ld etc. #}
+  {% include canonical.html %} {# ensure page/post canonical points to itself by default #}
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
@@ -49,18 +49,19 @@
 
         <div class="post-actions wrap">
           <a class="btn" href="#" onclick="
-  if(navigator.share){
-    navigator.share({
-      title: '{{ page.title }}',
-      text: 'Check this out:',
-      url: '{{ site.url }}{{ page.url }}'
-    });
-  } else {
-    alert('Share not supported in this browser.');
-  }
-  return false;
-">Share</a>
-          <a class="btn btn--primary" href="/contact.html">Appointment</a>
+            if(navigator.share){
+              navigator.share({
+                title: {{ page.title | jsonify }},
+                text: 'Check this out:',
+                url: {{ page.url | absolute_url | jsonify }}
+              });
+            } else {
+              alert('Share not supported in this browser.');
+            }
+            return false;
+          ">Share</a>
+
+          <a class="btn btn--primary" href="{{ '/contact.html' | relative_url }}">Appointment</a>
         </div>
 
         <hr />
@@ -76,11 +77,14 @@
   {% include bottom-nav.html %}
 
   <script>
-
     // When user visits post, make first heading focusable for a11y
     (function(){
       var h = document.querySelector('.post-header h1');
       if(h) h.setAttribute('tabindex','-1');
+
+      // fill copyright year
+      var y = document.getElementById('year');
+      if(y) y.textContent = new Date().getFullYear();
     })();
   </script>
   <script src="{{ '/assets/script/script.js' | relative_url }}"></script>
