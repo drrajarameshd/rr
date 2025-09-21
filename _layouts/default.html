@@ -3,15 +3,29 @@
 <head>
   {% seo %}                         <!-- <- jekyll-seo-tag inserts meta + JSON-LD -->
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/post-layout.css' | relative_url }}">
   <meta name="theme-color" content="#3368c6" />
+  <meta name="author" content="{{ site.author.name }}" />
+  <link rel="alternate" type="application/atom+xml" title="{{ site.title }} - Atom Feed" href="{{ '/atom.xml' | relative_url }}" />
 </head>
-<body>
+<body class="default-layout">
   {% include header.html %}
-  <main> {{ content }} </main>
+
+  <main id="main" class="post-layout-root">
+    <div class="wrap">
+      {{ content }}
+    </div>
+  </main>
+
   {% include footer.html %}
   {% include bottom-nav.html %}
 
+  <script>
+    // set year for any footer element with id="year"
+    document.getElementById('year')?.textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
+
