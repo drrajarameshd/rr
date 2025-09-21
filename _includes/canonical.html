@@ -1,0 +1,17 @@
+{%- comment -%}
+Canonical link helper.
+- Uses page.canonical if provided
+- Otherwise uses page.url (post/page permalink)
+- For paginated blog index pages, canonicalize to the first blog page (/blog/)
+Requires site.url set in _config.yml for absolute_url to produce full URL.
+{%- endcomment -%}
+
+{%- assign raw = page.canonical | default: page.url | default: "/" -%}
+
+{%- if paginator and paginator.page and paginator.page > 1 -%}
+  {%- assign raw = '/blog/' -%}
+{%- endif -%}
+
+{%- assign cleaned = raw | replace: 'index.html', '' -%}
+
+<link rel="canonical" href="{{ cleaned | absolute_url }}">
