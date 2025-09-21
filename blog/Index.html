@@ -6,35 +6,60 @@ permalink: /blog/
 
 <section class="blog-list">
   <div class="wrap">
-    <h1>Blog</h1>
+    <header class="page-header">
+      <h1>Blog</h1>
+      {% if page.description %}
+        <p class="page-description">{{ page.description }}</p>
+      {% endif %}
+    </header>
 
     {% if site.posts == empty %}
       <p>No posts found yet. Check that your posts are in <code>_posts/</code> and not future-dated.</p>
     {% else %}
-      <ul class="post-list">
-        {% for post in site.posts %}
-          <li class="post-item">
+      <ul class="post-list" aria-live="polite">
+        {% for post in paginator.posts %}
+          <li class="post-item" itemscope itemtype="http://schema.org/BlogPosting">
             {% if post.thumbnail %}
-              <a class="thumb" href="{{ post.url | relative_url }}">
-                <img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }}" loading="lazy" width="200">
+              <a class="thumb" href="{{ post.url | relative_url }}" itemprop="url" aria-hidden="true">
+                <img src="{{ post.thumbnail | relative_url }}"
+                     alt="{{ post.title | escape }}"
+                     loading="lazy"
+                     width="200" height="120">
               </a>
             {% endif %}
+
             <div class="post-meta">
-              <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
-              <div class="meta">{{ post.date | date: "%B %-d, %Y" }} • {% if post.tags %}{{ post.tags | join: ", " }}{% endif %}</div>
-              <p class="excerpt">{{ post.excerpt | strip_html | truncate: 160 }}</p>
+              <h2 class="post-link" itemprop="headline">
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+              </h2>
+
+              <div class="meta">
+                <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">
+                  {{ post.date | date: "%B %-d, %Y" }}
+                </time>
+                {% if post.tags and post.tags.size > 0 %} • <span class="tags">{{ post.tags | join: ", " }}</span>{% endif %}
+              </div>
+
+              {% if post.excerpt %}
+                <p class="excerpt" itemprop="description">{{ post.excerpt | strip_html | truncate: 200 }}</p>
+              {% endif %}
+
+              <p style="margin-top:.55rem;">
+                <a class="btn btn--primary" href="{{ post.url | relative_url }}">Read more</a>
+              </p>
             </div>
           </li>
         {% endfor %}
       </ul>
 
       {% if paginator.total_pages > 1 %}
-        <nav class="pagination">
+        <nav class="pagination" role="navigation" aria-label="Pagination">
           {% if paginator.previous_page %}
-            <a href="{{ paginator.previous_page_path }}">Older</a>
+            <a class="btn" href="{{ paginator.previous_page_path | relative_url }}">← Older</a>
           {% endif %}
+          <span aria-hidden="true" style="margin:0 .5rem;color:var(--muted)">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
           {% if paginator.next_page %}
-            <a href="{{ paginator.next_page_path }}">Newer</a>
+            <a class="btn" href="{{ paginator.next_page_path | relative_url }}">Newer →</a>
           {% endif %}
         </nav>
       {% endif %}
@@ -43,10 +68,38 @@ permalink: /blog/
 </section>
 
 <style>
-.post-list{list-style:none;padding:0}
-.post-item{display:flex;gap:12px;align-items:flex-start;margin:18px 0;padding-bottom:12px;border-bottom:1px dashed rgba(0,0,0,.06)}
-.post-link{font-weight:600;color:#3368c6;text-decoration:none}
-.post-item img{border-radius:6px;object-fit:cover}
-.meta{font-size:.9rem;color:#666}
-.excerpt{margin-top:6px;color:#333}
+/* Scoped to post layout root — won't conflict with global styles */
+.post-layout-root .blog-list .post-list{list-style:none;padding:0;margin:0}
+.post-layout-root .blog-list .post-item{
+  display:flex;
+  gap:16px;
+  align-items:flex-start;
+  margin:20px 0;
+  padding:18px;
+  border-radius:12px;
+  background:linear-gradient(180deg, #fff, #fbfdff);
+  border:1px solid rgba(16,24,40,0.03);
+  box-shadow:0 6px 18px rgba(15,23,36,0.03);
+}
+.post-layout-root .blog-list .thumb{flex:0 0 200px;border-radius:8px;overflow:hidden;display:block}
+.post-layout-root .blog-list .thumb img{width:200px;height:120px;object-fit:cover;display:block}
+.post-layout-root .blog-list .post-meta{flex:1;min-width:0}
+.post-layout-root .blog-list .post-link{margin:0 0 6px;font-size:1.05rem}
+.post-layout-root .blog-list .post-link a{
+  text-decoration:none;color:var(--primary);font-weight:700;display:inline-block;
+}
+.post-layout-root .blog-list .meta{font-size:.9rem;color:var(--muted);margin-bottom:8px}
+.post-layout-root .blog-list .tags{color:var(--muted)}
+.post-layout-root .blog-list .excerpt{margin:0;color:#21313d;line-height:1.55}
+.post-layout-root .blog-list .pagination{display:flex;gap:12px;align-items:center;justify-content:center;margin-top:18px;padding:12px 0}
+.post-layout-root .blog-list .pagination .btn{padding:.5rem .8rem;border-radius:8px}
+.post-layout-root .blog-list .post-item .btn{margin:0}
+
+/* Responsive: stack on small screens */
+@media (max-width:720px){
+  .post-layout-root .blog-list .post-item{flex-direction:column;gap:12px}
+  .post-layout-root .blog-list .thumb{width:100%;flex:0 0 auto}
+  .post-layout-root .blog-list .thumb img{width:100%;height:auto}
+}
 </style>
+
