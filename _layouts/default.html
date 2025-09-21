@@ -22,10 +22,7 @@
   {% include footer.html %}
   {% include bottom-nav.html %}
 
-  <script>
-    // set year for any footer element with id="year"
-    document.getElementById('year')?.textContent = new Date().getFullYear();
-  </script>
+  <script src="{{ '/assets/script/script.js' | relative_url }}"></script>
 </body>
 </html>
 
