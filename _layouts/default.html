@@ -92,6 +92,54 @@
   <!-- Main: page content is injected here -->
   <main class="container main-content" role="main">
     {{ content }}
+
+<!-- SEO JSON LOCAL BUSINESS -->
+    {% if page.url == "/" or page.permalink == "/" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Physician",
+  "name": "Dr. D. Raja Ramesh, MD – General Physician",
+  "alternateName": "డా. రాజా రమేష్, MD",
+  "jobTitle": "Consultant Physician & Diabetologist",
+  "url": "{{ site.url | absolute_url }}",
+  "image": "{{ site.default_image | absolute_url }}",
+  "telephone": "+91 79896 76770",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Ambience Fort Rd, Radha Krishna Nagar, Attapur",
+    "addressLocality": "Hyderabad",
+    "addressRegion": "Telangana",
+    "postalCode": "500048",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 17.36984110323328,
+    "longitude": 78.42742135872736
+  },
+  "hasMap": "https://www.google.com/maps/place/?q=place_id:ChIJg84R-kCXyzsR_6A_e2nIq58",
+  "medicalSpecialty": [
+    "Diabetologist",
+    "General Medicine",
+    "Internal Medicine"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "124"
+  },
+  "sameAs": [
+    "https://maps.app.goo.gl/tnZVczhkgeUxWYJ38",
+    "https://wa.me/917989676770",
+    "https://www.facebook.com/profile.php?id=100083618457015",
+    "https://instagram.com/dr.rajaramesh"
+  ]
+}
+</script>
+{% endif %}
+
+    
   </main>
 
   <!-- Footer (copied from your homepage) -->
