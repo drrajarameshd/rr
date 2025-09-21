@@ -45,7 +45,18 @@
         </div>
 
         <div class="post-actions wrap">
-          <a class="btn" href="#share" aria-label="Share this article">Share</a>
+          <a class="btn" href="#" onclick="
+  if(navigator.share){
+    navigator.share({
+      title: '{{ page.title }}',
+      text: 'Check this out:',
+      url: '{{ site.url }}{{ page.url }}'
+    });
+  } else {
+    alert('Share not supported in this browser.');
+  }
+  return false;
+">Share</a>
           <a class="btn btn--primary" href="#subscribe">Subscribe</a>
         </div>
 
