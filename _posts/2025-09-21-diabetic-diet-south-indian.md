@@ -8,6 +8,7 @@ image: /assets/images/2025-09-21-diabetic-diet-south-indian.jpg
 ---
 
 Food plays a central role in managing diabetes. A healthy eating pattern can control blood sugar, protect the heart, and improve overall well-being. Below are simple, practical principles — explained with common **South Indian food choices**.
+![South Indian Diabetic Diet]( /assets/images/posts/2025-09-21-diabetic-diet-south-indian.jpg "South Indian diabetic diet tips by Dr. Raja Ramesh")
 
 ## 1. Core principles
 - **Regular meal timings:** Avoid long gaps and erratic eating; aim for 3 main meals + 1–2 healthy snacks if needed.  
