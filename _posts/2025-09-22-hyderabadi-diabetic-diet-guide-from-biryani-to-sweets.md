@@ -4,7 +4,7 @@ title: "Hyderabadi Diabetic Diet Guide — From Biryani to Sweets"
 description: "A complete guide for diabetics in Hyderabad — understanding Glycemic Index (GI) & Glycemic Load (GL), and how popular foods like biryani, naan, Chicken 65, shawarmas, pizzas, burgers, and traditional desserts like Double ka Meetha & Khubani ka Meetha affect blood sugar."
 author: "Dr. Raja Ramesh"
 categories: [Diabetes, Diet, Hyderabad]
-image: /assets/images/posts/hyderabadi-diabetic-diet-guide-from-biryani-to-sweets.webp
+image: /assets/images/posts/2025-09-22-hyderabadi-diabetic-diet-guide-from-biryani-to-sweets.md
 ---
 
 # Hyderabadi Diabetic Diet Guide — From Biryani to Sweets
