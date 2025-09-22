@@ -4,6 +4,8 @@ title: "Viral fevers in the Monsoon season — FAQs & precautions"
 date: 2025-09-21 09:00:00 +0530
 excerpt: "Common viral fevers in the Indian monsoon — antibiotic misuse, role of antivirals, dengue platelet myths, and practical precautions."
 tags: [viral-fever, monsoon, dengue, influenza, infections]
+image: /assets/images/posts/2025-09-21-viral-fevers-in-monsoon.webp
+thumbnail :/assets/images/posts/thumbs/2025-09-21-viral-fevers-in-monsoon.webp
 ---
 
 Monsoon season in India brings a rise in viral infections. Most fevers are viral and self-limiting, but some require careful monitoring. Here are answers to frequently asked questions:
