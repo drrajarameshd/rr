@@ -10,6 +10,7 @@ image: /assets/images/posts/2025-09-22-hyderabadi-diabetic-diet-guide-from-birya
 # Hyderabadi Diabetic Diet Guide — From Biryani to Sweets
 
 Living with diabetes in Hyderabad can be tricky when biryani, naan, kebabs, shawarmas, and sweets are everywhere. The key is to understand **Glycemic Index (GI)** and **Glycemic Load (GL)** so you can enjoy food wisely.  
+![Hyderabadi Diabetic Diet — From Biryani to Sweets]({{ '/assets/images/posts/2025-09-22-hyderabadi-diabetic-diet-guide-from-biryani-to-sweets.webp' | relative_url }})
 
 ---
 
