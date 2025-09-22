@@ -5,7 +5,7 @@ description: "A complete guide for diabetics in Hyderabad — understanding Glyc
 author: "Dr. Raja Ramesh"
 categories: [Diabetes, Diet, Hyderabad]
 image: /assets/images/posts/2025-09-22-hyderabadi-diabetic-diet-guide-from-biryani-to-sweets.webp
-thumb: /assets/images/posts/thumbs/hyderabadi-diabetic-diet-guide-from-biryani-to-sweets.webp
+thumbnail: /assets/images/posts/thumbs/2025-09-22-hyderabadi-diabetic-diet-guide-from-biryani-to-sweets.webp
 ---
 
 # Hyderabadi Diabetic Diet Guide — From Biryani to Sweets
