@@ -50,3 +50,9 @@ Food plays a central role in managing diabetes. A healthy eating pattern can con
 ## Final notes
 South Indian diets can be very healthy for people with diabetes when simple adjustments are made: **whole grains, more vegetables, moderate rice, and limited fried/sugary foods.**  
 Always personalise diet plans with your healthcare provider or dietitian — especially if you are on insulin or multiple medicines.
+
+### About the Author
+**Dr. Raja Ramesh, MD (Osmania)**  
+Consultant Physician & Diabetologist in Attapur, Hyderabad  
+Available at **Germanten Hospital (10am–5pm)** & **Care Clinic Attapur (5pm–8pm)**.  
+📞 Call **+91 7989676770** for appointments.
