@@ -4,7 +4,8 @@ title: "Diabetic Diet — Simple Principles in South Indian Context"
 date: 2025-09-21 18:00:00 +0530
 excerpt: "Practical diet advice for diabetes in the South Indian setting — what to eat, what to limit, and how to plan balanced meals."
 tags: [diabetes, diet, south-india, lifestyle]
-image: /assets/images/2025-09-21-diabetic-diet-south-indian.jpg
+image: /assets/images/posts/2025-09-21-diabetic-diet-south-indian.webp
+thumbnail: /assets/images/posts/thumbs/2025-09-21-diabetic-diet-south-indian.webp
 ---
 
 Food plays a central role in managing diabetes. A healthy eating pattern can control blood sugar, protect the heart, and improve overall well-being. Below are simple, practical principles — explained with common **South Indian food choices**.
