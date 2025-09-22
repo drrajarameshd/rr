@@ -28,7 +28,7 @@ social:
   - name: "Google Maps"
     url: "https://maps.app.goo.gl/tnZVczhkgeUxWYJ38"
   - name: "Facebook"
-    url: "https://facebook.com/yourpage"   # replace if available
+    url: "https://www.facebook.com/profile.php?id=100083618457015"
 
 # Exclude from build
 exclude:
