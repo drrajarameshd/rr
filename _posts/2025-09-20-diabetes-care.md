@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Simple Daily Diabetes Care Tips – Dr. Raja Ramesh MD, General Physician in Attapur, Hyderabad"
+title: "Simple Daily Diabetes Care — Tips for everyday checks"
 date: 2025-09-20 09:00:00 +0530
 excerpt: "Simple daily diabetes care tips for patients in Attapur, Hyderabad — practical habits, easy monitoring advice and when to visit your doctor."
 tags: [diabetes, self-care, clinic]
