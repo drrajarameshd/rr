@@ -2,6 +2,7 @@
 <!doctype html>
 <html lang="en">
 {% include head.html %}
+
 <body>
   {% include header.html %}
 
@@ -15,7 +16,7 @@
               {{ page.date | date: "%B %-d, %Y" }}
             </time>
             {%- if page.author or site.author.name -%}
-              • <span itemprop="author">{{ page.author | default: site.author.name }}</span>
+            • <span itemprop="author">{{ page.author | default: site.author.name }}</span>
             {%- endif -%}
           </p>
         </header>
@@ -25,7 +26,7 @@
         </div>
 
         <div class="post-actions wrap">
-         <a class="btn" href="#" onclick="
+          <a class="btn" href="#" onclick="
   if (navigator.share) {
     navigator.share({
       title: '{{ page.title | escape }}',
@@ -61,15 +62,16 @@
 
   <script>
     // Accessibility: make first heading focusable; set copyright year
-    (function(){
+    (function () {
       var h = document.querySelector('.post-header h1');
-      if(h) h.setAttribute('tabindex','-1');
+      if (h) h.setAttribute('tabindex', '-1');
 
       var y = document.getElementById('year');
-      if(y) y.textContent = new Date().getFullYear();
+      if (y) y.textContent = new Date().getFullYear();
     })();
   </script>
 
   <script src="{{ '/assets/script/script.js' | relative_url }}"></script>
 </body>
+
 </html>
