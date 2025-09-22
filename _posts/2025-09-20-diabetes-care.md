@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Diabetes — Simple daily care & regular checks"
+title: "Simple Daily Diabetes Care Tips – Dr. Raja Ramesh, MD (Osmania), General Physician in Attapur, Hyderabad"
 date: 2025-09-20 09:00:00 +0530
-excerpt: "Practical, easy-to-follow instructions for people living with diabetes — daily habits, monitoring and when to see your healthcare team."
+excerpt: "Simple daily diabetes care tips for patients in Attapur, Hyderabad — practical habits, easy monitoring advice and when to visit your doctor."
 tags: [diabetes, self-care, clinic]
 ---
 
@@ -25,3 +25,9 @@ Living well with diabetes is mostly about simple daily habits plus a few regular
 
 ## Final notes
 Small, consistent habits add up. Diabetes self-care is supported by structured education (DSMES/ADCES7) and regular contact with your healthcare team — ask your clinic about education sessions or handouts.
+
+### About the Author
+**Dr. Raja Ramesh, MD (Osmania)**  
+Consultant Physician & Diabetologist in Attapur, Hyderabad  
+Available at **Germanten Hospital (10am–5pm)** & **Care Clinic Attapur (5pm–8pm)**.  
+📞 Call **+91 7989676770** for appointments.
