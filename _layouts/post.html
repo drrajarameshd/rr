@@ -25,19 +25,25 @@
         </div>
 
         <div class="post-actions wrap">
-          <a class="btn" href="#" onclick="
-            if(navigator.share){
-              navigator.share({
-                title: {{ page.title | jsonify }},
-                text: 'Check this out:',
-                url: {{ page.url | absolute_url | jsonify }}
-              });
-            } else {
-              alert('Share not supported in this browser.');
-            }
-            return false;
-          ">Share</a>
-
+         <a class="btn" href="#" onclick="
+  if (navigator.share) {
+    navigator.share({
+      title: '{{ page.title | escape }}',
+      text: 'Check this out:',
+      url: '{{ page.url | absolute_url }}'
+    }).catch((error) => console.log('Error sharing:', error));
+  } else {
+    // Fallback: Copy URL to clipboard
+    navigator.clipboard.writeText('{{ page.url | absolute_url }}')
+      .then(() => {
+        alert('🔗 Link copied to clipboard!');
+      })
+      .catch(() => {
+        alert('Could not copy link. Please try manually.');
+      });
+  }
+  return false;
+">Share</a>
           <a class="btn btn--primary" href="{{ '/contact.html' | relative_url }}">Appointment</a>
         </div>
 
