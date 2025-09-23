@@ -21,6 +21,8 @@ Each grain has 3 main layers:
 - **🥜 Bran** – Thin brown/red layer, rich in fiber and nutrients.  
 - **🍚 Endosperm** – White starchy inside (main edible part in polished rice).  
 
+![rice](/assets/images/posts/2025-09-23-rice.webp)
+
 ---
 
 ## ⚙️ Processing of rice
