@@ -9,7 +9,7 @@ thumbnail : /assets/images/posts/thumbs/2025-09-21-viral-fevers-in-monsoon.webp
 ---
 
 Monsoon season in India brings a rise in viral infections. Most fevers are viral and self-limiting, but some require careful monitoring. Here are answers to frequently asked questions:
-
+![viral-fevers-in-monsoon-attapur](/assets/images/posts/2025-09-21-viral-fevers-in-monsoon.webp)
 ## 1. Antibiotics & viral fevers
 - **Antibiotics do not cure viral infections.** They only work for bacterial infections.  
 - Unnecessary use leads to resistance and side effects.  
