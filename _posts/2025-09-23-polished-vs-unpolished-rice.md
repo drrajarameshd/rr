@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Polished vs Unpolished Rice — What You Need to Know"
-date: 2025-09-23 12:30:00 +0530
+date: 2025-09-23 13:00:00 +0530
 excerpt: "Explaining husking, polishing, brown rice, red rice, and their health benefits in simple terms."
 tags: [rice, diet, diabetes, health, brown-rice, red-rice]
 image: /assets/images/posts/2025-09-23-polished-vs-unpolished-rice.webp
@@ -14,67 +14,62 @@ Rice is one of the most common foods in India. But many people are confused abou
 
 ---
 
-## Understanding the structure of rice grain
+## 🌾 Rice grain structure
 
-When rice is harvested, each grain has multiple layers:  
-- **Husk** – The hard outer shell. Inedible and removed during husking.  
-- **Bran** – The thin brownish or reddish layer rich in fiber, vitamins, minerals, and antioxidants.  
-- **Endosperm** – The inner white starchy part. This is the main edible portion in polished rice.  
-
----
-
-## Processing of rice
-
-1. **Husking** – The husk (outer shell) is removed. Result = *brown rice* (bran intact).  
-2. **Polishing** – Further rubbing removes the bran layer. Result = *polished white rice*.  
-
-👉 **Brown rice** = husk removed, bran layer intact.  
-👉 **Red rice** = bran intact, but naturally red due to plant pigments.  
-👉 **Polished rice** = bran removed, only white starchy endosperm left.  
+Each grain has 3 main layers:  
+- **🌰 Husk** – Hard outer shell, removed during husking.  
+- **🥜 Bran** – Thin brown/red layer, rich in fiber and nutrients.  
+- **🍚 Endosperm** – White starchy inside (main edible part in polished rice).  
 
 ---
 
-## Nutritional comparison
+## ⚙️ Processing of rice
 
-<div style="overflow-x:auto;">
+1. **Husking** – Removes husk → *brown rice* (bran intact).  
+2. **Polishing** – Removes bran → *white rice*.  
 
-| Feature              | White Polished Rice | Brown Rice (Unpolished) | Red Rice (Unpolished) |
-|----------------------|---------------------|--------------------------|------------------------|
-| **Bran layer**       | ❌ Removed          | ✅ Present               | ✅ Present (red pigmented) |
-| **Fiber**            | Very low            | High                    | High + antioxidants |
-| **Vitamins & Minerals** | Mostly lost     | Retained                | Retained (iron & zinc) |
-| **Antioxidants**     | Minimal             | Moderate                | High (anthocyanins) |
-| **Taste & Texture**  | Soft, fluffy        | Chewy, nutty flavor      | Chewy, earthy flavor |
-| **Blood Sugar Effect** | High spike        | Lower, slow absorption   | Lower + antioxidant benefit |
-
-</div>
+👉 **Brown rice** = husk removed, bran kept.  
+👉 **Red rice** = bran intact, but naturally red.  
+👉 **Polished rice** = bran removed, only starchy part remains.  
 
 ---
 
-## Health view
+## 📊 Nutritional comparison
 
-- **White polished rice** – Easy to cook, soft texture, but loses most nutrients.  
-- **Brown rice** – High fiber, supports heart and sugar control.  
-- **Red rice** – Same benefits as brown rice, plus extra antioxidants.  
-
----
-
-## Who should be cautious with brown/red rice?
-
-Brown and red rice are very healthy, but not suitable for everyone:  
-- **People with weak digestion** – may feel bloated.  
-- **Patients with advanced kidney disease** – must restrict potassium & phosphorus.  
-- **Very elderly or sick patients** – may find it hard to chew or digest.  
-
-⚠️ **Disclaimer:** This is general information. Always check with your doctor or dietitian before making major changes to your diet.  
+| Feature       | 🍚 White Rice | 🌾 Brown Rice | ❤️ Red Rice |
+|---------------|---------------|---------------|-------------|
+| **Bran**      | ❌            | ✅            | ✅ (red)    |
+| **Fiber**     | Low           | High          | High + antioxidants |
+| **Vitamins**  | Lost          | Retained      | Retained    |
+| **Antioxid.** | Minimal       | Moderate      | High        |
+| **Texture**   | Soft          | Chewy         | Chewy       |
+| **Sugar**     | High spike    | Lower         | Lower       |
 
 ---
 
-## Final note
+## 💡 Health view
 
-- White polished rice is **nutrient-poor**.  
-- Brown and red rice are **nutrient-rich and healthier** for diabetes, heart health, and weight control.  
-- Even mixing **50% brown/red rice with white rice** can give better health benefits while keeping the taste acceptable.  
+- **White rice** – Tasty and soft, but poor in nutrients.  
+- **Brown rice** – High fiber, better for sugar control and heart health.  
+- **Red rice** – Same as brown, plus extra antioxidants.  
+
+---
+
+## ⚠️ Who should limit brown/red rice?
+
+- Weak digestion → may cause bloating.  
+- Kidney disease patients → need mineral restrictions.  
+- Very elderly or sick → harder to chew and digest.  
+
+❗ **Disclaimer:** General info only. Always check with your doctor or dietitian.  
+
+---
+
+## ✅ Final note
+
+- White rice = soft but nutrient-poor.  
+- Brown/red rice = healthier and filling.  
+- Even mixing **50% brown/red rice with white rice** is a smart choice.  
 
 ---
 
