@@ -57,8 +57,10 @@ Example: bicep curls, squats.
 1. **Abdominal Bracing** – Tighten tummy muscles while lying down.  
 2. **Glute Squeeze** – Tighten buttock muscles while lying or standing.  
 3. **Wall Sit (partial)** – Sit against wall without sliding, hold.  
-4. **Prone Press Isometric** – Lie on tummy, gently tighten lower back muscles.  
-
+4. **Prone Press Isometric** – Lie on tummy, gently tighten lower back muscles.
+   
+![2025-09-23-plank](/assets/images/posts/2025-09-23-plank.webp)
+   
 ---
 
 ## Best Isometrics for the Neck (Top 4)
@@ -66,6 +68,8 @@ Example: bicep curls, squats.
 2. **Side Neck Press** – Press side of head into palm without moving.  
 3. **Forward Neck Press** – Press forehead into palm.  
 4. **Backward Neck Press** – Press back of head into palm or wall.  
+
+![2025-09-23-neck](/assets/images/posts/2025-09-23-neck.webp)
 
 ---
 
