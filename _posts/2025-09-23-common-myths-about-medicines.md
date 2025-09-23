@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Common Myths About Medicines and Lifestyle — What Every Patient Should Know"
-date: 2025-09-23 10:30:00 +0530
+date: 2025-09-23 10:00:00 +0530
 excerpt: "Clearing common myths about medicines, insulin, exercise, and herbal remedies — practical advice for patients with chronic conditions."
 tags: [myths, medicines, diabetes, hypertension, thyroid, jaundice, lifestyle]
 image: /assets/images/posts/2025-09-23-common-myths-about-medicines.webp
