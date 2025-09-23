@@ -36,14 +36,18 @@ When rice is harvested, each grain has multiple layers:
 
 ## Nutritional comparison
 
+<div style="overflow-x:auto;">
+
 | Feature              | White Polished Rice | Brown Rice (Unpolished) | Red Rice (Unpolished) |
 |----------------------|---------------------|--------------------------|------------------------|
 | **Bran layer**       | ❌ Removed          | ✅ Present               | ✅ Present (red pigmented) |
-| **Fiber**            | Very low            | High                    | High + extra antioxidants |
-| **Vitamins & Minerals** | Mostly lost     | Retained                | Retained (esp. iron & zinc) |
-| **Antioxidants**     | Minimal             | Moderate                | High (anthocyanins in red bran) |
+| **Fiber**            | Very low            | High                    | High + antioxidants |
+| **Vitamins & Minerals** | Mostly lost     | Retained                | Retained (iron & zinc) |
+| **Antioxidants**     | Minimal             | Moderate                | High (anthocyanins) |
 | **Taste & Texture**  | Soft, fluffy        | Chewy, nutty flavor      | Chewy, earthy flavor |
-| **Effect on Blood Sugar** | High (fast spike) | Lower (slow absorption) | Lower (plus antioxidant benefit) |
+| **Blood Sugar Effect** | High spike        | Lower, slow absorption   | Lower + antioxidant benefit |
+
+</div>
 
 ---
 
