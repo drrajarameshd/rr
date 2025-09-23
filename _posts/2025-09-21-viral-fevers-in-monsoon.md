@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Viral fevers in the Monsoon season — FAQs & precautions"
+title: "Viral fevers in the Monsoon season | Attapur — FAQs & precautions"
 date: 2025-09-21 09:00:00 +0530
 excerpt: "Common viral fevers in the Indian monsoon — antibiotic misuse, role of antivirals, dengue platelet myths, and practical precautions."
 tags: [viral-fever, monsoon, dengue, influenza, infections]
