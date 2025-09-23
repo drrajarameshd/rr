@@ -59,6 +59,18 @@ Example: bicep curls, squats.
 3. **Wall Sit (partial)** – Sit against wall without sliding, hold.  
 4. **Prone Press Isometric** – Lie on tummy, gently tighten lower back muscles.
    
+## Advanced Exercises (Once You Master the Basics)
+
+- **Planks**  
+  - *Normal Plank*: Hold your body straight on elbows and toes.  
+  - *Side Plank*: Support yourself on one elbow and side of foot for side abdominal strength.  
+
+- **Glute Bridges**  
+  - Lie on your back, bend your knees, lift hips upward, and squeeze glutes.  
+  - Builds both glute and lower back strength.
+   
+![Plank](/assets/images/posts/2025-09-23-plank.webp)
+
 ---
 
 ## Best Isometrics for the Neck (Top 4)
@@ -67,7 +79,7 @@ Example: bicep curls, squats.
 3. **Forward Neck Press** – Press forehead into palm.  
 4. **Backward Neck Press** – Press back of head into palm or wall.  
 
-![2025-09-23-neck](/assets/images/posts/2025-09-23-neck.webp)
+![neck-isometrics](/assets/images/posts/2025-09-23-neck.webp)
 
 ---
 
@@ -89,6 +101,8 @@ When you have **acute back or neck pain**, gentle stretches:
 **For Back**  
 3. Cat-Cow stretch (gentle).  
 4. Knee-to-chest stretch (one leg at a time).  
+
+![Stretches](/assets/images/posts/2025-09-23-stretches.webp)
 
 ---
 
