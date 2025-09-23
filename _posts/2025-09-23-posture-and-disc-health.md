@@ -59,8 +59,6 @@ Example: bicep curls, squats.
 3. **Wall Sit (partial)** – Sit against wall without sliding, hold.  
 4. **Prone Press Isometric** – Lie on tummy, gently tighten lower back muscles.
    
-![2025-09-23-plank](/assets/images/posts/2025-09-23-plank.webp)
-   
 ---
 
 ## Best Isometrics for the Neck (Top 4)
