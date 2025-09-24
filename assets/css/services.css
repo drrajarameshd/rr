@@ -1,0 +1,16 @@
+/* rr-services — uses your theme variables */
+.rr-services__title{font-size:1.35rem;color:var(--primary-dark);margin:0 0 0.75rem;}
+.rr-services__item{border:1px solid rgba(0,0,0,0.04);background:var(--card);border-radius:12px;margin-bottom:0.75rem;overflow:hidden;}
+.rr-services__summary{display:flex;align-items:center;justify-content:space-between;padding:0.85rem 1rem;cursor:pointer;font-weight:700;color:var(--text);user-select:none}
+.rr-services__summary::-webkit-details-marker{display:none}
+.rr-services__summary::after{content:"▸";font-size:0.95rem;transition:transform .18s ease;opacity:.9;color:var(--muted)}
+details[open]>.rr-services__summary::after{transform:rotate(90deg)}
+.rr-services__body{padding:0.9rem 1rem 1.2rem;color:#163042;line-height:1.45}
+.rr-small{font-size:0.9rem;color:var(--muted);margin-top:.45rem}
+.rr-badge{background:var(--primary-100);color:var(--primary-dark);padding:.2rem .5rem;border-radius:999px;font-weight:600;font-size:.82rem;margin-left:.5rem}
+.rr-badge--alert{background:linear-gradient(90deg,var(--primary-150),var(--primary-100));box-shadow:0 6px 18px rgba(51,104,198,.06);color:var(--primary-dark)}
+.rr-services .btn{margin-top:.6rem;display:inline-flex}
+@media(min-width:700px){
+  .rr-services{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  .rr-services__title{grid-column:1/-1}
+}
