@@ -11,8 +11,8 @@
   --primary-600: #4aa3ff;                  /* New main tone */
   --primary-100: rgba(74,163,255,0.08);    /* 8% tint of new base */
   --primary-150: rgba(74,163,255,0.15);    /* 15% tint of new base */
-  --secondary : #e63946;
-   --secondary-dark : #801b24;
+  --secondary : #1e3a8a;
+   --secondary-dark : #1e3a8a;
   --muted: #6b7280;
   --text: #0f1724;
   --bg: #ffffff;
