@@ -67,7 +67,7 @@ img{max-width:100%;display:block}
 .btn-container{display:inline-flex;gap:0.5rem;align-items:center}
 .btn{
   display:inline-flex;align-items:center;justify-content:center;
-  background:var(--secondary);color:#fff;padding:0.6rem 1rem;border-radius:10px;text-decoration:none;
+  background:var(--primary);color:#fff;padding:0.6rem 1rem;border-radius:10px;text-decoration:none;
   box-shadow:0 6px 18px rgba(51,104,198,0.14);transition:transform .14s ease;text-align:center;margin:0;
   font-weight:600;line-height:1;white-space:nowrap;min-width:0; /* min-width:0 ensures proper flex shrink */
 }
