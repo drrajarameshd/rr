@@ -60,7 +60,7 @@ img{max-width:100%;display:block}
 .banner{background: linear-gradient(90deg, rgba(51,104,198,0.08), rgba(51,104,198,0.02));padding:2.4rem 0;border-bottom:1px solid rgba(0,0,0,.03)}
 .banner-inner{display:flex;align-items:center;gap:1.5rem}
 .hero-text{max-width:60ch}
-.hero-text h2{margin:0 0 .5rem;font-size:1.6rem;color:var(--primary-dark);line-height:1.15}
+.hero-text h2{margin:0 0 .5rem;font-size:1.6rem;color:var(--secondary-dark);line-height:1.15}
 .hero-text p{margin:0 0 1rem;color:var(--muted)}
 
 /* Buttons (single source of truth) */
