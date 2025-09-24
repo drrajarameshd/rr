@@ -17,8 +17,10 @@
   --text: #0f1724;
   --bg: #ffffff;
   --card: #f9fbfd;
-  --footer-bg-start: #f6f9fe;
-  --footer-bg-end: #eaf0fc;
+   
+  --footer-bg-start: #f4f6fc; /* very light indigo tint */
+  --footer-bg-end: #dbe3f8;   /* soft indigo background */  
+
 
   --radius: 12px;
   --container: 1100px;
