@@ -60,7 +60,7 @@ details[open] > .rr-services__summary::after {
   flex: 0 0 20px;
   transition: color .22s ease, transform .22s ease;
 }
-.rr-icon svg { width: 100%; height: 100%; stroke: currentColor; fill: none; }
+.rr-icon svg { width: 100%; height: 100%; fill: currentColor; }
 
 .rr-services__body {
   padding: 0.9rem 1rem 1.2rem;
