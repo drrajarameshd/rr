@@ -20,8 +20,8 @@
    
   --footer-bg-start: #f6f9fe;
   --footer-bg-end: #eaf0fc; 
-  --nav-gradient-start: #1e3a8a; /* indigo base */
-  --nav-gradient-end: #3b4cca;   /* lighter indigo blend */
+  --nav-gradient-start: #1e3a8a;
+  --nav-gradient-end: #3b4cca;
    
   --radius: 12px;
   --container: 1100px;
