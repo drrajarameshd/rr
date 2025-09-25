@@ -1,0 +1,199 @@
+---
+layout: post
+title: "Page not found"
+permalink: /404.html
+---
+
+<style>
+  :root{
+    --primary: #3368c6;   /* your blue */
+    --accent: #1e3a8a;    /* indigo */
+    --muted: #6b7280;
+    --bg: #fbfdff;
+    --card: #ffffff;
+  }
+
+  /* Reset for this page container to avoid theme collisions */
+  .custom-404-root {
+    min-height: calc(100vh - 0px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, var(--bg), #f4f7fb);
+    padding: 60px 20px;
+  }
+
+  .custom-404 {
+    text-align: center;
+    max-width: 860px;
+    width: 100%;
+    padding: 36px;
+    border-radius: 16px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(250,250,252,0.85));
+    box-shadow: 0 10px 30px rgba(18, 38, 86, 0.08), 0 2px 6px rgba(11, 22, 44, 0.04);
+    position: relative;
+    overflow: visible;
+  }
+
+  /* Big 404 with animated gradient glow and subtle float */
+  .error-code {
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    font-weight: 800;
+    font-size: clamp(48px, 12vw, 140px);
+    line-height: 0.86;
+    letter-spacing: -3px;
+    color: var(--primary);
+    margin: 0;
+    position: relative;
+    display: inline-block;
+    padding: 8px 12px;
+    transform-origin: center;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* layered glow */
+  .error-code::before,
+  .error-code::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    filter: blur(18px);
+    opacity: 0.35;
+  }
+  .error-code::before{
+    color: var(--accent);
+    transform: translateY(-6px) scale(1.02);
+    animation: glow1 4s ease-in-out infinite;
+  }
+  .error-code::after{
+    color: var(--primary);
+    transform: translateY(6px) scale(1.01);
+    animation: glow2 5s ease-in-out infinite;
+  }
+
+  @keyframes float{
+    0% { transform: translateY(0) rotate(-0.2deg); }
+    50% { transform: translateY(-6px) rotate(0.2deg); }
+    100% { transform: translateY(0) rotate(-0.2deg); }
+  }
+  @keyframes glow1{
+    0% { opacity: .28; transform: translateY(-6px) scale(1.02) translateX(-2px); }
+    50% { opacity: .45; transform: translateY(-10px) scale(1.05) translateX(2px); }
+    100% { opacity: .28; transform: translateY(-6px) scale(1.02) translateX(-2px); }
+  }
+  @keyframes glow2{
+    0% { opacity: .18; transform: translateY(6px) scale(1.01) translateX(2px); }
+    50% { opacity: .33; transform: translateY(10px) scale(1.03) translateX(-2px); }
+    100% { opacity: .18; transform: translateY(6px) scale(1.01) translateX(2px); }
+  }
+
+  /* small subtitle and message */
+  .error-subtitle {
+    font-size: 1.125rem;
+    color: var(--muted);
+    margin-top: 6px;
+    margin-bottom: 18px;
+  }
+
+  .error-message {
+    font-size: 1rem;
+    color: #0f1724;
+    margin: 18px 0 26px;
+  }
+
+  /* Card with floating dots (animated) */
+  .particle-wrap {
+    position: absolute;
+    pointer-events: none;
+    inset: -40px -30px auto auto;
+    width: 220px;
+    height: 220px;
+  }
+
+  .dot {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--primary));
+    opacity: .85;
+    transform-origin: center;
+    animation: orbit 7s linear infinite;
+    box-shadow: 0 6px 18px rgba(32, 63, 160, .12);
+  }
+
+  .dot.dot-1 { left: 10%; top: 60%; animation-duration: 6.2s; transform: scale(.9); }
+  .dot.dot-2 { left: 50%; top: 10%; animation-duration: 7.5s; transform: scale(1.1); }
+  .dot.dot-3 { left: 75%; top: 50%; animation-duration: 5.8s; transform: scale(.8); }
+  .dot.dot-4 { left: 35%; top: 35%; animation-duration: 8.2s; transform: scale(1.0); }
+
+  @keyframes orbit {
+    0%   { transform: translate(0,0) scale(1) rotate(0deg); opacity:.95; }
+    50%  { transform: translate(12px,-18px) scale(0.9) rotate(180deg); opacity:.7; }
+    100% { transform: translate(0,0) scale(1) rotate(360deg); opacity:.95; }
+  }
+
+  /* Buttons */
+  .actions {
+    display:flex;
+    gap:12px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-top: 8px;
+  }
+
+  .btn {
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:10px 18px;
+    border-radius: 10px;
+    border: none;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: .95rem;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    color: white;
+    box-shadow: 0 6px 18px rgba(51,104,198,0.18);
+    transition: transform .22s cubic-bezier(.2,.9,.2,1), box-shadow .22s;
+  }
+  .btn:active { transform: translateY(1px) scale(.995); }
+  .btn.secondary {
+    background: transparent;
+    color: var(--primary);
+    border: 1px solid rgba(51,104,198,0.12);
+    box-shadow: none;
+  }
+
+  /* small responsive tweaks */
+  @media (max-width:700px){
+    .custom-404 { padding: 28px; border-radius: 12px; }
+    .particle-wrap { display:none; }
+  }
+</style>
+
+<div class="custom-404-root" role="main" aria-labelledby="errcode">
+  <main class="custom-404" aria-live="polite">
+    <div style="display:flex;align-items:center;justify-content:center;flex-direction:column;">
+      <h1 id="errcode" class="error-code" data-text="404">404</h1>
+      <div class="error-subtitle">Page not found</div>
+      <p class="error-message">
+        The page you're looking for does not exist or may have been moved. Try returning to the homepage or explore below.
+      </p>
+
+      <div class="actions" role="group" aria-label="404 actions">
+        <a href="/" class="btn" title="Go back to home">← Back to home</a>
+        <a href="/sitemap.xml" class="btn secondary" title="View sitemap">Sitemap</a>
+      </div>
+    </div>
+
+    <!-- decorative animated particles (non-critical) -->
+    <div class="particle-wrap" aria-hidden="true">
+      <div class="dot dot-1"></div>
+      <div class="dot dot-2"></div>
+      <div class="dot dot-3"></div>
+      <div class="dot dot-4"></div>
+    </div>
+  </main>
+</div>
