@@ -16,6 +16,7 @@ Bronchial Asthma is a **chronic condition where the airways become sensitive and
 - **Chest tightness**
 
 It usually gets triggered by **allergens, dust, pollution, weather changes, infections, or strong odors**.
+![Asthma & Allergies](/assets/images/posts/2025-09-25-asthma-allergy-tips.webp)
 
 ---
 
