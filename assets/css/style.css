@@ -46,7 +46,6 @@ img{max-width:100%;display:block}
 
 /* ========= HEADER / BRAND ========= */
 .header-inner{display:flex;align-items:center;justify-content:space-between;padding:1rem 0;gap:1rem}
-.hero-mobile-card{display:none;box-sizing:border-box} }
 .brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:inherit}
 .logo{width:56px;height:56px;border-radius:10px;background:#fff;border:1px solid rgba(0,0,0,.06);padding:8px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
 .brand-text h1{font-size:1.1rem;margin:0}
@@ -270,4 +269,3 @@ input:focus,textarea:focus{outline:2px solid var(--primary-600);border-color:var
 @media (prefers-reduced-motion:reduce){
   *{transition:none!important;animation:none!important}
 }
-
