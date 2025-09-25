@@ -1,0 +1,27 @@
+<!-- _layouts/post.html — Responsive, accessible, SEO-friendly Jekyll post layout -->
+<!doctype html>
+<html lang="en-IN">
+{% include head.html %}
+
+<body>
+  {% include header.html %}
+  </main>
+
+  {% include footer.html %}
+  {% include bottom-nav.html %}
+
+  <script>
+    // Accessibility: make first heading focusable; set copyright year
+    (function () {
+      var h = document.querySelector('.post-header h1');
+      if (h) h.setAttribute('tabindex', '-1');
+
+      var y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
+    })();
+  </script>
+
+  <script src="{{ '/assets/script/script.js' | relative_url }}"></script>
+</body>
+
+</html>
