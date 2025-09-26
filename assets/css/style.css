@@ -49,7 +49,7 @@ img{max-width:100%;display:block}
 .brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:inherit}
 .logo{width:56px;height:56px;border-radius:10px;background:#fff;border:1px solid rgba(0,0,0,.06);padding:8px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
 .brand-text h1{font-size:1.1rem;margin:0}
-.brand-text .tag{margin:0;font-size:.85rem;color:var(--muted)}
+.brand-text .tags{margin:0;font-size:.85rem;color:var(--muted)}
 
 /* ========= NAVIGATION ========= */
 .nav-list{list-style:none;margin:0;padding:0;display:flex;gap:1rem;align-items:center}
@@ -211,7 +211,7 @@ input:focus,textarea:focus{outline:2px solid var(--primary-600);border-color:var
   :root{--container:720px}
   .container{padding-left:.75rem;padding-right:.75rem}
   .brand-text h1{font-size:1rem}
-  .brand-text .tag{font-size:.8rem}
+  .brand-text .tags{font-size:.8rem}
   .banner-inner{flex-direction:column;align-items:flex-start;gap:.9rem}
   .hero-text h2{font-size:1.25rem}
   .hero-text p{font-size:.94rem}
@@ -238,7 +238,7 @@ input:focus,textarea:focus{outline:2px solid var(--primary-600);border-color:var
   html,body{font-size:14px}
   .container{padding-left:.6rem;padding-right:.6rem}
   .brand-text h1{font-size:.95rem}
-  .brand-text .tag{font-size:.78rem}
+  .brand-text .tags{font-size:.78rem}
   .hero-text h2{font-size:1.05rem}
   .hero-text p{font-size:.9rem;margin-bottom:.6rem}
   /* Buttons: remain side-by-side and shrink, with truncation */
