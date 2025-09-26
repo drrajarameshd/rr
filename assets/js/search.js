@@ -191,3 +191,22 @@
     document.addEventListener('DOMContentLoaded', run);
   } else { run(); }
 })();
+
+// Clear button behavior for modern searchbar
+(function(){
+  const form = document.querySelector('.searchbar');
+  if (!form) return;
+  const input = form.querySelector('input[type="search"]');
+  const clearBtn = form.querySelector('.searchbar__clear');
+  if (!input || !clearBtn) return;
+
+  function toggleClear(){ clearBtn.hidden = !input.value; }
+  input.addEventListener('input', toggleClear);
+  clearBtn.addEventListener('click', () => {
+    input.value = '';
+    toggleClear();
+    input.focus();
+  });
+  // Initialize
+  toggleClear();
+})();
