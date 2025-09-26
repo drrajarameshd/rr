@@ -1,8 +1,9 @@
 (function () {
-  // ---------- Config ----------
+  // ---------- Config (read from data-* on the <script> tag) ----------
+  const thisScript = document.currentScript || document.querySelector('script[data-search-json]');
+  const SEARCH_JSON = thisScript?.getAttribute('data-search-json') || '/search.json';
+  const FALLBACK_THUMB = thisScript?.getAttribute('data-fallback-thumb') || '/assets/images/posts/thumbs/thumbnail.webp';
   const PAGE_SIZE = 10;
-  const FALLBACK_THUMB = '{{ "/assets/images/posts/thumbs/thumbnail.webp" | relative_url }}';
-  const SEARCH_JSON = '{{ "/search.json" | relative_url }}';
 
   // ---------- Helpers ----------
   function getParams() {
@@ -126,7 +127,20 @@
 
     status.textContent = 'Searching…';
 
+    // Fetch & validate JSON
     const res = await fetch(SEARCH_JSON, { cache: 'no-store' });
+    if (!res.ok) {
+      status.textContent = `Could not load search index (${res.status}). Check ${SEARCH_JSON}.`;
+      return;
+    }
+    const ct = res.headers.get('content-type') || '';
+    if (!ct.includes('application/json') && !ct.includes('json')) {
+      const text = await res.text();
+      console.error('Non-JSON response for search.json:', text.slice(0, 200));
+      status.textContent = 'Search index is not valid JSON. Open /search.json in your browser to debug.';
+      return;
+    }
+
     const data = await res.json();
 
     // Build index
@@ -148,7 +162,6 @@
     try {
       results = idx.search(`${q} ^${q} ${star}`);
     } catch {
-      // Fallback if Lunr query throws on special chars
       results = idx.search(star || q);
     }
 
@@ -167,7 +180,7 @@
     listEl.innerHTML = renderList(hits, q, p, PAGE_SIZE);
     renderPagination(pagerEl, hits.length, p, PAGE_SIZE, q);
 
-    // Enhance keyboard nav on disabled links
+    // Make "disabled" pager links inert
     pagerEl.querySelectorAll('.is-disabled').forEach(a => {
       a.setAttribute('aria-disabled', 'true');
       a.addEventListener('click', e => e.preventDefault());
@@ -178,4 +191,3 @@
     document.addEventListener('DOMContentLoaded', run);
   } else { run(); }
 })();
-
