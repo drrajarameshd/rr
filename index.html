@@ -82,11 +82,11 @@ description: "Available at Germanten Hospital (10am–5pm) & Care Clinic Attapur
       {% if paginator.total_pages > 1 %}
         <nav class="pagination" role="navigation" aria-label="Pagination">
           {% if paginator.previous_page %}
-            <a class="btn" href="{{ paginator.previous_page_path | relative_url }}">← Older</a>
+            <a class="btn" href="{{ paginator.previous_page_path | relative_url }}">← Newer</a>
           {% endif %}
           <span aria-hidden="true" style="margin:0 .5rem;color:var(--muted)">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
           {% if paginator.next_page %}
-            <a class="btn" href="{{ paginator.next_page_path | relative_url }}">Newer →</a>
+            <a class="btn" href="{{ paginator.next_page_path | relative_url }}">Older →</a>
           {% endif %}
         </nav>
       {% endif %}
