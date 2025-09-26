@@ -54,10 +54,14 @@
 
   // ---------- Rendering ----------
   function renderTags(tags, q) {
-    if (!Array.isArray(tags) || !tags.length) return '';
-    const chips = tags.slice(0, 12).map(t => `<span class="tag">${highlight(String(t), q)}</span>`).join('');
-    return `<div class="tags">${chips}</div>`;
-  }
+  if (!Array.isArray(tags) || !tags.length) return '';
+  const chips = tags
+    .slice(0, 12)
+    .map(t => `<span class="post-tag">${highlight(String(t), q)}</span>`)
+    .join('');
+  return `<div class="post-tags">${chips}</div>`;
+}
+
 
   function renderItem(post, q) {
     const title = highlight(post.title, q);
