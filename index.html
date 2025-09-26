@@ -58,7 +58,7 @@ description: "Available at Germanten Hospital (10am–5pm) & Care Clinic Attapur
     {% else %}
       <ul class="post-list" aria-live="polite">
         {% for post in paginator.posts %}
-          <li class="post-item" itemscope itemtype="http://schema.org/BlogPosting">
+          <article class="post-item" itemscope itemtype="http://schema.org/BlogPosting">
             {% if post.thumbnail %}
               <a class="thumb" href="{{ post.url | relative_url }}" itemprop="url" aria-hidden="true">
                 <img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title | escape }}" loading="lazy" width="200" height="120">
@@ -81,7 +81,7 @@ description: "Available at Germanten Hospital (10am–5pm) & Care Clinic Attapur
 
               <p style="margin-top:.55rem;"><a class="btn btn--primary" href="{{ post.url | relative_url }}">Read more</a></p>
             </div>
-          </li>
+          </article>
         {% endfor %}
       </ul>
 
