@@ -1,5 +1,5 @@
 (function () {
-  // ---------- Config (read from data-* on the <script> tag) ----------
+  // ---------- Config from data-* on the <script> tag ----------
   const thisScript = document.currentScript || document.querySelector('script[data-search-json]');
   const SEARCH_JSON = thisScript?.getAttribute('data-search-json') || '/search.json';
   const FALLBACK_THUMB = thisScript?.getAttribute('data-fallback-thumb') || '/assets/images/posts/thumbs/thumbnail.webp';
@@ -180,7 +180,7 @@
     listEl.innerHTML = renderList(hits, q, p, PAGE_SIZE);
     renderPagination(pagerEl, hits.length, p, PAGE_SIZE, q);
 
-    // Make "disabled" pager links inert
+    // Inert disabled pager links
     pagerEl.querySelectorAll('.is-disabled').forEach(a => {
       a.setAttribute('aria-disabled', 'true');
       a.addEventListener('click', e => e.preventDefault());
