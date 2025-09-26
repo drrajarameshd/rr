@@ -44,15 +44,10 @@ description: "Available at Germanten Hospital (10am–5pm) & Care Clinic Attapur
   <div class="wrap">
     <header class="page-header">
       <h2>Latest posts</h2>
-     <form action="{{ '/search/' | relative_url }}" method="get" role="search" class="searchbar">
-  <span class="searchbar__icon" aria-hidden="true">
-    <!-- magnifier -->
-    <svg viewBox="0 0 24 24"><path d="M11 4a7 7 0 1 1-4.95 11.95L3.7 18.3a1 1 0 0 1-1.4-1.4l2.35-2.35A7 7 0 0 1 11 4zm0 2a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></svg>
-  </span>
-  <input id="q" name="q" type="search" placeholder="Search diabetes, thyroid, fever…" value="{{ page.q | default: '' }}" />
-  <button class="searchbar__clear" type="button" aria-label="Clear search" title="Clear" hidden>×</button>
-  <button class="btn btn--primary" type="submit">Search</button>
-</form>
+      <form action="{{ '/search/' | relative_url }}" method="get" role="search" class="search-form">
+    <input id="q" name="q" type="search" placeholder="Search diabetes, thyroid, fever…" value="{{ page.q | default: '' }}" class="input" />
+    <button class="btn btn--primary" type="submit">Search</button>
+    </form>
 
 
       <p class="page-description">Helpful articles and patient guides from Care Clinic.</p>
