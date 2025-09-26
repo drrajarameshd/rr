@@ -1,86 +1,181 @@
 (function () {
-  // Get query (?q=) from URL
-  function getQuery() {
+  // ---------- Config ----------
+  const PAGE_SIZE = 10;
+  const FALLBACK_THUMB = '{{ "/assets/images/posts/thumbs/thumbnail.webp" | relative_url }}';
+  const SEARCH_JSON = '{{ "/search.json" | relative_url }}';
+
+  // ---------- Helpers ----------
+  function getParams() {
     const p = new URLSearchParams(window.location.search);
-    return (p.get('q') || '').trim();
+    return {
+      q: (p.get('q') || '').trim(),
+      p: Math.max(1, parseInt(p.get('p') || '1', 10) || 1),
+    };
+  }
+
+  function setParamUrl(q, page) {
+    const u = new URL(window.location);
+    const params = u.searchParams;
+    q ? params.set('q', q) : params.delete('q');
+    (page && page > 1) ? params.set('p', page) : params.delete('p');
+    u.search = params.toString();
+    return u.toString();
   }
 
   function escapeHtml(s) {
-    return s.replace(/[&<>"'`=\/]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;','/':'&#x2F;','`':'&#x60;','=':'&#x3D;'}[c]));
+    return (s || '').replace(/[&<>"'`=\/]/g, c => ({
+      '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;','/':'&#x2F;','`':'&#x60;','=':'&#x3D;'
+    }[c]));
+  }
+
+  function regexFromTerms(q) {
+    const terms = (q || '').split(/\s+/).filter(Boolean)
+      .map(t => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+    return terms.length ? new RegExp('(' + terms.join('|') + ')', 'ig') : null;
   }
 
   function highlight(text, q) {
-    if (!q) return escapeHtml(text);
-    const terms = q.split(/\s+/).filter(Boolean).map(t => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
-    if (!terms.length) return escapeHtml(text);
-    const rx = new RegExp('(' + terms.join('|') + ')', 'ig');
-    return escapeHtml(text).replace(rx, '<mark>$1</mark>');
+    const rx = regexFromTerms(q);
+    if (!rx) return escapeHtml(text || '');
+    return escapeHtml(text || '').replace(rx, '<mark>$1</mark>');
   }
 
+  function normalizeThumbnail(src) {
+    if (src && src.trim() !== '' && !/null|undefined/i.test(src)) return src;
+    return FALLBACK_THUMB;
+  }
+
+  function formatDate(iso) {
+    try {
+      return new Date(iso).toLocaleDateString(undefined, {year:'numeric', month:'short', day:'numeric'});
+    } catch { return ''; }
+  }
+
+  // ---------- Rendering ----------
+  function renderTags(tags, q) {
+    if (!Array.isArray(tags) || !tags.length) return '';
+    const chips = tags.slice(0, 12).map(t => `<span class="tag">${highlight(String(t), q)}</span>`).join('');
+    return `<div class="tags">${chips}</div>`;
+  }
+
+  function renderItem(post, q) {
+    const title = highlight(post.title, q);
+    const desc  = highlight(post.excerpt || '', q);
+    const date  = formatDate(post.date);
+    const thumb = normalizeThumbnail(post.thumbnail);
+
+    return `
+      <li class="post-item" itemscope itemtype="http://schema.org/BlogPosting">
+        <a class="thumb" href="${post.url}" aria-hidden="true" tabindex="-1">
+          <img src="${thumb}" alt="" loading="lazy" width="200" height="120">
+        </a>
+        <div class="post-meta">
+          <h3 class="post-link" itemprop="headline">
+            <a href="${post.url}">${title}</a>
+          </h3>
+          <div class="meta"><time datetime="${post.date}" itemprop="datePublished">${date}</time></div>
+          ${renderTags(post.tags, q)}
+          <p class="excerpt" itemprop="description">${desc}</p>
+          <p style="margin-top:.55rem;"><a class="btn btn--primary" href="${post.url}">Read more</a></p>
+        </div>
+      </li>`;
+  }
+
+  function renderList(hits, q, page, pageSize) {
+    const start = (page - 1) * pageSize;
+    const pageItems = hits.slice(start, start + pageSize);
+    return pageItems.map(post => renderItem(post, q)).join('');
+  }
+
+  function renderPagination(container, total, page, pageSize, q) {
+    const totalPages = Math.max(1, Math.ceil(total / pageSize));
+    if (totalPages <= 1) { container.hidden = true; return; }
+
+    const prev = container.querySelector('#prevPage');
+    const next = container.querySelector('#nextPage');
+    const info = container.querySelector('#pagerInfo');
+
+    prev.classList.toggle('is-disabled', page <= 1);
+    next.classList.toggle('is-disabled', page >= totalPages);
+
+    prev.href = page > 1 ? setParamUrl(q, page - 1) : '#';
+    next.href = page < totalPages ? setParamUrl(q, page + 1) : '#';
+
+    info.textContent = `Page ${page} of ${totalPages}`;
+    container.hidden = false;
+  }
+
+  // ---------- Main ----------
   async function run() {
+    const { q, p } = getParams();
+
     const qInput = document.querySelector('input#q');
-    const q = getQuery();
     if (qInput && !qInput.value) qInput.value = q;
 
     const status = document.getElementById('search-status');
-    const list = document.getElementById('results');
-    if (!list) return;
+    const listEl = document.getElementById('results');
+    const pagerEl = document.getElementById('pager');
+    if (!listEl) return;
 
     if (!q) {
       status.textContent = 'Type above and press Enter to search all posts.';
-      list.innerHTML = '';
+      listEl.innerHTML = '';
+      pagerEl.hidden = true;
       return;
     }
 
     status.textContent = 'Searching…';
 
-    // Fetch index
-    const res = await fetch('{{ "/search.json" | relative_url }}', {cache: 'no-store'});
+    const res = await fetch(SEARCH_JSON, { cache: 'no-store' });
     const data = await res.json();
 
-    // Build lunr index
+    // Build index
     const idx = lunr(function () {
       this.ref('id');
       this.field('title', { boost: 10 });
       this.field('tags',  { boost: 6 });
       this.field('excerpt', { boost: 3 });
       this.field('content');
-      data.docs.forEach(doc => this.add(doc), this);
+      data.docs.forEach(doc => this.add({
+        ...doc,
+        tags: (doc.tags || []).join(' ')
+      }), this);
     });
 
-    // Query with tolerance: boost exact, fallback to partials
-    let results = idx.search(q + ' ^' + q + ' ' + q.split(/\s+/).map(t => t + '*').join(' '));
+    // Query + tolerant partials
+    const star = q.split(/\s+/).filter(Boolean).map(t => t + '*').join(' ');
+    let results = [];
+    try {
+      results = idx.search(`${q} ^${q} ${star}`);
+    } catch {
+      // Fallback if Lunr query throws on special chars
+      results = idx.search(star || q);
+    }
+
     const hits = results.map(r => data.docs[parseInt(r.ref, 10)]);
 
-    // Render
     if (!hits.length) {
       status.textContent = `No matches for “${q}”.`;
-      list.innerHTML = '';
+      listEl.innerHTML = '';
+      pagerEl.hidden = true;
       return;
     }
 
-    status.textContent = `${hits.length} result${hits.length>1?'s':''} for “${q}”`;
-    const html = hits.slice(0, 50).map(post => {
-      const title = highlight(post.title, q);
-      const desc  = highlight(post.excerpt || '', q);
-      const date  = new Date(post.date).toLocaleDateString(undefined, {year:'numeric', month:'short', day:'numeric'});
-      return `
-        <li class="post-item" itemscope itemtype="http://schema.org/BlogPosting">
-          <div class="post-meta">
-            <h3 class="post-link" itemprop="headline">
-              <a href="${post.url}">${title}</a>
-            </h3>
-            <div class="meta"><time datetime="${post.date}" itemprop="datePublished">${date}</time></div>
-            <p class="excerpt" itemprop="description">${desc}</p>
-            <p style="margin-top:.55rem;"><a class="btn btn--primary" href="${post.url}">Read more</a></p>
-          </div>
-        </li>`;
-    }).join('');
-    list.innerHTML = html;
+    status.textContent = `${hits.length} result${hits.length > 1 ? 's' : ''} for “${q}”`;
+
+    // Render current page
+    listEl.innerHTML = renderList(hits, q, p, PAGE_SIZE);
+    renderPagination(pagerEl, hits.length, p, PAGE_SIZE, q);
+
+    // Enhance keyboard nav on disabled links
+    pagerEl.querySelectorAll('.is-disabled').forEach(a => {
+      a.setAttribute('aria-disabled', 'true');
+      a.addEventListener('click', e => e.preventDefault());
+    });
   }
 
-  // Run when Lunr loaded
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', run);
   } else { run(); }
 })();
+
