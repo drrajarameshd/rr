@@ -56,7 +56,7 @@ description: "Available at Germanten Hospital (10am–5pm) & Care Clinic Attapur
     {% if paginator.posts == empty %}
       <p>No posts found yet. Check that your posts are in <code>_posts/</code> and not future-dated.</p>
     {% else %}
-      <ul class="post-list" aria-live="polite">
+      <article class="post-list" aria-live="polite">
         {% for post in paginator.posts %}
           <article class="post-item" itemscope itemtype="http://schema.org/BlogPosting">
             {% if post.thumbnail %}
@@ -83,7 +83,7 @@ description: "Available at Germanten Hospital (10am–5pm) & Care Clinic Attapur
             </div>
           </article>
         {% endfor %}
-      </ul>
+      </article>
 
       {% if paginator.total_pages > 1 %}
         <nav class="pagination" role="navigation" aria-label="Pagination">
