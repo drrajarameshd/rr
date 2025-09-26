@@ -70,7 +70,7 @@
     const thumb = normalizeThumbnail(post.thumbnail);
 
     return `
-      <li class="post-item" itemscope itemtype="http://schema.org/BlogPosting">
+      <article class="post-item" itemscope itemtype="http://schema.org/BlogPosting">
         <a class="thumb" href="${post.url}" aria-hidden="true" tabindex="-1">
           <img src="${thumb}" alt="" loading="lazy" width="200" height="120">
         </a>
@@ -83,7 +83,7 @@
           <p class="excerpt" itemprop="description">${desc}</p>
           <p style="margin-top:.55rem;"><a class="btn btn--primary" href="${post.url}">Read more</a></p>
         </div>
-      </li>`;
+      </article>`;
   }
 
   function renderList(hits, q, page, pageSize) {
