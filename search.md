@@ -26,5 +26,5 @@ permalink: /search/
 </section>
 
 <!-- Scripts -->
-<script src="{{ '/assets/script/lunr.min.js' | relative_url }}" defer></script>
-<script src="{{ '/assets/script/search.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/lunr.min.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/search.js' | relative_url }}" defer></script>
