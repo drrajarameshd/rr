@@ -45,7 +45,17 @@ img{max-width:100%;display:block}
 :where(a,button,input,textarea,select):focus{outline:3px solid color-mix(in srgb, var(--primary) 20%, white);outline-offset:2px}
 
 /* ========= HEADER / BRAND ========= */
-.header-inner{display:flex;align-items:center;justify-content:space-between;padding:1rem 0;gap:1rem}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  padding: 1rem 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
 .brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:inherit}
 .logo{width:56px;height:56px;border-radius:10px;background:#fff;border:1px solid rgba(0,0,0,.06);padding:8px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
 .brand-text h1{font-size:1.1rem;margin:0}
@@ -230,27 +240,7 @@ input:focus,textarea:focus{outline:2px solid var(--primary-600);border-color:var
   .timeline::before{left:28px}
   .timeline-item{display:block;margin:18px 0;padding-left:0}
   .timeline-marker{position:absolute;left:12px;top:6px;width:40px;height:40px;border-radius:8px}
-  .timeline-item .edu-card{margin-left:0;padding-left:64px;padding-right:12px;width:100%}
-
-  .container.header-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem;
-  }
-
-  .container.header-inner .nav {
-    width: 100%;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 0.8rem;
-  }
-
-  .container.header-inner .nav-list {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0.8rem;
-  }
-   
+  .timeline-item .edu-card{margin-left:0;padding-left:64px;padding-right:12px;width:100%}   
 }
 
 /* <= 400px - small phones (core adjustments for compact screens) */
@@ -273,7 +263,7 @@ input:focus,textarea:focus{outline:2px solid var(--primary-600);border-color:var
   .footer-grid{grid-template-columns:1fr;gap:.6rem}
   .footer-bottom{flex-direction:column;align-items:flex-start;gap:.4rem}
   /* bottom nav shrink a bit */
-  .bottom-nav{height:60px;padding-top:4px;padding-bottom:calc(env(safe-area-inset-bottom,0px)+4px)}
+  .bottom-nav{height:60px;paddingtop:4px;padding-bottom:calc(env(safe-area-inset-bottom,0px)+4px)}
   .bottom-nav a{font-size:.72rem}
 }
 
