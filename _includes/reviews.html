@@ -1,228 +1,201 @@
-<!-- =========================
-     Google Reviews — Drop-in Snippet
-     Paste this anywhere inside <body>. No external libs.
-     ========================= -->
-
-<section class="reviews section container" aria-label="Patient reviews from Google">
-  <header class="reviews__head">
-    <div class="reviews__badge" aria-hidden="true">
-      <span class="stars" title="5 star rating" aria-label="5 star rating">
-        <!-- 5 SVG stars -->
-        <svg viewBox="0 0 24 24" class="star"><path d="M12 2.3l2.83 5.74 6.34.92-4.58 4.46 1.08 6.31L12 16.98 6.33 19.73l1.08-6.31L2.83 8.96l6.34-.92L12 2.3z"/></svg>
-        <svg viewBox="0 0 24 24" class="star"><path d="M12 2.3l2.83 5.74 6.34.92-4.58 4.46 1.08 6.31L12 16.98 6.33 19.73l1.08-6.31L2.83 8.96l6.34-.92L12 2.3z"/></svg>
-        <svg viewBox="0 0 24 24" class="star"><path d="M12 2.3l2.83 5.74 6.34.92-4.58 4.46 1.08 6.31L12 16.98 6.33 19.73l1.08-6.31L2.83 8.96l6.34-.92L12 2.3z"/></svg>
-        <svg viewBox="0 0 24 24" class="star"><path d="M12 2.3l2.83 5.74 6.34.92-4.58 4.46 1.08 6.31L12 16.98 6.33 19.73l1.08-6.31L2.83 8.96l6.34-.92L12 2.3z"/></svg>
-        <svg viewBox="0 0 24 24" class="star"><path d="M12 2.3l2.83 5.74 6.34.92-4.58 4.46 1.08 6.31L12 16.98 6.33 19.73l1.08-6.31L2.83 8.96l6.34-.92L12 2.3z"/></svg>
+<!-- _includes/reviews.html -->
+<section class="rr-reviews container" aria-label="Google reviews">
+  <header class="rr-reviews__head">
+    <div class="rr-chip" aria-hidden="true">
+      <span class="rr-stars" title="5 star rating">
+        <svg viewBox="0 0 24 24" class="rr-star"><path d="M12 2.3l2.83 5.74 6.34.92-4.58 4.46 1.08 6.31L12 16.98 6.33 19.73l1.08-6.31L2.83 8.96l6.34-.92L12 2.3z"/></svg>
+        <svg viewBox="0 0 24 24" class="rr-star"><path d="M12 2.3l2.83 5.74 6.34.92-4.58 4.46 1.08 6.31L12 16.98 6.33 19.73l1.08-6.31L2.83 8.96l6.34-.92L12 2.3z"/></svg>
+        <svg viewBox="0 0 24 24" class="rr-star"><path d="M12 2.3l2.83 5.74 6.34.92-4.58 4.46 1.08 6.31L12 16.98 6.33 19.73l1.08-6.31L2.83 8.96l6.34-.92L12 2.3z"/></svg>
+        <svg viewBox="0 0 24 24" class="rr-star"><path d="M12 2.3l2.83 5.74 6.34.92-4.58 4.46 1.08 6.31L12 16.98 6.33 19.73l1.08-6.31L2.83 8.96l6.34-.92L12 2.3z"/></svg>
+        <svg viewBox="0 0 24 24" class="rr-star"><path d="M12 2.3l2.83 5.74 6.34.92-4.58 4.46 1.08 6.31L12 16.98 6.33 19.73l1.08-6.31L2.83 8.96l6.34-.92L12 2.3z"/></svg>
       </span>
       <strong>5.0</strong> on Google
     </div>
 
-    <a class="btn reviews__cta" href="https://maps.app.goo.gl/tnZVczhkgeUxWYJ38" target="_blank" rel="noopener"
-       aria-label="Open Dr. Raja Ramesh Google Business profile to read all reviews">
-      Read all on Google
-    </a>
+    <a class="rr-btn" href="https://maps.app.goo.gl/tnZVczhkgeUxWYJ38" target="_blank" rel="noopener"
+       aria-label="Open Dr. Raja Ramesh Google Business profile">Read all on Google</a>
   </header>
 
-  <!-- Tip: Paste any 5 reviews below (keep <p> content). Names/dates are optional -->
-  <div class="reviews__track" role="list">
+  <div class="rr-track" role="list">
     <!-- CARD 1 -->
-    <article class="review card fade" role="listitem" tabindex="0" data-rating="5">
-      <div class="review__top">
-        <div class="review__avatar" aria-hidden="true">A</div>
-        <div class="review__meta">
-          <h3 class="review__name">Asha K</h3>
-          <div class="review__row">
-            <span class="stars mini" aria-label="5 out of 5 stars">
-              <i></i><i></i><i></i><i></i><i></i>
-            </span>
-            <time class="review__date" datetime="2025-08-12">Aug 12, 2025</time>
+    <article class="rr-card rr-fade" role="listitem" tabindex="0" data-rating="5">
+      <div class="rr-top">
+        <div class="rr-avatar" aria-hidden="true">A</div>
+        <div class="rr-meta">
+          <h3 class="rr-name">Asha K</h3>
+          <div class="rr-row">
+            <span class="rr-stars-mini" aria-label="5 out of 5"><i></i><i></i><i></i><i></i><i></i></span>
+            <time class="rr-date" datetime="2025-08-12">Aug 12, 2025</time>
           </div>
         </div>
       </div>
-      <p class="review__text">
-        <!-- Paste review text -->
-        Dr. Raja Ramesh listened patiently and explained everything clearly. My sugars are finally under control. Highly recommended!
-      </p>
+      <p class="rr-text">Dr. Raja Ramesh listened patiently and explained everything clearly. My sugars are finally under control. Highly recommended!</p>
     </article>
 
     <!-- CARD 2 -->
-    <article class="review card fade" role="listitem" tabindex="0" data-rating="5">
-      <div class="review__top">
-        <div class="review__avatar" aria-hidden="true">S</div>
-        <div class="review__meta">
-          <h3 class="review__name">Sameer P</h3>
-          <div class="review__row">
-            <span class="stars mini" aria-label="5 out of 5 stars"><i></i><i></i><i></i><i></i><i></i></span>
-            <time class="review__date" datetime="2025-07-22">Jul 22, 2025</time>
+    <article class="rr-card rr-fade" role="listitem" tabindex="0" data-rating="5">
+      <div class="rr-top">
+        <div class="rr-avatar" aria-hidden="true">S</div>
+        <div class="rr-meta">
+          <h3 class="rr-name">Sameer P</h3>
+          <div class="rr-row">
+            <span class="rr-stars-mini" aria-label="5 out of 5"><i></i><i></i><i></i><i></i><i></i></span>
+            <time class="rr-date" datetime="2025-07-22">Jul 22, 2025</time>
           </div>
         </div>
       </div>
-      <p class="review__text">Very knowledgeable physician. Staff is polite and clinic is neat. Five stars!</p>
+      <p class="rr-text">Very knowledgeable physician. Staff is polite and clinic is neat. Five stars!</p>
     </article>
 
     <!-- CARD 3 -->
-    <article class="review card fade" role="listitem" tabindex="0" data-rating="5">
-      <div class="review__top">
-        <div class="review__avatar" aria-hidden="true">N</div>
-        <div class="review__meta">
-          <h3 class="review__name">Neha R</h3>
-          <div class="review__row">
-            <span class="stars mini" aria-label="5 out of 5 stars"><i></i><i></i><i></i><i></i><i></i></span>
-            <time class="review__date" datetime="2025-06-09">Jun 9, 2025</time>
+    <article class="rr-card rr-fade" role="listitem" tabindex="0" data-rating="5">
+      <div class="rr-top">
+        <div class="rr-avatar" aria-hidden="true">N</div>
+        <div class="rr-meta">
+          <h3 class="rr-name">Neha R</h3>
+          <div class="rr-row">
+            <span class="rr-stars-mini" aria-label="5 out of 5"><i></i><i></i><i></i><i></i><i></i></span>
+            <time class="rr-date" datetime="2025-06-09">Jun 9, 2025</time>
           </div>
         </div>
       </div>
-      <p class="review__text">Accurate diagnosis and practical advice. The 30‑min walk tip changed my routine.</p>
+      <p class="rr-text">Accurate diagnosis and practical advice. The 30‑min walk tip changed my routine.</p>
     </article>
 
     <!-- CARD 4 -->
-    <article class="review card fade" role="listitem" tabindex="0" data-rating="5">
-      <div class="review__top">
-        <div class="review__avatar" aria-hidden="true">V</div>
-        <div class="review__meta">
-          <h3 class="review__name">Vijay M</h3>
-          <div class="review__row">
-            <span class="stars mini" aria-label="5 out of 5 stars"><i></i><i></i><i></i><i></i><i></i></span>
-            <time class="review__date" datetime="2025-05-18">May 18, 2025</time>
+    <article class="rr-card rr-fade" role="listitem" tabindex="0" data-rating="5">
+      <div class="rr-top">
+        <div class="rr-avatar" aria-hidden="true">V</div>
+        <div class="rr-meta">
+          <h3 class="rr-name">Vijay M</h3>
+          <div class="rr-row">
+            <span class="rr-stars-mini" aria-label="5 out of 5"><i></i><i></i><i></i><i></i><i></i></span>
+            <time class="rr-date" datetime="2025-05-18">May 18, 2025</time>
           </div>
         </div>
       </div>
-      <p class="review__text">Genuine care and clear plan for diabetes and BP. Thank you, doctor.</p>
+      <p class="rr-text">Genuine care and clear plan for diabetes and BP. Thank you, doctor.</p>
     </article>
 
     <!-- CARD 5 -->
-    <article class="review card fade" role="listitem" tabindex="0" data-rating="5">
-      <div class="review__top">
-        <div class="review__avatar" aria-hidden="true">F</div>
-        <div class="review__meta">
-          <h3 class="review__name">Farah S</h3>
-          <div class="review__row">
-            <span class="stars mini" aria-label="5 out of 5 stars"><i></i><i></i><i></i><i></i><i></i></span>
-            <time class="review__date" datetime="2025-04-02">Apr 2, 2025</time>
+    <article class="rr-card rr-fade" role="listitem" tabindex="0" data-rating="5">
+      <div class="rr-top">
+        <div class="rr-avatar" aria-hidden="true">F</div>
+        <div class="rr-meta">
+          <h3 class="rr-name">Farah S</h3>
+          <div class="rr-row">
+            <span class="rr-stars-mini" aria-label="5 out of 5"><i></i><i></i><i></i><i></i><i></i></span>
+            <time class="rr-date" datetime="2025-04-02">Apr 2, 2025</time>
           </div>
         </div>
       </div>
-      <p class="review__text">Professional, punctual, and friendly. Clinic at Attapur is easy to reach.</p>
+      <p class="rr-text">Professional, punctual, and friendly. Clinic at Attapur is easy to reach.</p>
     </article>
   </div>
 
-  <!-- Whole block acts as a link on tap/click -->
-  <a class="reviews__overlay-link" href="https://maps.app.goo.gl/tnZVczhkgeUxWYJ38" target="_blank" rel="noopener"
-     aria-label="Open Dr. Raja Ramesh Google Business profile"></a>
+  <!-- Make the whole section clickable (but not the top button) -->
+  <a class="rr-overlay" href="https://maps.app.goo.gl/tnZVczhkgeUxWYJ38" target="_blank" rel="noopener"
+     aria-label="Open Google Business Profile"></a>
 </section>
 
 <style>
-/* ========== Google Reviews block (uses your theme vars) ========== */
-.reviews{position:relative;margin:2rem auto}
-.reviews__head{
+/* ============ rr-reviews (scoped) ============ */
+:where(.rr-reviews){position:relative;margin:2rem auto}
+:where(.rr-reviews__head){
   display:flex;align-items:center;justify-content:space-between;gap:.75rem;margin-bottom:1rem
 }
-.reviews__badge{
+:where(.rr-chip){
   display:inline-flex;align-items:center;gap:.6rem;
   background:var(--primary-100);color:var(--primary-dark);
   padding:.5rem .75rem;border-radius:999px;font-weight:600;border:1px solid rgba(0,0,0,.06)
 }
-.reviews__badge .stars{display:inline-flex;gap:.15rem;position:relative}
-.reviews__badge .star{width:18px;height:18px;fill:var(--primary)}
-/* Shimmer across stars */
-.reviews__badge .stars::after{
+:where(.rr-chip .rr-stars){display:inline-flex;gap:.15rem;position:relative}
+:where(.rr-chip .rr-star){width:18px;height:18px;fill:var(--primary)}
+:where(.rr-chip .rr-stars)::after{
   content:"";position:absolute;inset:0;transform:skewX(-20deg) translateX(-120%);
   background:linear-gradient(90deg,transparent,rgba(255,255,255,.9),transparent);
-  animation:shine 2.6s linear infinite
+  animation:rr-shine 2.6s linear infinite
 }
-@keyframes shine{to{transform:skewX(-20deg) translateX(120%)}}
+@keyframes rr-shine{to{transform:skewX(-20deg) translateX(120%)}}
 
-.reviews__cta{white-space:nowrap}
+:where(.rr-btn){
+  display:inline-flex;align-items:center;justify-content:center;
+  background:var(--primary);color:#fff;padding:.6rem 1rem;border-radius:10px;
+  box-shadow:0 6px 18px rgba(51,104,198,0.14);text-decoration:none;font-weight:600;
+}
+:where(.rr-btn:hover){transform:translateY(-2px)}
 
-/* Cards track: grid on desktop, snap carousel on mobile */
-.reviews__track{
+:where(.rr-track){
   display:grid;grid-template-columns:repeat(5,1fr);gap:var(--gap);
   scroll-snap-type:x mandatory;overflow-x:auto;padding-bottom:.25rem
 }
-@media (max-width:992px){
-  .reviews__track{grid-auto-flow:column;grid-auto-columns:80%;scroll-padding:1rem}
-}
-@media (max-width:600px){
-  .reviews__track{grid-auto-columns:88%}
-}
+@media (max-width:992px){:where(.rr-track){grid-auto-flow:column;grid-auto-columns:80%;scroll-padding:1rem}}
+@media (max-width:600px){:where(.rr-track){grid-auto-columns:88%}}
 
-/* Review card */
-.review{
+:where(.rr-card){
   background:var(--card);border:1px solid rgba(0,0,0,.06);border-radius:var(--radius);
   padding:1rem;box-shadow:0 8px 24px rgba(15,23,36,.05);
   scroll-snap-align:start;position:relative;isolation:isolate;
-  transform:translateY(6px);opacity:0; /* will animate into view */
+  transform:translateY(6px);opacity:0
 }
-.review.show{transform:translateY(0);opacity:1;transition:all .6s cubic-bezier(.2,.8,.2,1)}
-.review:hover{transform:translateY(-2px)}
-.review:focus{outline:2px solid var(--primary-600)}
-
-/* Subtle float animation (reduced motion respected via your global rule) */
-.review{animation:float 6s ease-in-out infinite alternate .4s}
-@keyframes float{
-  from{translate:0 0}
-  to{translate:0 -2px}
+:where(.rr-card.rr-show){transform:translateY(0);opacity:1;transition:all .6s cubic-bezier(.2,.8,.2,1)}
+:where(.rr-card:hover){transform:translateY(-2px)}
+:where(.rr-card:focus){outline:2px solid var(--primary-600)}
+@media (prefers-reduced-motion:reduce){
+  :where(.rr-card){transform:none!important}
+  :where(.rr-card.rr-show){transition:none!important}
+  :where(.rr-chip .rr-stars)::after{animation:none!important}
 }
 
-.review__top{display:flex;align-items:center;gap:.7rem;margin-bottom:.6rem}
-.review__avatar{
+:where(.rr-top){display:flex;align-items:center;gap:.7rem;margin-bottom:.6rem}
+:where(.rr-avatar){
   width:40px;height:40px;border-radius:50%;display:grid;place-items:center;
   background:var(--primary-100);color:var(--primary-dark);font-weight:700;flex:0 0 40px
 }
-.review__meta{min-width:0}
-.review__name{margin:.05rem 0;font-size:1rem;color:var(--primary-dark)}
-.review__row{display:flex;align-items:center;gap:.5rem;color:var(--muted);font-size:.88rem}
+:where(.rr-name){margin:.05rem 0;font-size:1rem;color:var(--primary-dark)}
+:where(.rr-row){display:flex;align-items:center;gap:.5rem;color:var(--muted);font-size:.88rem}
 
-/* Mini stars for each card (pure CSS) */
-.stars.mini{display:inline-flex;gap:.12rem}
-.stars.mini i{
+:where(.rr-stars-mini){display:inline-flex;gap:.12rem}
+:where(.rr-stars-mini i){
   width:14px;height:14px;display:inline-block;mask:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox=\\'0 0 24 24\\'><path d=\\'M12 2.3l2.83 5.74 6.34.92-4.58 4.46 1.08 6.31L12 16.98 6.33 19.73l1.08-6.31L2.83 8.96l6.34-.92L12 2.3z\\'/></svg>') center/contain no-repeat;
   -webkit-mask:inherit;background:var(--primary)
 }
+:where(.rr-text){margin:.25rem 0 0;color:#153145;line-height:1.55}
 
-.review__text{margin:.25rem 0 0;color:#153145;line-height:1.5}
-
-/* Overlay link so anywhere the user clicks opens Google (keeps SEO/UX) */
-.reviews__overlay-link{
-  position:absolute;inset:0;z-index:1;border-radius:var(--radius);
-  /* prevents overlay from blocking the top CTAs */
-  pointer-events:none
+:where(.rr-overlay){
+  position:absolute;inset:0;border-radius:var(--radius);z-index:1;pointer-events:none
 }
-.reviews:hover .reviews__overlay-link{pointer-events:auto}
+:where(.rr-reviews:hover .rr-overlay){pointer-events:auto}
+:where(.rr-reviews__head .rr-btn){position:relative;z-index:2}
 
-/* Nice focus within: allow buttons/links to stay clickable */
-.reviews__head .reviews__cta{position:relative;z-index:2}
-
-/* Tweak for dark text on light background in your footer palette */
-:where(.professional-footer) .reviews .review__text{color:#153145}
+/* optional gentle bobbing (kept tiny) */
+:where(.rr-card){animation:rr-float 6s ease-in-out infinite alternate .4s}
+@keyframes rr-float{from{translate:0 0} to{translate:0 -2px}}
+@media (prefers-reduced-motion:reduce){:where(.rr-card){animation:none!important}}
 </style>
 
 <script>
-/* ===== Reviews: fade-in on view & safe overlay click ===== */
+/* _includes/reviews.html logic (no globals leaked) */
 (function(){
-  // Fade-in effect
-  const cards = document.querySelectorAll('.review.fade');
+  const root = document.currentScript?.previousElementSibling?.previousElementSibling?.previousElementSibling?.closest('.rr-reviews')
+            || document.querySelector('.rr-reviews');
+  if(!root) return;
+
+  // Fade-in on view
+  const cards = root.querySelectorAll('.rr-card.rr-fade');
   const io = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{
-      if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); }
+      if(e.isIntersecting){ e.target.classList.add('rr-show'); io.unobserve(e.target); }
     });
-  }, {threshold: .2});
+  }, {threshold:.2});
   cards.forEach(c=>io.observe(c));
 
-  // Make the whole block clickable BUT keep header CTA priority
-  const block = document.querySelector('.reviews');
-  const overlay = block?.querySelector('.reviews__overlay-link');
-  block?.addEventListener('click', (ev)=>{
-    const isHeadCTA = ev.target.closest('.reviews__cta');
-    if(isHeadCTA) return; // let the button handle it
+  // Click anywhere to open GBP, but allow the top button to work normally
+  const overlay = root.querySelector('.rr-overlay');
+  root.addEventListener('click', (ev)=>{
+    if(ev.target.closest('.rr-reviews__head')) return;
     overlay?.click();
-  });
+  }, {passive:true});
 })();
 </script>
 
-<!-- =========================
-     How to use:
-     1) Replace names/dates/text with your 5 real Google review snippets.
-     2) The top-right button and card clicks open your GBP link.
-     3) This block inherits your CSS variables; place after your main CSS.
-     ========================= -->
