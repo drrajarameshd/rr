@@ -45,7 +45,7 @@ img{max-width:100%;display:block}
 :where(a,button,input,textarea,select):focus{outline:3px solid color-mix(in srgb, var(--primary) 20%, white);outline-offset:2px}
 
 /* ========= HEADER / BRAND ========= */
-
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:1rem 0;gap:1rem}
 .brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:inherit}
 .logo{width:56px;height:56px;border-radius:10px;background:#fff;border:1px solid rgba(0,0,0,.06);padding:8px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
 .brand-text h1{font-size:1.1rem;margin:0}
