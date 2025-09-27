@@ -46,30 +46,6 @@ img{max-width:100%;display:block}
 
 /* ========= HEADER / BRAND ========= */
 
-/* 1) Move stickiness to the container */
-.site-header{
-  position: sticky;
-  top: 0;
-  z-index: 1100;
-  
-  /* Glass effect */
-  background: rgba(255,255,255,.55);              /* translucent base */
-  backdrop-filter: blur(8px) saturate(140%);
-  -webkit-backdrop-filter: blur(8px) saturate(140%);
-  border-bottom: 1px solid rgba(0,0,0,.06);
-  box-shadow: 0 6px 24px rgba(15,23,36,.06);
-}
-
-/* 2) Keep your existing layout for the inner row */
-header-inner{display:flex;align-items:center;justify-content:space-between;padding:1rem 0;gap:1rem};position: static;}
-
-/* 3) Keep your animated dots layer *under* the glass */
-.site-header{ position: sticky; overflow: hidden; } /* keep overflow for your ::after art */
-.site-header::after{ z-index: 0; pointer-events:none; }
-
-/* 4) Ensure content sits above the animated layer */
-.header-inner{ position: relative; z-index: 1; }
-
 .brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:inherit}
 .logo{width:56px;height:56px;border-radius:10px;background:#fff;border:1px solid rgba(0,0,0,.06);padding:8px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
 .brand-text h1{font-size:1.1rem;margin:0}
