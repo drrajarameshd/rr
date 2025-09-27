@@ -24,16 +24,9 @@
   --radius: 12px;
   --container: 1100px;
   --gap: 1.25rem;
+
   --nav-height: 64px;
   --bottom-nav-height: 64px;
-   
-  --btn-bg: var(--primary, #3368c6);
-  --btn-bg-dark: var(--primary-600, #2f5fb7);
-  --btn-bg-soft: var(--primary-100, rgba(51,104,198,.08));
-  --btn-text: #fff;
-  --btn-muted: var(--muted, #6b7280);
-  --btn-ring: color-mix(in srgb, var(--primary, #3368c6) 45%, white);
-   
 
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   box-sizing: border-box;
@@ -72,164 +65,17 @@ img{max-width:100%;display:block}
 .hero-text p{margin:0 0 1rem;color:var(--muted)}
 
 /* Buttons (single source of truth) */
-/* ---------- Pill Button System ---------- */
+.btn-container{display:inline-flex;gap:0.5rem;align-items:center}
 .btn{
-  -webkit-tap-highlight-color: transparent;
-  appearance: none;
-  border: 0;
-  outline: 0;
-  cursor: pointer;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: .55rem;
-
-  padding: clamp(.55rem, 1.2vw + .25rem, .85rem) clamp(.95rem, 2vw + .35rem, 1.35rem);
-  font: 600 clamp(.9rem, .25vw + .85rem, 1rem)/1 var(--font-sans, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial);
-  letter-spacing: .01em;
-
-  border-radius: 999px; /* pill */
-  background: var(--btn-bg);
-  color: var(--btn-text);
-  box-shadow:
-    0 .5px 0 rgba(0,0,0,.12) inset,
-    0 6px 14px rgba(51,104,198,.20);
-  transition:
-    transform .15s ease,
-    box-shadow .2s ease,
-    background-color .2s ease,
-    opacity .2s ease,
-    color .2s ease;
+  display:inline-flex;align-items:center;justify-content:center;
+  background:var(--primary);color:#fff;padding:0.6rem 1rem;border-radius:10px;text-decoration:none;
+  box-shadow:0 6px 18px rgba(51,104,198,0.14);transition:transform .14s ease;text-align:center;margin:0;
+  font-weight:600;line-height:1;white-space:nowrap;min-width:0; /* min-width:0 ensures proper flex shrink */
 }
-
-/* Hover / Active */
-.btn:hover{ transform: translateY(-1px); box-shadow:
-    0 .5px 0 rgba(0,0,0,.12) inset,
-    0 10px 20px rgba(51,104,198,.26); }
-.btn:active{ transform: translateY(0); box-shadow:
-    0 .5px 0 rgba(0,0,0,.12) inset,
-    0 4px 10px rgba(51,104,198,.20); }
-
-/* Focus ring (keyboard) */
-.btn:focus-visible{
-  outline: 0;
-  box-shadow:
-    0 0 0 2px #fff,
-    0 0 0 5px var(--btn-ring),
-    0 8px 18px rgba(51,104,198,.25);
-}
-
-/* Disabled */
-.btn[disabled], .btn:disabled{
-  opacity: .55;
-  cursor: not-allowed;
-  transform: none !important;
-  box-shadow:
-    0 .5px 0 rgba(0,0,0,.06) inset,
-    0 2px 6px rgba(0,0,0,.06);
-}
-
-/* ---------- Variants ---------- */
-.btn-primary{ /* default look already primary */
-  background: linear-gradient(180deg,
-    color-mix(in srgb, var(--primary, #3368c6) 96%, white) 0%,
-    var(--primary, #3368c6) 100%);
-}
-.btn-primary:hover{ background: linear-gradient(180deg,
-    color-mix(in srgb, var(--primary, #3368c6) 98%, white) 0%,
-    var(--primary-600, #2f5fb7) 100%); }
-
-.btn-outline{
-  background: transparent;
-  color: var(--primary-dark, #264a94);
-  border: 1.5px solid color-mix(in srgb, var(--primary, #3368c6) 65%, transparent);
-  box-shadow: none;
-}
-.btn-outline:hover{
-  background: var(--primary-100, rgba(51,104,198,.08));
-}
-
-.btn-ghost{
-  background: transparent;
-  color: var(--text, #0f1724);
-  box-shadow: none;
-}
-.btn-ghost:hover{
-  background: var(--card, #f9fbfd);
-}
-
-.btn-soft{
-  background: var(--primary-100, rgba(51,104,198,.08));
-  color: var(--primary-dark, #264a94);
-  box-shadow: none;
-}
-.btn-soft:hover{
-  background: color-mix(in srgb, var(--primary-100, rgba(51,104,198,.08)) 70%, white);
-}
-
-.btn-gradient{
-  background: linear-gradient(135deg, var(--bottom-nav-start, #3368c6), var(--bottom-nav-end, #5b9bd5));
-}
-.btn-gradient:hover{
-  filter: brightness(1.02);
-}
-
-/* Elevated (extra depth) */
-.btn-elevated{
-  box-shadow:
-    0 .5px 0 rgba(0,0,0,.12) inset,
-    0 12px 26px rgba(51,104,198,.28);
-}
-
-/* Destructive (red) — optional */
-.btn-danger{
-  --btn-bg: #e02424;
-  --btn-bg-dark: #c81e1e;
-  background: linear-gradient(180deg, #f64747, #e02424);
-}
-.btn-danger:hover{ background: linear-gradient(180deg, #ff5b5b, #c81e1e); }
-
-/* ---------- Sizes ---------- */
-.btn-xs{ padding: .35rem .7rem; font-size: .8rem; }
-.btn-sm{ padding: .5rem .9rem; font-size: .9rem; }
-.btn-lg{ padding: .9rem 1.3rem; font-size: 1.05rem; }
-.btn-xl{ padding: 1.05rem 1.5rem; font-size: 1.15rem; }
-
-/* ---------- Icon handling ---------- */
-.btn .icon{
-  width: 1.1em; height: 1.1em; flex: 0 0 auto;
-  display: inline-block; line-height: 1;
-}
-.btn-icon{ /* square, icon-only */
-  padding: .6rem; width: auto; aspect-ratio: 1/1;
-}
-.btn-icon.btn-lg{ padding: .9rem; }
-
-/* ---------- Loading state ---------- */
-.btn[data-loading="true"]{
-  position: relative; pointer-events: none; opacity: .9;
-}
-.btn[data-loading="true"]::after{
-  content: "";
-  position: absolute; inset: 50% auto auto 50%;
-  width: 1em; height: 1em; margin: -.5em 0 0 -.5em;
-  border-radius: 50%;
-  border: 2px solid currentColor;
-  border-top-color: transparent;
-  animation: btnspin .8s linear infinite;
-}
-@keyframes btnspin{ to{ transform: rotate(360deg); } }
-
-/* ---------- Button group (optional) ---------- */
-.btn-group{ display: inline-flex; gap: .5rem; flex-wrap: wrap; }
-.btn-group .btn{ margin: 0; }
-
-/* ---------- Motion respect ---------- */
-@media (prefers-reduced-motion: reduce){
-  .btn{ transition: none; }
-  .btn:hover, .btn:active{ transform: none; }
-}
+.btn:hover{transform:translateY(-2px)}
+/* allow safe truncation on very small screens; add .allow-wrap to override */
+.btn{overflow:hidden;text-overflow:ellipsis}
+.btn.allow-wrap{white-space:normal;overflow:visible;text-overflow:clip}
 
 /* Hero image & mobile visiting card */
 .hero-image{display:flex;position:relative;align-items:center;justify-content:center}
@@ -369,7 +215,6 @@ input:focus,textarea:focus{outline:2px solid var(--primary-600);border-color:var
   .banner-inner{flex-direction:column;align-items:flex-start;gap:.9rem}
   .hero-text h2{font-size:1.25rem}
   .hero-text p{font-size:.94rem}
-
   /* hero image + card side-by-side for most tablets */
   .hero-image{display:flex;gap:.8rem;align-items:center;justify-content:flex-start}
   .hero-photo-circle{max-width:110px;min-width:88px;border-width:3px}
@@ -384,7 +229,7 @@ input:focus,textarea:focus{outline:2px solid var(--primary-600);border-color:var
   .timeline::before{left:28px}
   .timeline-item{display:block;margin:18px 0;padding-left:0}
   .timeline-marker{position:absolute;left:12px;top:6px;width:40px;height:40px;border-radius:8px}
-  .timeline-item .edu-card{margin-left:0;padding-left:64px;padding-right:12px;width:100%}   
+  .timeline-item .edu-card{margin-left:0;padding-left:64px;padding-right:12px;width:100%}
 }
 
 /* <= 400px - small phones (core adjustments for compact screens) */
@@ -407,7 +252,7 @@ input:focus,textarea:focus{outline:2px solid var(--primary-600);border-color:var
   .footer-grid{grid-template-columns:1fr;gap:.6rem}
   .footer-bottom{flex-direction:column;align-items:flex-start;gap:.4rem}
   /* bottom nav shrink a bit */
-  .bottom-nav{height:60px;paddingtop:4px;padding-bottom:calc(env(safe-area-inset-bottom,0px)+4px)}
+  .bottom-nav{height:60px;padding-top:4px;padding-bottom:calc(env(safe-area-inset-bottom,0px)+4px)}
   .bottom-nav a{font-size:.72rem}
 }
 
