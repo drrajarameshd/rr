@@ -78,7 +78,7 @@ img{max-width:100%;display:block}
   justify-content: center;
 
   padding: 0.55rem 1.4rem;
-  border-radius: 999px; /* Fully pill-shaped */
+  border-radius: 999px !important;
   background: var(--primary);
   color: #fff;
   font-weight: 600;
