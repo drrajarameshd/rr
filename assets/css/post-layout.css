@@ -56,6 +56,17 @@
   border-color: var(--primary-600,#2f5fb7);
   box-shadow: 0 0 0 4px var(--ring);
 }
+.search-status{
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--primary-dark);
+    border-radius: 8px;
+    margin: 2rem auto;
+    max-width: 600px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); 
+}
 
 /* Buttons — no border, pill style */
 .btn{
