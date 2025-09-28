@@ -74,28 +74,35 @@ img{max-width:100%;display:block}
 /* =========================
    Base Pill-Style Button
    ========================= */
+/* =========================
+   Base Pill-Style Button
+   ========================= */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
   padding: 0.55rem 1.4rem;
   border-radius: 999px !important;
+
   background: var(--primary);
+  color: #fff;
   font-weight: 600;
   font-size: 0.95rem;
   line-height: 1.2;
   text-decoration: none;
+
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   min-width: 0;
   cursor: pointer;
 
-  transition: transform 0.15s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
   box-shadow: 0 4px 14px rgba(51, 104, 198, 0.18);
+  transition: transform 0.15s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
 }
 
-/* Allow text wrap if needed */
+/* Text wrapping support */
 .btn.allow-wrap {
   white-space: normal;
   overflow: visible;
@@ -114,16 +121,19 @@ img{max-width:100%;display:block}
   box-shadow: 0 3px 8px rgba(51, 104, 198, 0.2);
 }
 
+/* Disabled */
+.btn.disabled,
+.btn:disabled {
+  opacity: 0.6;
+  pointer-events: none;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
 /* =========================
    Button Variants
    ========================= */
-
-/* Primary (default) */
-.btn.primary {
-  background: var(--primary);
-  color: #fff;
-  border: none;
-}
 
 /* Outline */
 .btn.outline {
@@ -163,7 +173,7 @@ img{max-width:100%;display:block}
 
 /* Gradient */
 .btn.gradient {
-  background: linear-gradient(135deg, #3368c6, #5a98f0);
+  background: linear-gradient(135deg, var(--primary), var(--primary-600));
   color: #fff;
   border: none;
 }
@@ -172,7 +182,7 @@ img{max-width:100%;display:block}
   box-shadow: 0 6px 22px rgba(51, 104, 198, 0.35);
 }
 
-/* Muted / Secondary */
+/* Muted / Neutral */
 .btn.muted {
   background: #f3f4f6;
   color: #374151;
@@ -184,7 +194,7 @@ img{max-width:100%;display:block}
   background: #e5e7eb;
 }
 
-/* Ghost */
+/* Ghost (transparent text button) */
 .btn.ghost {
   background: transparent;
   color: var(--primary);
@@ -196,15 +206,6 @@ img{max-width:100%;display:block}
   background: var(--primary-100);
 }
 
-/* Disabled */
-.btn.disabled,
-.btn:disabled {
-  opacity: 0.6;
-  pointer-events: none;
-  cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
-}
 
 /* Hero image & mobile visiting card */
 .hero-image{display:flex;position:relative;align-items:center;justify-content:center}
