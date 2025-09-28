@@ -2,12 +2,12 @@
 <section class="rr-reviews container" aria-label="Google reviews">
   <header class="rr-reviews__head">
     <div class="rr-chip" aria-hidden="true">
-      <span class="rr-stars" title="5 star rating">
-        <svg viewBox="0 0 24 24" class="rr-star"><path d="M12 2.3l2.83 5.74 6.34.92-4.58 4.46 1.08 6.31L12 16.98 6.33 19.73l1.08-6.31L2.83 8.96l6.34-.92L12 2.3z"/></svg>
-        <svg viewBox="0 0 24 24" class="rr-star"><path d="M12 2.3l2.83 5.74 6.34.92-4.58 4.46 1.08 6.31L12 16.98 6.33 19.73l1.08-6.31L2.83 8.96l6.34-.92L12 2.3z"/></svg>
-        <svg viewBox="0 0 24 24" class="rr-star"><path d="M12 2.3l2.83 5.74 6.34.92-4.58 4.46 1.08 6.31L12 16.98 6.33 19.73l1.08-6.31L2.83 8.96l6.34-.92L12 2.3z"/></svg>
-        <svg viewBox="0 0 24 24" class="rr-star"><path d="M12 2.3l2.83 5.74 6.34.92-4.58 4.46 1.08 6.31L12 16.98 6.33 19.73l1.08-6.31L2.83 8.96l6.34-.92L12 2.3z"/></svg>
-        <svg viewBox="0 0 24 24" class="rr-star"><path d="M12 2.3l2.83 5.74 6.34.92-4.58 4.46 1.08 6.31L12 16.98 6.33 19.73l1.08-6.31L2.83 8.96l6.34-.92L12 2.3z"/></svg>
+      <span class="rr-stars" title="5 star rating" aria-label="5 out of 5">
+        {% for i in (1..5) %}
+        <svg viewBox="0 0 576 512" class="fa-star" aria-hidden="true">
+          <path d="M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"/>
+        </svg>
+        {% endfor %}
       </span>
       <strong>5.0</strong> on Google
     </div>
@@ -15,14 +15,18 @@
 
   <div class="rr-track" role="list">
     <!-- CARD 1 -->
-    <article class="rr-card rr-fade" role="listitem" tabindex="0" data-rating="5">
+    <article class="rr-card" role="listitem" tabindex="0" data-rating="5">
       <div class="rr-top">
         <div class="rr-avatar" aria-hidden="true">A</div>
         <div class="rr-meta">
           <h3 class="rr-name">Asha K</h3>
-          <div class="rr-row">
-            <span class="rr-stars-mini" aria-label="5 out of 5"> 
-            <i></i><i></i><i></i><i></i><i></i></span>
+          <div class="rr-row" aria-label="5 out of 5">
+            <span class="rr-stars-mini">
+              {% for i in (1..5) %}
+              <svg viewBox="0 0 576 512" class="fa-star" aria-hidden="true">
+                <path d="M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"/>
+              </svg>
+              {% endfor %}
             </span>
             <time class="rr-date" datetime="2025-08-12">Aug 12, 2025</time>
           </div>
@@ -32,13 +36,19 @@
     </article>
 
     <!-- CARD 2 -->
-    <article class="rr-card rr-fade" role="listitem" tabindex="0" data-rating="5">
+    <article class="rr-card" role="listitem" tabindex="0" data-rating="5">
       <div class="rr-top">
         <div class="rr-avatar" aria-hidden="true">S</div>
         <div class="rr-meta">
           <h3 class="rr-name">Sameer P</h3>
-          <div class="rr-row">
-            <span class="rr-stars-mini" aria-label="5 out of 5"><i></i><i></i><i></i><i></i><i></i></span>
+          <div class="rr-row" aria-label="5 out of 5">
+            <span class="rr-stars-mini">
+              {% for i in (1..5) %}
+              <svg viewBox="0 0 576 512" class="fa-star" aria-hidden="true">
+                <path d="M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"/>
+              </svg>
+              {% endfor %}
+            </span>
             <time class="rr-date" datetime="2025-07-22">Jul 22, 2025</time>
           </div>
         </div>
@@ -47,13 +57,19 @@
     </article>
 
     <!-- CARD 3 -->
-    <article class="rr-card rr-fade" role="listitem" tabindex="0" data-rating="5">
+    <article class="rr-card" role="listitem" tabindex="0" data-rating="5">
       <div class="rr-top">
         <div class="rr-avatar" aria-hidden="true">N</div>
         <div class="rr-meta">
           <h3 class="rr-name">Neha R</h3>
-          <div class="rr-row">
-            <span class="rr-stars-mini" aria-label="5 out of 5"><i></i><i></i><i></i><i></i><i></i></span>
+          <div class="rr-row" aria-label="5 out of 5">
+            <span class="rr-stars-mini">
+              {% for i in (1..5) %}
+              <svg viewBox="0 0 576 512" class="fa-star" aria-hidden="true">
+                <path d="M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"/>
+              </svg>
+              {% endfor %}
+            </span>
             <time class="rr-date" datetime="2025-06-09">Jun 9, 2025</time>
           </div>
         </div>
@@ -62,13 +78,19 @@
     </article>
 
     <!-- CARD 4 -->
-    <article class="rr-card rr-fade" role="listitem" tabindex="0" data-rating="5">
+    <article class="rr-card" role="listitem" tabindex="0" data-rating="5">
       <div class="rr-top">
         <div class="rr-avatar" aria-hidden="true">V</div>
         <div class="rr-meta">
           <h3 class="rr-name">Vijay M</h3>
-          <div class="rr-row">
-            <span class="rr-stars-mini" aria-label="5 out of 5"><i></i><i></i><i></i><i></i><i></i></span>
+          <div class="rr-row" aria-label="5 out of 5">
+            <span class="rr-stars-mini">
+              {% for i in (1..5) %}
+              <svg viewBox="0 0 576 512" class="fa-star" aria-hidden="true">
+                <path d="M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"/>
+              </svg>
+              {% endfor %}
+            </span>
             <time class="rr-date" datetime="2025-05-18">May 18, 2025</time>
           </div>
         </div>
@@ -77,13 +99,19 @@
     </article>
 
     <!-- CARD 5 -->
-    <article class="rr-card rr-fade" role="listitem" tabindex="0" data-rating="5">
+    <article class="rr-card" role="listitem" tabindex="0" data-rating="5">
       <div class="rr-top">
         <div class="rr-avatar" aria-hidden="true">F</div>
         <div class="rr-meta">
           <h3 class="rr-name">Farah S</h3>
-          <div class="rr-row">
-            <span class="rr-stars-mini" aria-label="5 out of 5"><i></i><i></i><i></i><i></i><i></i></span>
+          <div class="rr-row" aria-label="5 out of 5">
+            <span class="rr-stars-mini">
+              {% for i in (1..5) %}
+              <svg viewBox="0 0 576 512" class="fa-star" aria-hidden="true">
+                <path d="M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"/>
+              </svg>
+              {% endfor %}
+            </span>
             <time class="rr-date" datetime="2025-04-02">Apr 2, 2025</time>
           </div>
         </div>
@@ -92,103 +120,50 @@
     </article>
   </div>
 
-  <!-- Make the whole section clickable (but not the top button) -->
   <a class="rr-overlay" href="https://maps.app.goo.gl/tnZVczhkgeUxWYJ38" target="_blank" rel="noopener"
      aria-label="Open Google Business Profile"></a>
 </section>
 
 <style>
-/* ============ rr-reviews (scoped) ============ */
-:where(.rr-reviews){position:relative;margin:2rem auto}
-:where(.rr-reviews__head){
-  display:flex;align-items:center;justify-content:space-between;gap:.75rem;margin-bottom:1rem;margin-top:2rem
-}
-:where(.rr-chip){
-  display:inline-flex;align-items:center;gap:.6rem;
-  background:var(--primary-100);color:var(--primary-dark);
-  padding:.5rem .75rem;border-radius:999px;font-weight:600;border:1px solid rgba(0,0,0,.06)
-}
-:where(.rr-chip .rr-stars){display:inline-flex;gap:.15rem;position:relative}
-:where(.rr-chip .rr-star){width:18px;height:18px;fill:var(--primary)}
-:where(.rr-chip .rr-stars)::after{
-  content:"";position:absolute;inset:0;transform:skewX(-20deg) translateX(-120%);
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.9),transparent);
-  animation:rr-shine 2.6s linear infinite
-}
-@keyframes rr-shine{to{transform:skewX(-20deg) translateX(120%)}}
+/* minimal styles only */
+.rr-reviews { position:relative; margin:2rem auto; }
+.rr-reviews__head { display:flex; align-items:center; justify-content:space-between; gap:.75rem; margin:2rem 0 1rem; }
 
+.rr-chip { display:inline-flex; align-items:center; gap:.5rem; padding:.4rem .6rem;
+  background:var(--primary-100); color:var(--primary-dark); border:1px solid rgba(0,0,0,.06); border-radius:999px; font-weight:600; }
+.rr-stars, .rr-stars-mini { display:inline-flex; gap:.15rem; color:var(--primary, #3368c6); }
+.fa-star { width:18px; height:18px; fill:currentColor; }
 
-:where(.rr-track){
-  display:grid;grid-template-columns:repeat(5,1fr);gap:var(--gap);
-  scroll-snap-type:x mandatory;overflow-x:auto;padding-bottom:.25rem
-}
-@media (max-width:992px){:where(.rr-track){grid-auto-flow:column;grid-auto-columns:80%;scroll-padding:1rem}}
-@media (max-width:600px){:where(.rr-track){grid-auto-columns:88%}}
+.rr-track { display:grid; grid-template-columns:repeat(5,1fr); gap:var(--gap); overflow-x:auto; padding-bottom:.25rem; }
+@media (max-width:992px){ .rr-track{ grid-auto-flow:column; grid-auto-columns:80%; } }
+@media (max-width:600px){ .rr-track{ grid-auto-columns:88%; } }
 
-:where(.rr-card){
-  background:var(--card);border:1px solid rgba(0,0,0,.06);border-radius:var(--radius);
-  padding:1rem;box-shadow:0 8px 24px rgba(15,23,36,.05);
-  scroll-snap-align:start;position:relative;isolation:isolate;
-  transform:translateY(6px);opacity:0
-}
-:where(.rr-card.rr-show){transform:translateY(0);opacity:1;transition:all .6s cubic-bezier(.2,.8,.2,1)}
-:where(.rr-card:hover){transform:translateY(-2px)}
-:where(.rr-card:focus){outline:2px solid var(--primary-600)}
-@media (prefers-reduced-motion:reduce){
-  :where(.rr-card){transform:none!important}
-  :where(.rr-card.rr-show){transition:none!important}
-  :where(.rr-chip .rr-stars)::after{animation:none!important}
-}
+.rr-card { background:var(--card,#fff); border:1px solid rgba(0,0,0,.06); border-radius:var(--radius,12px);
+  padding:1rem; box-shadow:0 8px 24px rgba(15,23,36,.05); scroll-snap-align:start; }
+.rr-top { display:flex; align-items:center; gap:.7rem; margin-bottom:.6rem; }
+.rr-avatar { width:40px; height:40px; border-radius:50%; display:grid; place-items:center;
+  background:var(--primary-100); color:var(--primary-dark); font-weight:700; flex:0 0 40px; }
+.rr-name { margin:.05rem 0; font-size:1rem; color:var(--primary-dark); }
+.rr-row { display:flex; align-items:center; gap:.5rem; color:var(--muted,#6b7280); font-size:.88rem; }
+.rr-text { margin:.25rem 0 0; color:#153145; line-height:1.55; }
 
-:where(.rr-top){display:flex;align-items:center;gap:.7rem;margin-bottom:.6rem}
-:where(.rr-avatar){
-  width:40px;height:40px;border-radius:50%;display:grid;place-items:center;
-  background:var(--primary-100);color:var(--primary-dark);font-weight:700;flex:0 0 40px
-}
-:where(.rr-name){margin:.05rem 0;font-size:1rem;color:var(--primary-dark)}
-:where(.rr-row){display:flex;align-items:center;gap:.5rem;color:var(--muted);font-size:.88rem}
-
-:where(.rr-stars-mini){display:inline-flex;gap:.12rem}
-:where(.rr-stars-mini i){
-  width:14px;height:14px;display:inline-block;mask:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox=\\'0 0 24 24\\'><path d=\\'M12 2.3l2.83 5.74 6.34.92-4.58 4.46 1.08 6.31L12 16.98 6.33 19.73l1.08-6.31L2.83 8.96l6.34-.92L12 2.3z\\'/></svg>') center/contain no-repeat;
-  -webkit-mask:inherit;background:var(--primary)
-}
-:where(.rr-text){margin:.25rem 0 0;color:#153145;line-height:1.55}
-
-:where(.rr-overlay){
-  position:absolute;inset:0;border-radius:var(--radius);z-index:1;pointer-events:none
-}
-:where(.rr-reviews:hover .rr-overlay){pointer-events:auto}
-:where(.rr-reviews__head .rr-btn){position:relative;z-index:2}
-
-/* optional gentle bobbing (kept tiny) */
-:where(.rr-card){animation:rr-float 6s ease-in-out infinite alternate .4s}
-@keyframes rr-float{from{translate:0 0} to{translate:0 -2px}}
-@media (prefers-reduced-motion:reduce){:where(.rr-card){animation:none!important}}
+.rr-overlay { position:absolute; inset:0; border-radius:var(--radius,12px); z-index:1; pointer-events:none; }
+.rr-reviews:hover .rr-overlay { pointer-events:auto; }
 </style>
 
 <script>
-/* _includes/reviews.html logic (no globals leaked) */
-(function(){
+(() => {
   const root = document.currentScript?.previousElementSibling?.previousElementSibling?.previousElementSibling?.closest('.rr-reviews')
-            || document.querySelector('.rr-reviews');
-  if(!root) return;
+           || document.querySelector('.rr-reviews');
+  if (!root) return;
 
-  // Fade-in on view
-  const cards = root.querySelectorAll('.rr-card.rr-fade');
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){ e.target.classList.add('rr-show'); io.unobserve(e.target); }
-    });
-  }, {threshold:.2});
-  cards.forEach(c=>io.observe(c));
-
-  // Click anywhere to open GBP, but allow the top button to work normally
+  // Make the whole section clickable (except header area)
   const overlay = root.querySelector('.rr-overlay');
-  root.addEventListener('click', (ev)=>{
-    if(ev.target.closest('.rr-reviews__head')) return;
+  root.addEventListener('click', (ev) => {
+    if (ev.target.closest('.rr-reviews__head')) return;
     overlay?.click();
-  }, {passive:true});
+  }, { passive: true });
 })();
 </script>
+
 
