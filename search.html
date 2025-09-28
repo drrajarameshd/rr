@@ -9,7 +9,7 @@ permalink: /search/
 
   <form action="{{ '/search/' | relative_url }}" method="get" role="search" class="search-form">
     <input id="q" name="q" type="search" placeholder="Search diabetes, thyroid, fever…" value="{{ page.q | default: '' }}" class="input" />
-    <button class="btn btn--primary" type="submit">Search</button>
+    <button class="btn gradient" type="submit">Search</button>
   </form>
 
   <div id="search-status" class="post-item" aria-live="polite" style="margin-top: 1rem;
