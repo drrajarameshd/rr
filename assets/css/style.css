@@ -71,48 +71,140 @@ img{max-width:100%;display:block}
   align-items: center;
 }
 
-/* Modern pill-style button */
+/* =========================
+   Base Pill-Style Button
+   ========================= */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   padding: 0.55rem 1.4rem;
   border-radius: 999px !important;
-  background: var(--primary);
-  color: #fff;
   font-weight: 600;
   font-size: 0.95rem;
   line-height: 1.2;
   text-decoration: none;
-
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   min-width: 0;
+  cursor: pointer;
 
+  transition: transform 0.15s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
   box-shadow: 0 4px 14px rgba(51, 104, 198, 0.18);
-  transition: transform 0.15s ease, box-shadow 0.3s ease;
 }
 
-/* Allow wrapping if needed */
+/* Allow text wrap if needed */
 .btn.allow-wrap {
   white-space: normal;
   overflow: visible;
   text-overflow: clip;
 }
 
-/* Hover state */
+/* Hover */
 .btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(51, 104, 198, 0.25);
 }
 
-/* Active state */
+/* Active */
 .btn:active {
   transform: scale(0.97);
   box-shadow: 0 3px 8px rgba(51, 104, 198, 0.2);
 }
+
+/* =========================
+   Button Variants
+   ========================= */
+
+/* Primary (default) */
+.btn.primary {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+}
+
+/* Outline */
+.btn.outline {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  box-shadow: none;
+}
+
+.btn.outline:hover {
+  background: var(--primary-100);
+}
+
+/* Danger */
+.btn.danger {
+  background: #dc3545;
+  color: #fff;
+  border: none;
+}
+
+.btn.danger:hover {
+  background: #c82333;
+  box-shadow: 0 6px 20px rgba(220, 53, 69, 0.25);
+}
+
+/* Outline Danger */
+.btn.outline-danger {
+  background: transparent;
+  color: #dc3545;
+  border: 2px solid #dc3545;
+  box-shadow: none;
+}
+
+.btn.outline-danger:hover {
+  background: rgba(220, 53, 69, 0.1);
+}
+
+/* Gradient */
+.btn.gradient {
+  background: linear-gradient(135deg, #3368c6, #5a98f0);
+  color: #fff;
+  border: none;
+}
+
+.btn.gradient:hover {
+  box-shadow: 0 6px 22px rgba(51, 104, 198, 0.35);
+}
+
+/* Muted / Secondary */
+.btn.muted {
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  box-shadow: none;
+}
+
+.btn.muted:hover {
+  background: #e5e7eb;
+}
+
+/* Ghost */
+.btn.ghost {
+  background: transparent;
+  color: var(--primary);
+  border: none;
+  box-shadow: none;
+}
+
+.btn.ghost:hover {
+  background: var(--primary-100);
+}
+
+/* Disabled */
+.btn.disabled,
+.btn:disabled {
+  opacity: 0.6;
+  pointer-events: none;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
 /* Hero image & mobile visiting card */
 .hero-image{display:flex;position:relative;align-items:center;justify-content:center}
 .hero-photo-circle{display:block;width:100%;max-width:240px;height:auto;border-radius:50%;object-fit:cover;border:2px solid var(--primary);box-shadow:0 8px 28px rgba(15,23,36,0.12);background:#fff}
