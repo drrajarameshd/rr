@@ -79,7 +79,7 @@ description: "Available at Germanten Hospital (10am–5pm) & Care Clinic Attapur
                 <p class="excerpt" itemprop="description">{{ post.excerpt | strip_html | truncate: 200 }}</p>
               {% endif %}
 
-              <p style="margin-top:.55rem;"><a class="btn btn--primary" href="{{ post.url | relative_url }}">Read more</a></p>
+              <p style="margin-top:.55rem;"><a class="btn outline" href="{{ post.url | relative_url }}">Read more</a></p>
             </div>
           </article>
         {% endfor %}
