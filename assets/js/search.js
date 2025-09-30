@@ -214,3 +214,18 @@
   // Initialize
   toggleClear();
 })();
+
+
+//tag listener
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener('click', function (e) {
+    const tag = e.target.closest('.post-tag');
+    if (!tag || !tag.href.includes('/search/?q=')) return;
+
+    // Optional: prevent default and redirect manually
+    e.preventDefault();
+    const url = new URL(tag.href);
+    window.location.href = url.href;
+  });
+});
