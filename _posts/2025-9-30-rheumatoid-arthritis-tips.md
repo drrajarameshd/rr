@@ -65,12 +65,12 @@ Some patients stop their medications when they “feel better.” But RA is a ch
 
 ## ✅ Practical Tips for RA Patients
 
-- 🔹 **Be patient** — DMARDs take time to show effect.  
-- 🔹 Use **painkillers or short steroid courses** only during flare-ups — as advised.  
-- 🔹 **Stick to your medicine schedule** — don’t stop on your own.  
-- 🔹 **Regular follow-ups** and blood tests are important.  
-- 🔹 Do gentle **joint-friendly exercises** — ask your doctor for guidance.  
-- 🔹 **Healthy diet**, **calcium and vitamin D**, and weight control help joint health.
+🔹 **Be patient** — DMARDs take time to show effect.  
+🔹 Use **painkillers or short steroid courses** only during flare-ups — as advised.  
+🔹 **Stick to your medicine schedule** — don’t stop on your own.  
+🔹 **Regular follow-ups** and blood tests are important.  
+🔹 Do gentle **joint-friendly exercises** — ask your doctor for guidance.  
+🔹 **Healthy diet**, **calcium and vitamin D**, and weight control help joint health.
 
 ---
 
