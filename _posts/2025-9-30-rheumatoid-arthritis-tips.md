@@ -78,7 +78,7 @@ Some patients stop their medications when they “feel better.” But RA is a ch
 
 RA treatment is a long journey, but **well-controlled RA means better quality of life** and less joint damage. Early diagnosis and correct use of DMARDs can prevent disability.
 
-> Trust your rheumatologist, follow your medicines, and avoid self-medication — especially with steroids.
+> Trust your doctor, follow your medicines, and avoid self-medication — especially with steroids.
 
 ---
 
