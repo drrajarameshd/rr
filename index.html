@@ -71,14 +71,17 @@ description: "Available at Germanten Hospital (10am–5pm) & Care Clinic Attapur
               </h3>
 
               <div class="meta">
-                <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%B %-d, %Y" }}</time>
-                {% if post.tags and post.tags.size > 0 %}
-                <div class="post-tags">
-                {% for tag in post.tags %}
-                <span class="post-tag">{{ tag }}</span>
-                {% endfor %}
-                </div>
-                {% endif %}
+               <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">
+                {{ post.date | date: "%B %-d, %Y" }}
+               </time>
+
+               {% if post.tags and post.tags.size > 0 %}
+           <div class="post-tags">
+               {% for tag in post.tags %}
+             <a class="post-tag" href="{{ '/search/' | relative_url }}?q={{ tag | uri_escape }}">{{ tag }}</a>
+              {% endfor %}
+               </div>
+               {% endif %}
               </div>
 
               {% if post.excerpt %}
