@@ -1,7 +1,7 @@
 ---
 layout: post  
 title: "Rheumatoid Arthritis — What Every Patient Must Know"  
-date: 2025-09-30 10:00:00 +0530  
+date: 2025-09-30 9:00:00 +0530  
 excerpt: "Rheumatoid arthritis is more than joint pain. Learn why treatment delays can damage joints permanently, why steroids are not a long-term solution, and why DMARDs must be taken regularly."  
 tags: [rheumatoid arthritis, joint pain, steroids, DMARDs, autoimmune, myths]  
 image: /assets/images/posts/2025-rheumatoid-arthritis-tips.webp  
