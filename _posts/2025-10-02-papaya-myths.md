@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Papaya Myths — Facts Every Patient Should Know"
-date: 2025-10-02 10:00:00 +0530
+date: 2025-10-01 10:00:00 +0530
 excerpt: "Papaya in viral fever? Pregnancy concerns? Learn the truth about papaya, its enzymes, wound healing use, and common myths that mislead patients."
 tags: [myths, papaya, pregnancy, platelets, wound healing, viral fever]
 image: /assets/images/posts/2025-10-02-papaya-myths.webp
