@@ -61,7 +61,7 @@ description: "Available at Germanten Hospital (10am–5pm) & Care Clinic Attapur
           <article class="post-item" itemscope itemtype="http://schema.org/BlogPosting">
             {% if post.thumbnail %}
               <a class="thumb" href="{{ post.url | relative_url }}" itemprop="url" aria-hidden="true">
-                <img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title | escape }}" loading="lazy" width="200" height="120">
+                <img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title | escape }}" loading="lazy">
               </a>
             {% endif %}
 
