@@ -399,3 +399,22 @@ input:focus,textarea:focus{outline:2px solid var(--primary-600);border-color:var
 @media (prefers-reduced-motion:reduce){
   *{transition:none!important;animation:none!important}
 }
+
+/* === Site-wide custom bullet icon === */
+ul, ol {
+  list-style: none;
+}
+
+ul li, ol li {
+  position: relative;
+}
+
+ul li::before, ol li::before {
+  content: "›"; /* small arrow bullet */
+  position: absolute;
+  left: -1em; 
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 0.9em;
+  line-height: 1;
+}
