@@ -85,5 +85,5 @@ RA treatment is a long journey, but **well-controlled RA means better quality of
 ### About the Author  
 **Dr. Raja Ramesh, MD (Osmania)**  
 Consultant Physician & Diabetologist in Attapur, Hyderabad  
-Available at **Germanten Hospital (10am–5pm)** & **Care Clinic Attapur (5pm–8pm)**  
+Available at **Olive Hospital (10am–5pm)** & **Care Clinic Attapur (5pm–8pm)**  
 📞 Call **+91 79896 76770** for appointments
