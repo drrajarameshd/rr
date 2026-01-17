@@ -93,5 +93,5 @@ Papaya is a healthy fruit when used appropriately, but **not a miracle cure**. W
 ### About the Author
 **Dr. Raja Ramesh, MD (Osmania)**  
 Consultant Physician & Diabetologist in Attapur, Hyderabad  
-Available at **Germanten Hospital (10am–5pm)** & **Care Clinic Attapur (5pm–8pm)**  
+Available at **Olive Hospital (10am–5pm)** & **Care Clinic Attapur (5pm–8pm)**  
 📞 Call **+91 7989676770** for appointments.
